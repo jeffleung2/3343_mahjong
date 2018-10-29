@@ -16,6 +16,7 @@ public class MahJong {
 			System.out.println("InValid Input");
 		} else {
 			int point = 0;
+			System.out.println("Hello");
 //			if()
 		}
 	}
