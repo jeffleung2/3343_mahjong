@@ -3,6 +3,7 @@ package mahJong;
 import java.lang.reflect.Array;
 
 public class MahJong {
+	//test
 	
 	public boolean isPureOneSuit(String mahJong[], char target) {
 		return false;
