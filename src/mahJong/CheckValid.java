@@ -43,6 +43,10 @@ public class CheckValid {
 		}
 	}
 	
+	
+	
+	
+	
 	public boolean isValidInput(String mahJong[]) {
 		String firstTile[] = new String[]{mahJong[0], mahJong[1], mahJong[2]};
 		String secondTile[] = new String[]{mahJong[3], mahJong[4], mahJong[5]};
