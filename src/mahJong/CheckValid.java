@@ -43,21 +43,18 @@ public class CheckValid {
 		}
 	}
 	
-	
-	
-	
-	
 	public boolean isValidInput(String mahJong[]) {
 		String firstTile[] = new String[]{mahJong[0], mahJong[1], mahJong[2]};
 		String secondTile[] = new String[]{mahJong[3], mahJong[4], mahJong[5]};
 		String thirdTile[] = new String[]{mahJong[6], mahJong[7], mahJong[8]};
-		String eyes[] = new String[]{mahJong[9], mahJong[10]};
+		String fourthTile[] = new String[]{mahJong[9], mahJong[10], mahJong[11]};
+		String eyes[] = new String[]{mahJong[12], mahJong[13]};
 		for(int i = 0; i < Array.getLength(mahJong); i++) {
 			if(!sameMahJongLessThanFour(mahJong, mahJong[i])) {
 				return false;
 			}
 		}
-		return isValidTile(firstTile) && isValidTile(secondTile) && isValidTile(thirdTile) && isValidEyes(eyes);
+		return isValidTile(firstTile) && isValidTile(secondTile) && isValidTile(thirdTile) && isValidTile(fourthTile) && isValidEyes(eyes);
 	}
 
 }
