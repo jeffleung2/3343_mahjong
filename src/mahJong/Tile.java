@@ -6,7 +6,7 @@ public class Tile {
 	
 	public Tile (String tile) {
 		this.suit = tile.charAt(0);
-		this.rank = Integer.parseInt(Character.toString(tile.charAt(1)));
+		this.rank = Integer.parseInt(tile.substring(1));
 	}
 	
 	public char getSuit() {
