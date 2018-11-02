@@ -3,7 +3,7 @@ package mahJong;
 import java.util.ArrayList;
 
 public class Win {
-	ArrayList <Combination> win = new ArrayList<>();
+	private ArrayList <Combination> win = new ArrayList<>();
 	
 	public Win(Combination firstMeld, 
 			Combination secondMeld, 

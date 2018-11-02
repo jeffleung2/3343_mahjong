@@ -1,7 +1,5 @@
 package mahJong;
 
-import java.lang.reflect.Array;
-
 public class Calculator {
 	//test
 	
@@ -31,8 +29,8 @@ public class Calculator {
 			System.out.println("Valid Input");
 			Win win = new MakeWin(input).getWin();
 			
-			System.out.println(win.win.get(2).getState());
-			System.out.println(win.win.get(2).getSuit());
+			System.out.println(win.getWin().get(2).getState());
+			System.out.println(win.getWin().get(2).getSuit());
 			
 			System.out.println(MJUtil.isNineChains(win.getWin()));
 			System.out.println(MJUtil.isPureOneSuit(win.getWin()));

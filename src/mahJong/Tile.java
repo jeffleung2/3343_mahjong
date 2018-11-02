@@ -1,8 +1,8 @@
 package mahJong;
 
 public class Tile {
-	char suit; // H = 番子 T = 筒子 S = 索子 M = 萬子
-	int rank; // 
+	private char suit; // H = 番子 T = 筒子 S = 索子 M = 萬子
+	private int rank; // 
 	
 	public Tile (String tile) {
 		this.suit = tile.charAt(0);
