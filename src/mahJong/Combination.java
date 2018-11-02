@@ -9,7 +9,10 @@ public class Combination {
 	private int meldType;
 	// 2 : triplet
 	// 1 : sequence
-	
+	public Combination()
+	{
+		tiles = new ArrayList<>();
+	}
 	public Combination(Tile firstTile, Tile secondTile, String state, int meldType) {
 		tiles = new ArrayList<>();
 		tiles.add(firstTile);
@@ -22,7 +25,10 @@ public class Combination {
 	{
 		tiles.add(tile);
 	}
-	
+	public int getTilesSize()
+	{
+		return tiles.size();
+	}
 	public String getState() {
 		return this.state;
 	}

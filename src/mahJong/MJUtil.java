@@ -22,6 +22,30 @@ public class MJUtil {
 		}
 		return true;
 	}
+	//十三么
+	public static boolean isThirteenOrphans(Combination win)
+	{
+		boolean[] haveHonours = new boolean[7];
+		boolean[] haveMan = new boolean[9];
+		boolean[] haveTung = new boolean[9];
+		boolean[] haveSort = new boolean[9];
+		int tileSize = win.getTilesSize();
+		if(win.getTile(tileSize-1).getRank() != win.getTile(tileSize-2).getRank() ||
+		win.getTile(tileSize-1).getSuit() != win.getTile(tileSize-2).getSuit()) // check Eyes
+			return false;
+		for(int i = 0, l = win.getTilesSize();i < l;i++)
+		{
+			if(win.getTile(i).getSuit() == 'H')haveHonours[win.getTile(i).getRank()-1] = true;
+			else if(win.getTile(i).getSuit() == 'M')haveMan[win.getTile(i).getRank()-1] = true;
+			else if(win.getTile(i).getSuit() == 'T')haveTung[win.getTile(i).getRank()-1] = true;
+			else if(win.getTile(i).getSuit() == 'S')haveSort[win.getTile(i).getRank()-1] = true; 
+		}
+		for(boolean b:haveHonours)
+			if(!b)return false;
+		if(!haveMan[0] || !haveMan[8] || !haveTung[0] || !haveTung[8] || !haveSort[0] || !haveSort[8])return false;
+		return true;
+	}
+	//九子連環
 	public static boolean isNineChains(ArrayList<Combination> win)
 	{
 		int[] count = {0,0,0,0,0,0,0,0,0};
