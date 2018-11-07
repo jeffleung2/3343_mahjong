@@ -45,7 +45,7 @@ public class MJUtil {
 		if(!haveMan[0] || !haveMan[8] || !haveTung[0] || !haveTung[8] || !haveSort[0] || !haveSort[8])return false;
 		return true;
 	}
-	//九子連環
+	//九子連環, change name -> isNineGate
 	public static boolean isNineChains(ArrayList<Combination> win)
 	{
 		int[] count = {0,0,0,0,0,0,0,0,0};
@@ -100,7 +100,7 @@ public class MJUtil {
 				return false;
 		return true;
 	}
-	//么九
+	//全么九 , change name -> isAllOrphans
 	public static boolean isAllOneOrNine(ArrayList<Combination> win)
 	{
 		for(Combination c:win)
@@ -120,7 +120,7 @@ public class MJUtil {
 			default: return 0;
 		}
 	}
-	//大四喜
+	//大四喜 , change name -> isGreatWinds
 	public static int isBigFourHappiness(ArrayList<Combination> win)
 	{
 		int countNorth = 0, countEast = 0, countSouth = 0, countWest = 0;
@@ -151,7 +151,7 @@ public class MJUtil {
 		}
 		return -1;
 	}
-	//小四喜
+	//小四喜, change name -> isSmallWinds
 	public static int isSmallFourHappiness(ArrayList<Combination> win)
 	{
 		int countNorth = 0, countEast = 0, countSouth = 0, countWest = 0;
