@@ -86,6 +86,87 @@ public class MJUtil {
 		}
 	}
 	
+	public static int isBigFourHappiness(ArrayList<Combination> win)
+	{
+		int countNorth = 0, countEast = 0, countSouth = 0, countWest = 0;
+		ArrayList<Combination> checkPair = new ArrayList<Combination>();
+		for (Combination c: win) {
+			if (c.getSuit() == 'H')
+			{
+				if (c.getMeldType() == 1)
+					countEast++;
+				else if (c.getMeldType() == 2)
+					countSouth++;
+				else if (c.getMeldType() == 3)
+					countWest++;
+				else if (c.getMeldType() == 4)
+					countNorth++;
+			}
+			else 
+			{
+				checkPair.add(c);
+			}
+		}
+		if (countNorth == 3 && countEast == 3 && countSouth == 3 && countWest == 3)
+		{
+			if (checkPair.get(0).equals(checkPair.get(1)))
+				return 100;
+			else
+				return -1;
+		}
+		return -1;
+	}
+	
+	public static int isSmallFourHappiness(ArrayList<Combination> win)
+	{
+		int countNorth = 0, countEast = 0, countSouth = 0, countWest = 0;
+		ArrayList<Combination> checkAscAndSame = new ArrayList<Combination>();
+		for (Combination c: win) 
+		{
+			if (c.getSuit() == 'H')
+			{
+				if (c.getMeldType() == 1)
+					countEast++;
+				else if (c.getMeldType() == 2)
+					countSouth++;
+				else if (c.getMeldType() == 3)
+					countWest++;
+				else if (c.getMeldType() == 4)
+					countNorth++;
+			}
+			else 
+			{
+				checkAscAndSame.add(c);
+			}
+		}
+		if (countNorth + countEast + countSouth + countWest == 11)
+		{
+			if (checkAscAndSame.get(0).equals(checkAscAndSame.get(1)) && checkAscAndSame.get(1).equals(checkAscAndSame.get(2)))
+			{
+				//score
+				return 80;
+			}
+			else 
+			{
+				int min = 999, max = -1;
+				for (Combination c: checkAscAndSame)
+				{
+					int temp = c.getMeldType();
+					if (temp > max)
+						max = temp;
+					if (temp < min)
+						min = temp;
+				}
+				if (min + 2 == max)
+					return 80;
+				else 
+					return -1;
+				
+			}
+		}
+		return -1;
+	}
+	
 //	public static int isBigFourHappiness(ArrayList<Combination> win) {
 //		boolean hasEastMeld;
 //		boolean hasSouthMeld;
