@@ -3,7 +3,7 @@ package mahJong;
 import java.util.ArrayList;
 
 public class MJUtil {
-	// 清一色
+	// 清一色, change name -> isAllOneSuit
 	public static boolean isPureOneSuit(ArrayList<Combination> win) {
 		char suit = win.get(0).getSuit();
 		for (Combination c: win) {
