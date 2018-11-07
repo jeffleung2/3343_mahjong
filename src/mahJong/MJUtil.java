@@ -71,7 +71,32 @@ public class MJUtil {
 		for(int i :count)
 			if(i == 0)
 				return false;
-//		if(win.get(0).getClass().getName() !== 'Triplet')return false;
+		return true;
+	}
+	public static boolean isBigDragon(ArrayList<Combination> win)
+	{
+		boolean[] redGreenWhite = new boolean[3];
+		for(int i = 0, l = win.size()-1;i < l;i++)
+		{
+			if(win.get(i).getTile(0).getSuit() == 'H' && win.get(i).getTile(0).getRank() >= 5)redGreenWhite[win.get(i).getTile(0).getRank()-5] = true;
+		}
+		for(int i = 0;i < 3;i++)
+			if(!redGreenWhite[i])
+				return false;
+		return true;
+	}
+	
+	public static boolean isSmallDragon(ArrayList<Combination> win)
+	{
+		boolean[] redGreenWhite = new boolean[3];
+		for(int i = 0, l = win.size();i < l;i++)
+		{
+			if(win.get(i).getTile(0).getSuit() == 'H' && win.get(i).getTile(0).getRank() >= 5)
+				redGreenWhite[win.get(i).getTile(0).getRank()-5] = true;
+		}
+		for(int i = 0;i < 3;i++)
+			if(!redGreenWhite[i])
+				return false;
 		return true;
 	}
 	public static int isAllTripletOrAllSequence (ArrayList<Combination> win) {

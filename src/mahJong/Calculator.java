@@ -17,7 +17,8 @@ public class Calculator {
 //		String[] input = new String[] {"M1", "M2", "M3", "M3", "M4", "M5", "M6", "M7", "M8", "M9", "M9", "M9", "M1", "M1"}; // Valid 9chain case 3
 //		String[] input = new String[] {"M1", "M1", "M1", "M2", "M3", "M4", "M4", "M5", "M6", "M7", "M8", "M9", "M9", "M9"}; // Valid 9chain case 4
 //		String[] input = new String[] {"M1", "M1", "M1", "M2", "M3", "M4", "M6", "M7", "M8", "M9", "M9", "M9", "M5", "M5"}; // Valid 9chain case 5
-		String[] input = new String[] {"M1", "M9", "T1", "T9", "S1", "S9", "H1", "H2", "H3", "H4", "H5", "H6", "H7", "H7"}; // Valid 9chain case 5
+//		String[] input = new String[] {"M1", "M9", "T1", "T9", "S1", "S9", "H1", "H2", "H3", "H4", "H5", "H6", "H7", "H7"}; // Valid 9chain case 5
+		String[] input = new String[] {"M1", "M1", "M1", "H5", "H5", "H5", "H6", "H6", "H6", "H1", "H1", "H1", "H7", "H7"}; // Valid 9chain case 5
 
 		Combination c = new Combination();
 		for(String s:input)
@@ -39,6 +40,7 @@ public class Calculator {
 			System.out.println(win.getWin().get(2).getState());
 			System.out.println(win.getWin().get(2).getSuit());
 			
+			System.out.println(MJUtil.isSmallDragon(win.getWin()));
 			System.out.println(MJUtil.isNineChains(win.getWin()));
 			System.out.println(MJUtil.isPureOneSuit(win.getWin()));
 			System.out.println(MJUtil.isAllHonorSuit(win.getWin()));
