@@ -73,6 +73,7 @@ public class MJUtil {
 				return false;
 		return true;
 	}
+	//大三元
 	public static boolean isBigDragon(ArrayList<Combination> win)
 	{
 		boolean[] redGreenWhite = new boolean[3];
@@ -85,7 +86,7 @@ public class MJUtil {
 				return false;
 		return true;
 	}
-	
+	//小三元
 	public static boolean isSmallDragon(ArrayList<Combination> win)
 	{
 		boolean[] redGreenWhite = new boolean[3];
@@ -96,6 +97,15 @@ public class MJUtil {
 		}
 		for(int i = 0;i < 3;i++)
 			if(!redGreenWhite[i])
+				return false;
+		return true;
+	}
+	//么九
+	public static boolean isAllOneOrNine(ArrayList<Combination> win)
+	{
+		for(Combination c:win)
+			if((c.getMeldType() != 2 && c.getMeldType() != 0) || c.getTile(0).getSuit() == 'H' ||
+			(c.getTile(0).getRank() != 1 && c.getTile(0).getRank() != 9))
 				return false;
 		return true;
 	}
@@ -110,7 +120,7 @@ public class MJUtil {
 			default: return 0;
 		}
 	}
-	
+	//大四喜
 	public static int isBigFourHappiness(ArrayList<Combination> win)
 	{
 		int countNorth = 0, countEast = 0, countSouth = 0, countWest = 0;
@@ -141,7 +151,7 @@ public class MJUtil {
 		}
 		return -1;
 	}
-	
+	//小四喜
 	public static int isSmallFourHappiness(ArrayList<Combination> win)
 	{
 		int countNorth = 0, countEast = 0, countSouth = 0, countWest = 0;
