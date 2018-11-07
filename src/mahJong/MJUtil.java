@@ -3,7 +3,7 @@ package mahJong;
 import java.util.ArrayList;
 
 public class MJUtil {
-	// 清一色
+	// 清一色 , change name -> isAllOneSuit
 	public static boolean isPureOneSuit(ArrayList<Combination> win) {
 		char suit = win.get(0).getSuit();
 		for (Combination c: win) {
@@ -45,7 +45,7 @@ public class MJUtil {
 		if(!haveMan[0] || !haveMan[8] || !haveTung[0] || !haveTung[8] || !haveSort[0] || !haveSort[8])return false;
 		return true;
 	}
-	//九子連環
+	//九子連環 , change name -> isNineHandGate
 	public static boolean isNineChains(ArrayList<Combination> win)
 	{
 		int[] count = {0,0,0,0,0,0,0,0,0};
@@ -71,34 +71,10 @@ public class MJUtil {
 		for(int i :count)
 			if(i == 0)
 				return false;
+//		if(win.get(0).getClass().getName() !== 'Triplet')return false;
 		return true;
 	}
-	public static boolean isBigDragon(ArrayList<Combination> win)
-	{
-		boolean[] redGreenWhite = new boolean[3];
-		for(int i = 0, l = win.size()-1;i < l;i++)
-		{
-			if(win.get(i).getTile(0).getSuit() == 'H' && win.get(i).getTile(0).getRank() >= 5)redGreenWhite[win.get(i).getTile(0).getRank()-5] = true;
-		}
-		for(int i = 0;i < 3;i++)
-			if(!redGreenWhite[i])
-				return false;
-		return true;
-	}
-	
-	public static boolean isSmallDragon(ArrayList<Combination> win)
-	{
-		boolean[] redGreenWhite = new boolean[3];
-		for(int i = 0, l = win.size();i < l;i++)
-		{
-			if(win.get(i).getTile(0).getSuit() == 'H' && win.get(i).getTile(0).getRank() >= 5)
-				redGreenWhite[win.get(i).getTile(0).getRank()-5] = true;
-		}
-		for(int i = 0;i < 3;i++)
-			if(!redGreenWhite[i])
-				return false;
-		return true;
-	}
+	// 對對糊? change name -> isAllTriplets
 	public static int isAllTripletOrAllSequence (ArrayList<Combination> win) {
 		int count = 0;
 		for (Combination c: win) {
@@ -110,7 +86,7 @@ public class MJUtil {
 			default: return 0;
 		}
 	}
-	
+	// 大四喜, change name -> isGreatWinds
 	public static int isBigFourHappiness(ArrayList<Combination> win)
 	{
 		int countNorth = 0, countEast = 0, countSouth = 0, countWest = 0;
@@ -141,7 +117,7 @@ public class MJUtil {
 		}
 		return -1;
 	}
-	
+	// 小四喜, change name -> isSmallWinds
 	public static int isSmallFourHappiness(ArrayList<Combination> win)
 	{
 		int countNorth = 0, countEast = 0, countSouth = 0, countWest = 0;
