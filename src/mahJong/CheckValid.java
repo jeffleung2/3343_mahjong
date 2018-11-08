@@ -46,27 +46,36 @@ public class CheckValid {
 		if(count == 2) {
 			if(tile[0].charAt(1) == tile[1].charAt(1) && tile[0].charAt(1) == tile[2].charAt(1)) {
 				return true;
-			} else {
+			} else if (tile[0].charAt(0)!='H'){
 				int firstCard = Character.getNumericValue(tile[0].charAt(1));
 				int secondCard = Character.getNumericValue(tile[1].charAt(1));
 				int thirdCard = Character.getNumericValue(tile[2].charAt(1));
 				return secondCard == firstCard + 1 && thirdCard == firstCard + 2; 
+			}else {
+				return false;
 			}
 		}
-		else {
+		return false;		
+	}
+	public boolean isValidInput(String mahJong[]) {
+		if(mahJong.length != 14) {
+			System.out.println("You do not have 14 tiles.");
 			return false;
 		}
-	}
-	
-	public boolean isValidInput(String mahJong[]) {
 		for(int i = 0; i < Array.getLength(mahJong); i++) {
 			if(!isValidTile(mahJong[i])) {
+				System.out.println(mahJong[i] + " does not exist.");
 				return false;
 			}
 			if(!sameMahJongLessThanFour(mahJong, mahJong[i])) {
+				System.out.println(mahJong[i] + " could not be more than 4");
 				return false;
 			}
 		}
+		return true;
+	}
+	
+	public boolean isWinHand(String mahJong[]) {
 		String firstTile[] = new String[]{mahJong[0], mahJong[1], mahJong[2]};
 		String secondTile[] = new String[]{mahJong[3], mahJong[4], mahJong[5]};
 		String thirdTile[] = new String[]{mahJong[6], mahJong[7], mahJong[8]};
