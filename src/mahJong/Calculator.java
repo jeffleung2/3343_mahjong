@@ -11,9 +11,12 @@ public class Calculator {
 //		String[] input = new String[] {"M1", "M1", "M1", "M1", "M2", "M3", "M4", "M5", "M6", "M7", "M8", "M9", "M9", "M9"}; // Valid 9chain case 1
 //		String[] input = new String[] {"M1", "M2", "M3", "M3", "M4", "M5", "M6", "M7", "M8", "M9", "M9", "M9", "M1", "M1"}; // Valid 9chain case 3
 //		String[] input = new String[] {"M1", "M1", "M1", "M2", "M3", "M4", "M4", "M5", "M6", "M7", "M8", "M9", "M9", "M9"}; // Valid 9chain case 4
-		String[] input = new String[] {"M1", "M1", "M1", "M2", "M3", "M4", "M6", "M7", "M8", "M9", "M9", "M9", "M5", "M5"}; // Valid 9chain case 5
+//		String[] input = new String[] {"M1", "M1", "M1", "M2", "M3", "M4", "M6", "M7", "M8", "M9", "M9", "M9", "M5", "M5"}; // Valid 9chain case 5
 //		String[] input = new String[] {"M1", "M9", "T1", "T9", "S1", "S9", "H1", "H2", "H3", "H4", "H5", "H6", "H7", "H7"}; // Valid 9chain case 5
 //		String[] input = new String[] {"M1", "M9", "T1", "T9", "S1", "S9", "H1", "H2", "H3", "H5", "H4", "H6", "H7", "H7"}; // Valid 9chain case 5
+//		String[] input = new String[] {"M1", "M1", "M1", "M2", "M3", "M4", "M3", "M3", "M3", "M4", "M4", "M4", "M5", "M5"}; // Valid 9chain case 5
+		
+		String[] input = new String[] {"H5", "H5", "H5", "H6", "H6", "H6", "H7", "H7", "H7", "M4", "M4", "M4", "M5", "M5"}; // Valid 9chain case 5
 		
 		if(!new CheckValid().isValidInput(input)) {
 			System.exit(1);
@@ -41,9 +44,13 @@ public class Calculator {
 			
 //			System.out.println(MJUtil.isSmallDragon(win.getWin()));
 //			System.out.println(MJUtil.isAllOneOrNine(win.getWin()));
-//			System.out.println(MJUtil.isNineChains(win.getWin()));
+//			System.out.println(MJUtil.isNineGate(win.getWin()));
+//			System.out.println(MJUtil.isAllOneSuit(win.getWin()));
 //			System.out.println(MJUtil.isPureOneSuit(win.getWin()));
-			System.out.println(MJUtil.isAllHonorSuit(win.getWin()));
+//			System.out.println(MJUtil.isAllHonorSuit(win.getWin()));
+			
+			PointsAccumulator pointsAccumulator = new PointsAccumulator(win);
+			pointsAccumulator.printString();
 		}
 	}
 	
