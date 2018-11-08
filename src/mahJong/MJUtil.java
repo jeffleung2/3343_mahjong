@@ -123,83 +123,55 @@ public class MJUtil {
 	//大四喜 , change name -> isGreatWinds
 	public static int isBigFourHappiness(ArrayList<Combination> win)
 	{
-		int countNorth = 0, countEast = 0, countSouth = 0, countWest = 0;
-		ArrayList<Combination> checkPair = new ArrayList<Combination>();
-		for (Combination c: win) {
-			if (c.getSuit() == 'H')
+		int count = 0;
+		for (int i = 0; i < 4; i++) {
+			if (win.get(i).getSuit() == 'H')
 			{
-				if (c.getMeldType() == 1)
-					countEast++;
-				else if (c.getMeldType() == 2)
-					countSouth++;
-				else if (c.getMeldType() == 3)
-					countWest++;
-				else if (c.getMeldType() == 4)
-					countNorth++;
+				if (win.get(i).getTile(0).getRank() == 1)
+					count++;
+				else if (win.get(i).getTile(0).getRank() == 2)
+					count++;
+				else if (win.get(i).getTile(0).getRank() == 3)
+					count++;
+				else if (win.get(i).getTile(0).getRank() == 4)
+					count++;
 			}
 			else 
 			{
-				checkPair.add(c);
+				return 0;
 			}
 		}
-		if (countNorth == 3 && countEast == 3 && countSouth == 3 && countWest == 3)
+		if (count != 4)
 		{
-			if (checkPair.get(0).equals(checkPair.get(1)))
-				return 100;
-			else
-				return -1;
+			return 0;
 		}
-		return -1;
+		return 13;
 	}
 	//小四喜, change name -> isSmallWinds
 	public static int isSmallFourHappiness(ArrayList<Combination> win)
 	{
-		int countNorth = 0, countEast = 0, countSouth = 0, countWest = 0;
-		ArrayList<Combination> checkAscAndSame = new ArrayList<Combination>();
-		for (Combination c: win) 
-		{
-			if (c.getSuit() == 'H')
+		int count = 0;
+		for (int i = 0; i < 4; i++) {
+			if (win.get(i).getSuit() == 'H')
 			{
-				if (c.getMeldType() == 1)
-					countEast++;
-				else if (c.getMeldType() == 2)
-					countSouth++;
-				else if (c.getMeldType() == 3)
-					countWest++;
-				else if (c.getMeldType() == 4)
-					countNorth++;
-			}
-			else 
-			{
-				checkAscAndSame.add(c);
+				if (win.get(i).getTile(0).getRank() == 1)
+					count++;
+				else if (win.get(i).getTile(0).getRank() == 2)
+					count++;
+				else if (win.get(i).getTile(0).getRank() == 3)
+					count++;
+				else if (win.get(i).getTile(0).getRank() == 4)
+					count++;
 			}
 		}
-		if (countNorth + countEast + countSouth + countWest == 11)
+		if (count != 3)
 		{
-			if (checkAscAndSame.get(0).equals(checkAscAndSame.get(1)) && checkAscAndSame.get(1).equals(checkAscAndSame.get(2)))
-			{
-				//score
-				return 80;
-			}
-			else 
-			{
-				int min = 999, max = -1;
-				for (Combination c: checkAscAndSame)
-				{
-					int temp = c.getMeldType();
-					if (temp > max)
-						max = temp;
-					if (temp < min)
-						min = temp;
-				}
-				if (min + 2 == max)
-					return 80;
-				else 
-					return -1;
-				
-			}
+			return 0;
 		}
-		return -1;
+		else if (win.get(4).getTile(0).getSuit() == 'H' && win.get(4).getTile(0).getRank() < 5)
+			return 13;
+		else 
+			return 0;
 	}
 	
 	public static int isMixOneSuit(ArrayList<Combination> win) {
@@ -219,7 +191,7 @@ public class MJUtil {
 		}
 	}
 	
-		public static int isAllOrphans(ArrayList<Combination> win) {
+	public static int isAllOrphans(ArrayList<Combination> win) { 
 		for (Combination c: win) {
 			if (c.getTile(0).getRank() != 1 && c.getTile(0).getRank() != 9)
 			return 0;
