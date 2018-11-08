@@ -218,6 +218,24 @@ public class MJUtil {
 			return 3;
 		}
 	}
+	
+		public static int isAllOrphans(ArrayList<Combination> win) {
+		for (Combination c: win) {
+			if (c.getTile(0).getRank() != 1 && c.getTile(0).getRank() != 9)
+			return 0;
+		}
+		return 13;
+	}
+	
+	public static int isMixOrphans(ArrayList<Combination> win) {
+		for (Combination c: win) {
+			if (!(c.getSuit()+"").equals("H")) {
+				if (c.getTile(0).getRank() != 1 && c.getTile(0).getRank() != 9)
+					return 0;
+			}
+		}
+		return 1;
+	}
 //	public static int isBigFourHappiness(ArrayList<Combination> win) {
 //		boolean hasEastMeld;
 //		boolean hasSouthMeld;
