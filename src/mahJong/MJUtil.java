@@ -202,6 +202,22 @@ public class MJUtil {
 		return -1;
 	}
 	
+	public static int isMixOneSuit(ArrayList<Combination> win) {
+		String suit="";
+		for (Combination c: win) {
+			if (!suit.contains(c.getSuit()+""))
+			suit += c.getSuit();
+		}
+		if (suit.length() > 2) {
+			return 0;
+		}
+		else if (suit.length() == 2 && !suit.contains("H")) {
+			return 0;
+		}
+		else {	// Assume all one suit is not possible in this method
+			return 3;
+		}
+	}
 //	public static int isBigFourHappiness(ArrayList<Combination> win) {
 //		boolean hasEastMeld;
 //		boolean hasSouthMeld;
