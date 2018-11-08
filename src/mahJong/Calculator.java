@@ -16,7 +16,10 @@ public class Calculator {
 //		String[] input = new String[] {"M1", "M9", "T1", "T9", "S1", "S9", "H1", "H2", "H3", "H5", "H4", "H6", "H7", "H7"}; // Valid 9chain case 5
 //		String[] input = new String[] {"M1", "M1", "M1", "M2", "M3", "M4", "M3", "M3", "M3", "M4", "M4", "M4", "M5", "M5"}; // Valid 9chain case 5
 		
-		String[] input = new String[] {"H5", "H5", "H5", "H6", "H6", "H6", "H7", "H7", "H7", "M4", "M4", "M4", "M5", "M5"}; // Valid 9chain case 5
+//		String[] input = new String[] {"H5", "H5", "H5", "H6", "H6", "H6", "H7", "H7", "H7", "M4", "M4", "M4", "M5", "M5"}; // Valid 9chain case 5
+//		String[] input = new String[] {"T1", "T2", "T3", "T1", "T2", "T3", "T2", "T3", "T4", "T6", "T7", "T8", "T5", "T5"}; // Valid 9chain case 5
+		String[] input = new String[] {"H5", "H5", "H5", "M6", "M6", "M6", "H7", "H7", "H7", "M4", "M4", "M4", "M5", "M5"}; // Valid 9chain case 5
+		
 		
 		if(!new CheckValid().isValidInput(input)) {
 			System.exit(1);

@@ -90,20 +90,59 @@ public class PointsAccumulator {
 	}
 
 	private void checkSmallDragon() {
-//		if(MJUtil.is)
+		if(MJUtil.isSmallDragon(win)) {
+			checkSmallDragonMixOneSuit();
+		} else {
+			checkMixOneSuit();
+		}
 		
 	}
 	
+	private void checkSmallDragonMixOneSuit() {
+		if(MJUtil.isMixOneSuit(win)) {
+			checkSmallDragonMixOneSuitAllTriplet();
+		} else {
+			checkMixOneSuit();
+		}
+	}
+
+	private void checkSmallDragonMixOneSuitAllTriplet() {
+		if(MJUtil.isAllTriplet(win)) {
+			point = 11;
+			name = "Small Dragon Mix One Suit All Triplet";
+		} else {
+			point = 8;
+			name = "Small Dragon Mix One Suit";
+		}
+	}
+
 	private void checkBigDragonMixOneSuit() {
 		if(MJUtil.isMixOneSuit(win)) {
 			checkBigDragonMixOneSuitAllTriplet();
-		}	
+		} else {
+			point = 11;
+			name = "Big Dragon Mix One Suit";
+		}
 	}
 
 	private void checkBigDragonMixOneSuitAllTriplet() {
 		if(MJUtil.isAllTriplet(win)) {
 			point = 13;
 			name = "Big Dragon Mix One Suit All Triplet";
+		}
+	}
+	
+	private void checkMixOneSuit() {
+		if(MJUtil.isMixOneSuit(win)) {
+			checkMixOneSuitAllTriplet();
+		} else {
+			
+		}
+	}
+
+	private void checkMixOneSuitAllTriplet() {
+		if(MJUtil.isAllTriplet(win)) {
+			
 		}
 		
 	}
