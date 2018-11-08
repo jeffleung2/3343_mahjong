@@ -208,6 +208,35 @@ public class MJUtil {
 		}
 		return 1;
 	}
+	
+	public static int countDragons (ArrayList<Combination> win) {
+		int count = 0;
+		for (int i = 0; i < 4; i++) {
+			if (win.get(i).getSuit() == 'H')
+			{
+				if (win.get(i).getTile(0).getRank() == 5)
+					count++;
+				else if (win.get(i).getTile(0).getRank() == 6)
+					count++;
+				else if (win.get(i).getTile(0).getRank() == 7)
+					count++;
+			}
+		}
+		if (count == 3)
+		{
+			return 8;
+		}
+		else if (count == 2) {
+			if (win.get(4).getTile(0).getSuit() == 'H' && win.get(4).getTile(0).getRank() > 4) {
+				return 5;
+			}
+			else 
+				return 2;
+		}
+		else if (count == 1)
+			return 1;
+		return 0;
+	}
 //	public static int isBigFourHappiness(ArrayList<Combination> win) {
 //		boolean hasEastMeld;
 //		boolean hasSouthMeld;
