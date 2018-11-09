@@ -6,7 +6,7 @@ public class PointsAccumulator {
 	
 	private int point = 0;
 	private ArrayList<Combination> win;
-	private String name = "chicken win";
+	private String name = "chicken hand";
 	
 	public PointsAccumulator(Win win) {
 		this.win = win.getWin();
@@ -45,7 +45,7 @@ public class PointsAccumulator {
 	}
 
 	private void checkAllOneSuitAllSequence() {
-		if(MJUtil.isAllSequence(win)) {
+		if(MJUtil.isCommonHand(win)) {
 			point = 8;
 			name = "All one Suit All Sequence";
 		} else {

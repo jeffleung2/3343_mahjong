@@ -121,7 +121,7 @@ public class MJUtil {
 		return false;
 	}
 	
-	public static boolean isAllSequence(ArrayList<Combination> win) {
+	public static boolean isCommonHand(ArrayList<Combination> win) {
 		int count = 0;
 		for (Combination c: win) {
 			count+=c.getMeldType();
