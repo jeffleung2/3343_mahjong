@@ -18,8 +18,8 @@ public class Calculator {
 		
 //		String[] input = new String[] {"H5", "H5", "H5", "H6", "H6", "H6", "H7", "H7", "H7", "M4", "M4", "M4", "M5", "M5"}; // Valid 9chain case 5
 //		String[] input = new String[] {"T1", "T2", "T3", "T1", "T2", "T3", "T2", "T3", "T4", "T6", "T7", "T8", "T5", "T5"}; // Valid 9chain case 5
-		String[] input = new String[] {"H5", "H5", "H5", "M6", "M6", "M6", "H7", "H7", "H7", "M4", "M4", "M4", "M5", "M5"}; // Valid 9chain case 5
-		
+//		String[] input = new String[] {"H5", "H5", "H5", "M6", "M6", "M6", "H7", "H7", "H7", "M4", "M4", "M4", "M5", "M5"}; // Valid 9chain case 5
+		String[] input = new String[] {"H5", "H1", "H2", "H3", "H4", "M6", "H7", "H7", "H7", "M4", "M6", "M4", "M5", "M5"}; // Valid 9chain case 5
 		
 //		new CheckValid();
 		if(!CheckValid.isValidInput(input)) {
@@ -37,10 +37,10 @@ public class Calculator {
 		
 		boolean isWinHand = CheckValid.isWinHand(input);
 		if(!isWinHand) {
-			System.out.println("InValid Input");
+			System.out.println("Trick Hand");
 		} else {
 //			int point = 0;
-			System.out.println("Valid Input");
+			System.out.println("Is a legal Hand Type");
 			Win win = new MakeWin(input).getWin();
 			
 //			System.out.println(win.getWin().get(2).getState());
@@ -53,8 +53,8 @@ public class Calculator {
 //			System.out.println(MJUtil.isPureOneSuit(win.getWin()));
 //			System.out.println(MJUtil.isAllHonorSuit(win.getWin()));
 			
-			PointsAccumulator pointsAccumulator = new PointsAccumulator(win);
-			pointsAccumulator.printString();
+			PointsAccumulator pointsAccumulator = PointsAccumulator.getInstance();
+			pointsAccumulator.setWin(win.getWin());
 		}
 	}
 	

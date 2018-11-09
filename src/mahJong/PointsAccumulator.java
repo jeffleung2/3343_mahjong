@@ -4,13 +4,37 @@ import java.util.ArrayList;
 
 public class PointsAccumulator {
 	
-	private int point = 0;
-	private ArrayList<Combination> win;
-	private String name = "chicken hand";
+	private static int point;
+	private static ArrayList<Combination> win;
+	private static String name = "chicken hand";
+	private static PointsAccumulator instance = new PointsAccumulator();
 	
-	public PointsAccumulator(Win win) {
-		this.win = win.getWin();
+	private PointsAccumulator() {
+		point = 0;
+		name = "chicken hand";
 		checkAllOneSuit();
+	}
+	
+	public static PointsAccumulator getInstance() {
+		return instance;
+	}
+	
+	public void setWin(ArrayList<Combination> win) {
+		this.win = win;
+	}
+	
+	
+	
+	public int getPoint() {
+		return point;
+	}
+	
+	public void setPoint(int point) {
+		this.point = point;
+	}
+	
+	public void addName (String name) {
+		this.name += name;
 	}
 	
 	public void printString() {
@@ -20,6 +44,8 @@ public class PointsAccumulator {
 	
 	private void checkAllOneSuit() {
 		if(MJUtil.isAllOneSuit(win)) {
+			point =  7;
+			name = "All One suit";
 			checkAllHonorSuit();
 		} else {
 			checkGreatWinds();
@@ -31,7 +57,14 @@ public class PointsAccumulator {
 			point = 13;
 			name = "All Honor Suit";
 		} else {
-			checkAllOneSuitAllTriplet();
+			checkAllTriplet();
+		}
+	}
+	
+	private void checkAllTriplet() {
+		if(MJUtil.isAllTriplet(win)) {
+			point = point + 3;
+			name = name + " All Triplet";
 		}
 	}
 
