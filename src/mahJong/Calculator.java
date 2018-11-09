@@ -54,7 +54,7 @@ public class Calculator {
 //			System.out.println(MJUtil.isAllHonorSuit(win.getWin()));
 			
 			PointsAccumulator pointsAccumulator = PointsAccumulator.getInstance();
-			pointsAccumulator.setWin(win.getWin());
+			
 		}
 	}
 	

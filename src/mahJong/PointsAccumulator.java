@@ -12,25 +12,27 @@ public class PointsAccumulator {
 	private PointsAccumulator() {
 		point = 0;
 		name = "chicken hand";
-		checkAllOneSuit();
+//		checkAllOneSuit();
 	}
 	
 	public static PointsAccumulator getInstance() {
 		return instance;
 	}
 	
-	public void setWin(ArrayList<Combination> win) {
-		this.win = win;
-	}
-	
-	
+//	public void setWin(ArrayList<Combination> win) {
+//		this.win = win;
+//	}
+//	
+//	public static ArrayList<Combination> getWin() {
+//		return win;
+//	}
 	
 	public int getPoint() {
 		return point;
 	}
 	
-	public void setPoint(int point) {
-		this.point = point;
+	public void addPoint(int point) {
+		this.point += point;
 	}
 	
 	public void addName (String name) {
@@ -177,6 +179,16 @@ public class PointsAccumulator {
 		if(MJUtil.isAllTriplet(win)) {
 			
 		}
+		
+	}
+
+	public void setName(String name) {
+		PointsAccumulator.name = name;
+		
+	}
+
+	public void setPoint(int point) {
+		PointsAccumulator.point = point;
 		
 	}
 	
