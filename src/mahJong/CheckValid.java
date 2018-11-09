@@ -3,7 +3,7 @@ package mahJong;
 import java.lang.reflect.Array;
 
 public class CheckValid {
-	public Boolean sameMahJongLessThanFour(String mahJong[], String target) {
+	public static boolean sameMahJongLessThanFour(String mahJong[], String target) {
 		int count = 0;
 		for(int i = 0; i < Array.getLength(mahJong); i++) {
 			if(mahJong[i] == target) {
@@ -17,7 +17,7 @@ public class CheckValid {
 		}
 	}
 	
-	public boolean isValidTile(String tile) {
+	public static boolean isValidTile(String tile) {
 		if(tile.charAt(0) == 'T' || tile.charAt(0) == 'S' || tile.charAt(0) == 'M') {
 			int rank = Character.getNumericValue(tile.charAt(1));
 			if(rank >= 1 && rank <= 9) {
@@ -32,11 +32,11 @@ public class CheckValid {
 		return false;
 	}
 	
-	public boolean isValidEyes(String eyes[]) {
+	public static boolean isValidEyes(String eyes[]) {
 		return eyes[0] == eyes[1];
 	}
 	
-	public boolean isValidMeld(String tile[]) {
+	public static boolean isValidMeld(String tile[]) {
 		int count = 0;
 		for(int i = 0; i < 2; i++) {
 			if(tile[0].charAt(0) == tile[i + 1].charAt(0)) {
@@ -57,7 +57,7 @@ public class CheckValid {
 		}
 		return false;		
 	}
-	public boolean isValidInput(String mahJong[]) {
+	public static boolean isValidInput(String mahJong[]) {
 		if(mahJong.length != 14) {
 			System.out.println("You do not have 14 tiles.");
 			return false;
@@ -75,7 +75,7 @@ public class CheckValid {
 		return true;
 	}
 	
-	public boolean isWinHand(String mahJong[]) {
+	public static boolean isWinHand(String mahJong[]) {
 		String firstTile[] = new String[]{mahJong[0], mahJong[1], mahJong[2]};
 		String secondTile[] = new String[]{mahJong[3], mahJong[4], mahJong[5]};
 		String thirdTile[] = new String[]{mahJong[6], mahJong[7], mahJong[8]};

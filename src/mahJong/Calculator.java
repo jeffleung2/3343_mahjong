@@ -21,7 +21,8 @@ public class Calculator {
 		String[] input = new String[] {"H5", "H5", "H5", "M6", "M6", "M6", "H7", "H7", "H7", "M4", "M4", "M4", "M5", "M5"}; // Valid 9chain case 5
 		
 		
-		if(!new CheckValid().isValidInput(input)) {
+//		new CheckValid();
+		if(!CheckValid.isValidInput(input)) {
 			System.exit(1);
 		}
 		Combination c = new Combination();
@@ -34,7 +35,7 @@ public class Calculator {
 			System.exit(0);
 		}
 		
-		boolean isWinHand = new CheckValid().isWinHand(input);
+		boolean isWinHand = CheckValid.isWinHand(input);
 		if(!isWinHand) {
 			System.out.println("InValid Input");
 		} else {
