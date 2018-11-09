@@ -30,28 +30,104 @@ public class WinTracker {
 		if(MJUtil.isAllHonorSuit(win)) {
 			new CountAllHonorSuit().count();
 		} else {
-			checkAllTriplet();
+			checkAllTriplet(true);
 		}
 	}
 
-	private void checkAllTriplet() {
-		if(MJUtil.isAllTriplet(win)) {
-			new CountAllTriplet().count();
+	private void checkAllTriplet(boolean isAllOneSuit) {
+		if(isAllOneSuit) {
+			if(MJUtil.isAllTriplet(win)) {
+				new CountAllTriplet().count();
+			} else {
+				checkCommonHand();
+			}
 		} else {
-			checkCommonHand();
+			if(MJUtil.isAllTriplet(win)) {
+				new CountAllTriplet().count();
+				checkAllOrphans();
+			} else {
+				checkCommonHand();
+			}
+		}
+	}
+
+	private void checkAllOrphans() {
+		if(MJUtil.isAllOrphans(win)) {
+			new CountAllOrphans().count();
+		} else {
+			checkisMixOrphans();
+		}
+		
+	}
+
+	private void checkisMixOrphans() {
+		if(MJUtil.isMixOrphans(win)) {
+			new CountMixOrphans().count();
 		}
 	}
 
 	private void checkCommonHand() {
 		if(MJUtil.isCommonHand(win)) {
-			new CountCommonHand();
+			new CountCommonHand().count();
 		}
 	}
 	
 	private void checkGreatWinds() {
 		if(MJUtil.isGreatWinds(win)) {
 			new CountGreatWinds().count();
+		} else {
+			checkSmallWinds();
 		}
+	}
+
+	private void checkSmallWinds() {
+		if(MJUtil.isSmallWinds(win)) {
+			new CountSmallWinds().count();
+		} else {
+			checkBigDragon();
+		}	
+	}
+
+	private void checkBigDragon() {
+		if(MJUtil.isBigDragon(win)) {
+			new CountBigDragon().count();
+			checkMixOneSuit();
+		} else {
+			checkSmallDragon();
+		}
+		
+	}
+
+	private void checkMixOneSuit() {
+		if(MJUtil.isMixOneSuit(win)) {
+			new CountMixOneSuit().count();
+			checkAllTriplet(false);
+		} else {
+			checkAllTriplet(false);
+		}
+		
+	}
+	
+	private void checkSmallDragon() {
+		if(MJUtil.isSmallDragon(win)) {
+			new CountSmallDragon().count();
+			checkAllTriplet(false);
+		} else {
+			checkContainDragon();
+		}
+	}
+
+	private void checkContainDragon() {
+		if(MJUtil.countDragons(win) == 2) {
+			new CountContainTwoDragon().count();
+			checkMixOneSuit();
+		} else if (MJUtil.countDragons(win) == 1) {
+			new CountContainOneDragon().count();
+			checkMixOneSuit();
+		} else {
+			checkMixOneSuit();
+		}
+		
 	}
 	
 

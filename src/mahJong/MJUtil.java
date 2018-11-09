@@ -125,7 +125,10 @@ public class MJUtil {
 		int count = 0;
 		for (Combination c: win) {
 			count+=c.getMeldType();
+//			System.out.println(c.getMeldType());
+//			System.out.println(count);
 		}
+//		System.out.println(count);
 		if(count == 4) {
 			return true;
 		}
@@ -244,20 +247,21 @@ public class MJUtil {
 					count++;
 			}
 		}
-		if (count == 3)
-		{
-			return 8;
-		}
-		else if (count == 2) {
-			if (win.get(4).getTile(0).getSuit() == 'H' && win.get(4).getTile(0).getRank() > 4) {
-				return 5;
-			}
-			else 
-				return 2;
-		}
-		else if (count == 1)
-			return 1;
-		return 0;
+//		if (count == 3)
+//		{
+//			return 8;
+//		}
+//		else if (count == 2) {
+//			if (win.get(4).getTile(0).getSuit() == 'H' && win.get(4).getTile(0).getRank() > 4) {
+//				return 5;
+//			}
+//			else 
+//				return 2;
+//		}
+//		else if (count == 1)
+//			return 1;
+//		return 0;
+		return count;
 	}
 //	public static int isBigFourHappiness(ArrayList<Combination> win) {
 //		boolean hasEastMeld;
