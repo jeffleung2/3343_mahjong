@@ -22,7 +22,7 @@ public class WinTracker {
 			new CountAllOneSuit().count();
 			checkAllHonorSuit();
 		} else {
-			
+			checkGreatWinds();
 		}
 	}
 
@@ -30,7 +30,6 @@ public class WinTracker {
 		if(MJUtil.isAllHonorSuit(win)) {
 			new CountAllHonorSuit().count();
 		} else {
-			
 			checkAllTriplet();
 		}
 	}
@@ -39,9 +38,20 @@ public class WinTracker {
 		if(MJUtil.isAllTriplet(win)) {
 			new CountAllTriplet().count();
 		} else {
-			
+			checkCommonHand();
 		}
-		
+	}
+
+	private void checkCommonHand() {
+		if(MJUtil.isCommonHand(win)) {
+			new CountCommonHand();
+		}
+	}
+	
+	private void checkGreatWinds() {
+		if(MJUtil.isGreatWinds(win)) {
+			new CountGreatWinds().count();
+		}
 	}
 	
 
