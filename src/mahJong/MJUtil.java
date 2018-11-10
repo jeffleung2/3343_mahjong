@@ -23,8 +23,13 @@ public class MJUtil {
 		return true;
 	}
 	//十三么
-	public static boolean isThirteenOrphans(Combination win)
+	public static boolean isThirteenOrphans(String[] input)
 	{
+		Combination win = new Combination();
+		for(String s:input)
+		{
+			win.addTiles(new Tile(s));
+		}
 		boolean[] haveHonours = new boolean[7];
 		boolean[] haveMan = new boolean[9];
 		boolean[] haveTung = new boolean[9];

@@ -4,9 +4,9 @@ public class CountMixOrphans implements Counter {
 
 	@Override
 	public void count() {
-		PointsAccumulator pointsAccumulator = PointsAccumulator.getInstance();
+		PointsAccumulator pointsAccumulator = WinTracker.getPointsAccumulator();
 		pointsAccumulator.addPoint(1);
-		pointsAccumulator.addName(" mix orphans");
+		pointsAccumulator.addName("Mix Orphans ");
 	}
 
 }

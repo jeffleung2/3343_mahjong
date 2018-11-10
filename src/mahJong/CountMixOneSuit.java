@@ -4,7 +4,7 @@ public class CountMixOneSuit implements Counter {
 
 	@Override
 	public void count() {
-		PointsAccumulator pointsAccumulator = PointsAccumulator.getInstance();
+		PointsAccumulator pointsAccumulator = WinTracker.getPointsAccumulator();
 		if(pointsAccumulator.getPoint() == 0) {
 			pointsAccumulator.setPoint(3);
 			pointsAccumulator.setName("Mix One Suit ");

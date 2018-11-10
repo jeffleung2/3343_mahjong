@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class WinTracker {
 	
 	private static ArrayList<Combination> win;
+	private static PointsAccumulator pointsAccumulator;
 	private static WinTracker instance = new WinTracker();
 	
 	private WinTracker(){};
@@ -15,6 +16,14 @@ public class WinTracker {
 	
 	public void setWin(ArrayList<Combination> win) {
 		WinTracker.win = win;
+	}
+	
+	public void createPointsAccumulator() {
+		WinTracker.pointsAccumulator = new PointsAccumulator();
+	}
+	
+	public static PointsAccumulator getPointsAccumulator() {
+		return WinTracker.pointsAccumulator;
 	}
 	
 	public void startTracking() {

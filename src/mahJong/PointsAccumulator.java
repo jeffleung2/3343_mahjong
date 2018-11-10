@@ -4,45 +4,46 @@ import java.util.ArrayList;
 
 public class PointsAccumulator {
 	
-	private static int point;
-	private static String name = "chicken hand";
-	private static PointsAccumulator instance = new PointsAccumulator();
+	private int point;
+	private String name = "chicken hand";
+//	private static PointsAccumulator instance = new PointsAccumulator();
 	
-	private PointsAccumulator() {
+	public PointsAccumulator() {
 		point = 0;
 		name = "chicken hand";
 	}
 	
+//	public static PointsAccumulator getInstance() {
+//		return instance;
+//	}
+	
 	public void setName(String name) {
-		PointsAccumulator.name = name;
-	}
-	
-	public static PointsAccumulator getInstance() {
-		return instance;
-	}
-	
-	
-	public int getPoint() {
-		return point;
-	}
-	
-	public void addPoint(int point) {
-		PointsAccumulator.point += point;
+		this.name = name;
 	}
 	
 	public void addName (String name) {
-		PointsAccumulator.name += name;
+		this.name += name;
+	}
+	
+	public String getName () {
+		return this.name;
+	}
+
+	public void setPoint(int point) {
+		this.point = point;	
+	}
+	
+	public void addPoint(int point) {
+		this.point += point;
+	}
+	
+	public int getPoint() {
+		return point;
 	}
 	
 	public void printString() {
 		System.out.println("Points: " + point);
 		System.out.println("Name: " + name);
 	}
-
-	public void setPoint(int point) {
-		PointsAccumulator.point = point;	
-	}
-	
-	
 	
 }
