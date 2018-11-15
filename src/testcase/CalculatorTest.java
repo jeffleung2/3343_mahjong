@@ -55,7 +55,7 @@ public class CalculatorTest {
 		 String[] input = new String[] {"M8", "M8", "M8", "T2", "T2", "T2", "S4", "S4", "S4", "T7", "T7", "T7", "H3", "H3"}; //
 		 Calculator calculator = new Calculator(input);
 		 String name = calculator.getWinName();
-		 assertEquals("All Triplet ", name);
+		 assertEquals("All in Triplet ", name);
          }
 	 
 
