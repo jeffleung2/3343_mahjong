@@ -2,7 +2,7 @@ package mahJong;
 
 import java.util.ArrayList;
 
-public class CountAllInTriplet implements Counter {
+public class CountAllTriplet implements Counter {
 
 	@Override
 	public void count() {
