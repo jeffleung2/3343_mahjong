@@ -29,15 +29,15 @@ public class WinTracker {
 	public void startTracking() {
 		if(MJUtil.isAllOneSuit(win)) {
 			new CountAllOneSuit().count();
-			checkAllHonorSuit();
+			checkAllHonorTiles();
 		} else {
 			checkGreatWinds();
 		}
 	}
 
-	private void checkAllHonorSuit() {
+	private void checkAllHonorTiles() {
 		if(MJUtil.isAllHonorSuit(win)) {
-			new CountAllHonorSuit().count();
+			new CountAllHonorTiles().count();
 		} else {
 			checkAllTriplet(true);
 		}

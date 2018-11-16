@@ -6,7 +6,7 @@ public class CountCommonHand implements Counter {
 	public void count() {
 		PointsAccumulator pointsAccumulator = WinTracker.getPointsAccumulator();
 		pointsAccumulator.addPoint(1);
-		pointsAccumulator.addName("Common Hand");
+		pointsAccumulator.addName("Common Hand ");
 	}
 
 }
