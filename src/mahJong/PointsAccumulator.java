@@ -5,12 +5,12 @@ import java.util.ArrayList;
 public class PointsAccumulator {
 	
 	private int point;
-	private String name = "chicken hand";
+	private String name = "";
 //	private static PointsAccumulator instance = new PointsAccumulator();
 	
 	public PointsAccumulator() {
 		point = 0;
-		name = "chicken hand";
+		name = "";
 	}
 	
 //	public static PointsAccumulator getInstance() {
@@ -26,6 +26,9 @@ public class PointsAccumulator {
 	}
 	
 	public String getName () {
+		if(this.point == 0) {
+			return "Chicken Hand ";
+		}
 		return this.name;
 	}
 

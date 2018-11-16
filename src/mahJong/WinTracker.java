@@ -39,6 +39,14 @@ public class WinTracker {
 		if(MJUtil.isAllHonorSuit(win)) {
 			new CountAllHonorTiles().count();
 		} else {
+			checkNineGate();
+		}
+	}
+	
+	private void checkNineGate() {
+		if(MJUtil.isNineGate(win)) {
+			new CountNineGate().count();
+		} else {
 			checkAllTriplet(true);
 		}
 	}
