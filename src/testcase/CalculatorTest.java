@@ -1,6 +1,7 @@
 package testcase;
 
 import mahJong.Calculator;
+import mahJong.MJUtil;
 import mahJong.PointsAccumulator;
 
 import org.junit.After;
@@ -58,5 +59,81 @@ public class CalculatorTest {
 		 assertEquals("All in Triplet ", name);
          }
 	 
-
+	 @Test
+	 public void testThirteenOrphans()
+	 {
+		 // suit same, rank different
+		 String[] input = new String[]{"M1", "M9", "T1", "T9", "S1", "S9", "H1", "H2", "H3", "H5", "H4", "H6", "H6", "H7"};
+		 assertEquals(false, MJUtil.isThirteenOrphans(input));
+	 }
+	 @Test
+	 public void testThirteenOrphans2()
+	 {
+		 //suit different, rank same
+		 String[] input = new String[]{"M1", "M9", "T1", "T9", "S1", "S9", "H1", "H2", "H3", "H5", "H4", "H6", "H7", "M7"};
+		 assertEquals(false, MJUtil.isThirteenOrphans(input));
+	 }
+	 @Test
+	 public void testThirteenOrphans3()
+	 {
+		 // suit different, rank different
+		 String[] input = new String[]{"M1", "M9", "T1", "T9", "S1", "S9", "H1", "H2", "H3", "H5", "H4", "H6", "H7", "M6"};
+		 assertEquals(false, MJUtil.isThirteenOrphans(input));
+	 }
+	 @Test
+	 public void testThirteenOrphans4()
+	 {
+		 // suit same, rank same
+		 String[] input = new String[]{"M1", "M9", "T1", "T9", "S1", "S9", "H1", "H2", "H3", "H5", "H4", "H6", "H7", "H7"};
+		 assertEquals(true, MJUtil.isThirteenOrphans(input));
+	 }
+	 @Test
+	 public void testThirteenOrphans5()
+	 {
+		 // no S1
+		 String[] input = new String[]{"M1", "S9", "T1", "T9", "M1", "M9", "H1", "H2", "H3", "H5", "H4", "H6", "H7", "H7"};
+		 assertEquals(false, MJUtil.isThirteenOrphans(input));
+	 }
+	 @Test
+	 public void testThirteenOrphans6()
+	 {
+		 // no S9
+		 String[] input = new String[]{"S1", "M9", "T1", "T9", "M1", "M9", "H1", "H2", "H3", "H5", "H4", "H6", "H7", "H7"};
+		 assertEquals(false, MJUtil.isThirteenOrphans(input));
+	 }
+	 @Test
+	 public void testThirteenOrphans7()
+	 {
+		 // no M1
+		 String[] input = new String[]{"S1", "S9", "T1", "T9", "S1", "M9", "H1", "H2", "H3", "H5", "H4", "H6", "H7", "H7"};
+		 assertEquals(false, MJUtil.isThirteenOrphans(input));
+	 }
+	 @Test
+	 public void testThirteenOrphans8()
+	 {
+		 // no M9
+		 String[] input = new String[]{"M1", "S9", "T1", "T9", "M1", "S9", "H1", "H2", "H3", "H5", "H4", "H6", "H7", "H7"};
+		 assertEquals(false, MJUtil.isThirteenOrphans(input));
+	 }
+	 @Test
+	 public void testThirteenOrphans9()
+	 {
+		 // no T1
+		 String[] input = new String[]{"M1", "S9", "M1", "T9", "M1", "M9", "H1", "H2", "H3", "H5", "H4", "H6", "H7", "H7"};
+		 assertEquals(false, MJUtil.isThirteenOrphans(input));
+	 }
+	 @Test
+	 public void testThirteenOrphans10()
+	 {
+		 // no T9
+		 String[] input = new String[]{"M1", "S9", "T1", "M9", "M1", "M9", "H1", "H2", "H3", "H5", "H4", "H6", "H7", "H7"};
+		 assertEquals(false, MJUtil.isThirteenOrphans(input));
+	 }
+	 @Test
+	 public void testThirteenOrphans12()
+	 {
+		 // no S
+		 String[] input = new String[]{"A1", "M9", "T1", "M9", "M1", "M9", "H1", "H2", "H3", "H5", "H4", "H6", "H7", "H7"};
+		 assertEquals(false, MJUtil.isThirteenOrphans(input));
+	 }
 }
