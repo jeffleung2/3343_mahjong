@@ -6,7 +6,7 @@ public class CountBigDragon implements Counter {
 	public void count() {
 		PointsAccumulator pointsAccumulator = WinTracker.getPointsAccumulator();
 		pointsAccumulator.setPoint(8);
-		pointsAccumulator.setName("Big Dragon");
+		pointsAccumulator.setName("Big Dragon ");
 		
 	}
 	
