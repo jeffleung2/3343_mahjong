@@ -44,9 +44,9 @@ public class PointsAccumulator {
 		return point;
 	}
 	
-	public void printString() {
-		System.out.println("Points: " + point);
-		System.out.println("Name: " + name);
-	}
+// 	public void printString() {
+// 		System.out.println("Points: " + point);
+// 		System.out.println("Name: " + name);
+// 	}
 	
 }
