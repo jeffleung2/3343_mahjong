@@ -208,13 +208,8 @@ public class CalculatorTest {
      }
 	 
 	 @Test
-<<<<<<< .merge_file_a07976
-	 public void testNineChain() { // All in Triplets
-		 String[] input = new String[] {"M1", "M1", "M1", "M3", "M4", "M5", "M6", "M7", "M8", "M9", "M9", "M9", "M2", "M2"}; // Valid 9chain case 2
-=======
 	 public void test_Mahjong_SmallDragon1() { //Small Dragon
 		 String[] input = new String[] {"H5", "H5", "H5", "H7", "H7", "H7", "S6", "S7", "S8", "M5", "M5", "M5", "H6", "H6"}; //
->>>>>>> .merge_file_a15244
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
 		 assertEquals(5, point);
@@ -228,16 +223,11 @@ public class CalculatorTest {
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
 		 assertEquals(13, point);
-<<<<<<< .merge_file_a07976
-		 assertEquals("Nine Gate ", name);
-         }
-=======
 		 String name = calculator.getWinName();
 		 assertEquals("Small Winds", name);
      }
 	 
 	 @Test
->>>>>>> .merge_file_a15244
 	 public void testThirteenOrphans()
 	 {
 		 // suit same, rank different
@@ -315,8 +305,5 @@ public class CalculatorTest {
 		 String[] input = new String[]{"A1", "M9", "T1", "M9", "M1", "M9", "H1", "H2", "H3", "H5", "H4", "H6", "H7", "H7"};
 		 assertEquals(false, MJUtil.isThirteenOrphans(input));
 	 }
-<<<<<<< .merge_file_a07976
-=======
 	 
->>>>>>> .merge_file_a15244
 }
