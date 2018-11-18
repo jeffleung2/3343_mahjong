@@ -62,7 +62,6 @@ public class CalculatorTest {
          }
 	 
 	 @Test
-<<<<<<< HEAD
 	 public void testNineChain() { // All in Triplets
 		 String[] input = new String[] {"M1", "M1", "M1", "M3", "M4", "M5", "M6", "M7", "M8", "M9", "M9", "M9", "M2", "M2"}; // Valid 9chain case 2
 		 Calculator calculator = new Calculator(input);
@@ -71,9 +70,6 @@ public class CalculatorTest {
 		 assertEquals(13, point);
 		 assertEquals("Nine Gate ", name);
          }
-	 
-
-=======
 	 public void testThirteenOrphans()
 	 {
 		 // suit same, rank different
@@ -150,5 +146,4 @@ public class CalculatorTest {
 		 String[] input = new String[]{"A1", "M9", "T1", "M9", "M1", "M9", "H1", "H2", "H3", "H5", "H4", "H6", "H7", "H7"};
 		 assertEquals(false, MJUtil.isThirteenOrphans(input));
 	 }
->>>>>>> 44b267966f6b708c3dd7c7bd8eaa21b3b7c3c313
 }
