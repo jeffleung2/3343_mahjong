@@ -26,7 +26,7 @@ public class PointsAccumulator {
 	}
 	
 	public String getName () {
-		if(this.point == 0) {
+		if(isChickenHand()) {
 			return "Chicken Hand ";
 		}
 		return this.name;
@@ -44,9 +44,20 @@ public class PointsAccumulator {
 		return point;
 	}
 	
-// 	public void printString() {
-// 		System.out.println("Points: " + point);
-// 		System.out.println("Name: " + name);
-// 	}
+	public boolean isChickenHand() {
+		if(this.point == 0) {
+			return true;
+		}
+		return false;
+	}
+	
+ 	public void printString() {
+ 		System.out.println("Points: " + point);
+ 		if(isChickenHand()) {
+ 			System.out.println("Name: " + "Chicken Hand");
+ 		}
+ 		System.out.println("Name: " + name);
+ 	}
+
 	
 }
