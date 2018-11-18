@@ -167,6 +167,16 @@ public class CalculatorTest {
      }
 	 
 	 @Test
+	 public void test_Mahjong_ChickenHand1() { //ChickenHand(Unit Testing)
+		 String[] input = new String[] {"H1", "H1", "H1", "T3", "T4", "T5", "M1", "M2", "M3", "H2", "H2", "H2", "S1", "S1"}; 
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(0, point);
+		 String name = calculator.getWinName();
+		 assertEquals("Chicken Hand ", name);
+     }
+	 
+	 @Test
 	 public void test_Mahjong_AllHonorSuit1() { //AllHonorSuit(Unit Testing)
 		 String[] input = new String[] {"H1", "H1", "H1", "H3", "H3", "H3", "H4", "H4", "H4", "H5", "H5", "H5", "H6", "H6"}; 
 		 Calculator calculator = new Calculator(input);
@@ -213,7 +223,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(3, point);
 		 String name = calculator.getWinName();
-		 assertEquals("chicken handAll in Triplet ", name);
+		 assertEquals("All in Triplet ", name);
      }
 	 
 	 @Test
@@ -243,7 +253,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(4, point);
 		 String name = calculator.getWinName();
-		 assertEquals("chicken handAll in Triplet Mix Orphans ", name);
+		 assertEquals("All in Triplet Mix Orphans ", name);
      }
 	 
 	 @Test
@@ -303,7 +313,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(1, point);
 		 String name = calculator.getWinName();
-		 assertEquals("chicken handCommon Hand", name);
+		 assertEquals("Common Hand", name);
      }
 	 
 	 @Test
