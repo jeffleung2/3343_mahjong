@@ -183,7 +183,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(13, point);
 		 String name = calculator.getWinName();
-		 assertEquals("All Honor Suit ", name);
+		 assertEquals("All Honor Tiles ", name);
      }
 	 
 	 @Test
@@ -203,7 +203,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(8, point);
 		 String name = calculator.getWinName();
-		 assertEquals("All One Suit Common Hand", name);
+		 assertEquals("All One Suit Common Hand ", name);
      }
 	 
 	 @Test
@@ -301,7 +301,7 @@ public class CalculatorTest {
 		 String[] input = new String[] {"H5", "H5", "H5", "M1", "M1", "M1", "H6", "H6", "H6", "H7", "H7", "H7", "M5", "M5"}; 
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
-		 assertEquals(14, point);
+		 assertEquals(13, point);
 		 String name = calculator.getWinName();
 		 assertEquals("Big Dragon Mix One Suit All in Triplet ", name);
      }
@@ -313,7 +313,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(1, point);
 		 String name = calculator.getWinName();
-		 assertEquals("Common Hand", name);
+		 assertEquals("Common Hand ", name);
      }
 	 
 	 @Test
@@ -383,7 +383,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(4, point);
 		 String name = calculator.getWinName();
-		 assertEquals("Mix One Suit Common Hand", name);
+		 assertEquals("Mix One Suit Common Hand ", name);
      }
 	 
 	 @Test

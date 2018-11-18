@@ -41,6 +41,9 @@ public class PointsAccumulator {
 	}
 	
 	public int getPoint() {
+		if(this.point > 13) {
+			return 13;
+		}
 		return point;
 	}
 	
