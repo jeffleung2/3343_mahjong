@@ -29,9 +29,9 @@ public class Combination {
 	{
 		return tiles.size();
 	}
-	public String getState() {
-		return this.state;
-	}
+// 	public String getState() {
+// 		return this.state;
+// 	}
 	
 	public char getSuit() {
 		return suit;
