@@ -38,9 +38,9 @@ public class MakeWin {
 		return false;
 	}
 	
-	public Tile makeTile(String tile) {
-		return new Tile(tile);
-	}
+// 	public Tile makeTile(String tile) {
+// 		return new Tile(tile);
+// 	}
 	
 	public Meld makeMeld(String[] tile) {
 		Tile firstTile = new Tile(tile[0]);
