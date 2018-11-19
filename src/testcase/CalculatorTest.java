@@ -11,7 +11,7 @@ public class CalculatorTest {
 		 String[] input = new String[] {"H5", "H5", "H5", "M1", "M2", "M3", "H6", "H6", "H6", "H7", "H7", "H7", "T1", "T1", "T1"}; 
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
-		 assertEquals(0, point);
+		 assertEquals(-1, point);
 		 String name = calculator.getWinName();
 		 assertEquals("InValid Input", name);
     }
@@ -21,7 +21,7 @@ public class CalculatorTest {
 		 String[] input = new String[] {"H5", "H5", "H5", "M1", "M2", "M3", "H6", "H6", "H6", "H7", "H7", "H7", "T1"};
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
-		 assertEquals(0, point);
+		 assertEquals(-1, point);
 		 String name = calculator.getWinName();
 		 assertEquals("InValid Input", name);
      }
@@ -31,7 +31,7 @@ public class CalculatorTest {
 		 String[] input = new String[] {"A5", "H5", "H5", "M1", "M2", "M3", "H6", "H6", "H6", "H7", "H7", "H7", "T1", "T1"};
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
-		 assertEquals(0, point);
+		 assertEquals(-1, point);
 		 String name = calculator.getWinName();
 		 assertEquals("InValid Input", name);
      }
@@ -41,7 +41,7 @@ public class CalculatorTest {
 		 String[] input = new String[] {"H5", "H5", "H5", "H5", "H5", "M3", "H6", "H6", "H6", "H7", "H7", "H7", "T1", "T1"};
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
-		 assertEquals(0, point);
+		 assertEquals(-1, point);
 		 String name = calculator.getWinName();
 		 assertEquals("InValid Input", name);
      }
@@ -51,7 +51,7 @@ public class CalculatorTest {
 		 String[] input = new String[] {"T1", "T1", "T1", "H5", "H5", "H5", "H6", "H6", "H6", "H7", "H7", "H7", "T1", "T3"}; 
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
-		 assertEquals(0, point);
+		 assertEquals(-2, point);
 		 String name = calculator.getWinName();
 		 assertEquals("Input could not form a legal hand", name);
      }
@@ -61,7 +61,7 @@ public class CalculatorTest {
 		 String[] input = new String[] {"M0", "M0", "M0", "H5", "H5", "H5", "H6", "H6", "H6", "H7", "H7", "H7", "T1", "T1"}; 
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
-		 assertEquals(0, point);
+		 assertEquals(-1, point);
 		 String name = calculator.getWinName();
 		 assertEquals("InValid Input", name);
      }
@@ -71,7 +71,7 @@ public class CalculatorTest {
 		 String[] input = new String[] {"M10", "M10", "M10", "H5", "H5", "H5", "H6", "H6", "H6", "H7", "H7", "H7", "T1", "T1"}; 
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
-		 assertEquals(0, point);
+		 assertEquals(-1, point);
 		 String name = calculator.getWinName();
 		 assertEquals("InValid Input", name);
      }
@@ -81,7 +81,7 @@ public class CalculatorTest {
 		 String[] input = new String[] {"H", "H8", "H8", "H5", "H5", "H5", "H6", "H6", "H6", "H7", "H7", "H7", "T1", "T3"}; 
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
-		 assertEquals(0, point);
+		 assertEquals(-1, point);
 		 String name = calculator.getWinName();
 		 assertEquals("InValid Input", name);
      }
@@ -91,27 +91,27 @@ public class CalculatorTest {
 		 String[] input = new String[] {"H0", "H0", "H0", "H5", "H5", "H5", "H6", "H6", "H6", "H7", "H7", "H7", "T1", "T3"}; 
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
-		 assertEquals(0, point);
+		 assertEquals(-1, point);
 		 String name = calculator.getWinName();
 		 assertEquals("InValid Input", name);
      }
 	 
 	 @Test
 	 public void test_Mahjong_Invalid9() { //Invalid Input Test Case (tile.charAt(0) == 'H' $$ !rank <= 7)
-		 String[] input = new String[] {"H8", "H8", "H8", "H5", "H5", "H5", "H6", "H6", "H6", "H7", "H7", "H7", "T1", "T3"}; 
+		 String[] input = new String[] {"H8", "H8", "H8", "H0", "H0", "H0", "H6", "H6", "H6", "H7", "H7", "H7", "T1", "T3"}; 
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
-		 assertEquals(0, point);
+		 assertEquals(-1, point);
 		 String name = calculator.getWinName();
 		 assertEquals("InValid Input", name);
      }
 	 
 	 @Test
 	 public void test_Mahjong_Invalid10() { //Invalid Input Test Case(invalid character) 
-		 String[] input = new String[] {"HH", "H8", "H8", "H5", "H5", "H5", "H6", "H6", "H6", "H7", "H7", "H7", "T1", "T3"}; 
+		 String[] input = new String[] {"H8", "H8", "H8", "H5", "H5", "H5", "H6", "H6", "H6", "H7", "H7", "H7", "T1", "T3"}; 
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
-		 assertEquals(0, point);
+		 assertEquals(-1, point);
 		 String name = calculator.getWinName();
 		 assertEquals("InValid Input", name);
      }
@@ -121,7 +121,7 @@ public class CalculatorTest {
 		 String[] input = new String[] {"M1", "M1", "M2", "H2", "H2", "H2", "H4", "H4", "H4", "S7", "S8", "S9", "H3", "H3"}; 
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
-		 assertEquals(0, point);
+		 assertEquals(-2, point);
 		 String name = calculator.getWinName();
 		 assertEquals("Input could not form a legal hand", name);
      }
@@ -131,7 +131,7 @@ public class CalculatorTest {
 		 String[] input = new String[] {"H1", "H2", "H2", "H6", "H6", "H6", "H4", "H4", "H4", "S7", "S8", "S9", "H3", "H3"}; 
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
-		 assertEquals(0, point);
+		 assertEquals(-2, point);
 		 String name = calculator.getWinName();
 		 assertEquals("Input could not form a legal hand", name);
      }
@@ -141,7 +141,7 @@ public class CalculatorTest {
 		 String[] input = new String[] {"H2", "H2", "H2", "H6", "H6", "H6", "H4", "H4", "H4", "S7", "S7", "S9", "H3", "H3"}; 
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
-		 assertEquals(0, point);
+		 assertEquals(-2, point);
 		 String name = calculator.getWinName();
 		 assertEquals("Input could not form a legal hand", name);
      }
@@ -151,7 +151,7 @@ public class CalculatorTest {
 		 String[] input = new String[] {"H2", "H2", "H2", "H6", "H6", "H6", "H4", "H4", "H3", "S7", "S7", "S9", "H3", "H3"}; 
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
-		 assertEquals(0, point);
+		 assertEquals(-2, point);
 		 String name = calculator.getWinName();
 		 assertEquals("Input could not form a legal hand", name);
      }
@@ -161,7 +161,7 @@ public class CalculatorTest {
 		 String[] input = new String[] {"H2", "H2", "H2", "H6", "H1", "H6", "H4", "H4", "H3", "S7", "S7", "S9", "H3", "H3"}; 
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
-		 assertEquals(0, point);
+		 assertEquals(-2, point);
 		 String name = calculator.getWinName();
 		 assertEquals("Input could not form a legal hand", name);
      }
@@ -356,6 +356,16 @@ public class CalculatorTest {
      }
 	 
 	 @Test
+	 public void test_Mahjong_NotContainGreatWinds1() { //Contain Great Winds(Unit Testing)
+		 String[] input = new String[] {"H1", "H1", "H1", "H2", "H2", "H2", "H4", "H4", "H4", "H5", "H5", "H5", "T8", "T8"}; 
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(7, point);
+		 String name = calculator.getWinName();
+		 assertEquals("Contain One Dragon Mix One Suit All in Triplet ", name);
+     }
+	 
+	 @Test
 	 public void test_Mahjong_MixOneSuit1() { //Mix One Suit(Unit Testing)
 		 String[] input = new String[] {"T1", "T2", "T3", "T2", "T3", "T4", "T5", "T6", "T7", "H1", "H1", "H1", "T4", "T4"}; 
 		 Calculator calculator = new Calculator(input);
@@ -396,6 +406,16 @@ public class CalculatorTest {
      }
 	 
 	 @Test
+	 public void test_Mahjong_NotMixOneSuit1() { 
+		 String[] input = new String[] {"T1", "T1", "T1", "T4", "T5", "T6", "T5", "T6", "T7", "T2", "T3", "T4", "M1", "M1"}; 
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(0, point);
+		 String name = calculator.getWinName();
+		 assertEquals("Chicken Hand ", name);
+     }
+	 
+	 @Test
 	 public void test_Mahjong_SmallDragon1() { //Small Dragon
 		 String[] input = new String[] {"H5", "H5", "H5", "H7", "H7", "H7", "S6", "S7", "S8", "M5", "M5", "M5", "H6", "H6"}; 
 		 Calculator calculator = new Calculator(input);
@@ -426,11 +446,31 @@ public class CalculatorTest {
      }
 	 
 	 @Test
+	 public void test_Mahjong_NotSmallWind1() { //Contain Small Wind
+		 String[] input = new String[] {"H1", "H1", "H1", "H3", "H3", "H3", "H4", "H4", "H4", "T5", "T6", "T7", "T2", "T2"}; 
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(3, point);
+		 String name = calculator.getWinName();
+		 assertEquals("Mix One Suit ", name);
+     }
+	 
+	 @Test
+	 public void test_Mahjong_NotSmallWind2() { //Contain Small Wind
+		 String[] input = new String[] {"H1", "H1", "H1", "H3", "H3", "H3", "H4", "H4", "H4", "T5", "T6", "T7", "H6", "H6"}; 
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(3, point);
+		 String name = calculator.getWinName();
+		 assertEquals("Mix One Suit ", name);
+     }
+	 
+	 @Test
 	 public void test_Mahjong_ThirteenOrphans1() {  // suit same, rank different
 		 String[] input = new String[]{"M1", "M9", "T1", "T9", "S1", "S9", "H1", "H2", "H3", "H5", "H4", "H6", "H6", "H7"};
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
-		 assertEquals(0, point);
+		 assertEquals(-2, point);
 		 String name = calculator.getWinName();
 		 assertEquals("Input could not form a legal hand", name);
 		 //assertEquals(false, MJUtil.isThirteenOrphans(input));
@@ -441,7 +481,7 @@ public class CalculatorTest {
 		 String[] input = new String[]{"M1", "M9", "T1", "T9", "S1", "S9", "H1", "H2", "H3", "H5", "H4", "H6", "H7", "M7"};
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
-		 assertEquals(0, point);
+		 assertEquals(-2, point);
 		 String name = calculator.getWinName();
 		 assertEquals("Input could not form a legal hand", name);
 		 //assertEquals(false, MJUtil.isThirteenOrphans(input));
@@ -452,7 +492,7 @@ public class CalculatorTest {
 		 String[] input = new String[]{"M1", "M9", "T1", "T9", "S1", "S9", "H1", "H2", "H3", "H5", "H4", "H6", "H7", "M6"};
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
-		 assertEquals(0, point);
+		 assertEquals(-2, point);
 		 String name = calculator.getWinName();
 		 assertEquals("Input could not form a legal hand", name);
 		 //assertEquals(false, MJUtil.isThirteenOrphans(input));
@@ -474,7 +514,7 @@ public class CalculatorTest {
 		 String[] input = new String[]{"M1", "S9", "T1", "T9", "M1", "M9", "H1", "H2", "H3", "H5", "H4", "H6", "H7", "H7"};
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
-		 assertEquals(0, point);
+		 assertEquals(-2, point);
 		 String name = calculator.getWinName();
 		 assertEquals("Input could not form a legal hand", name);
 		 //assertEquals(false, MJUtil.isThirteenOrphans(input));
@@ -485,7 +525,7 @@ public class CalculatorTest {
 		 String[] input = new String[]{"S1", "M9", "T1", "T9", "M1", "M9", "H1", "H2", "H3", "H5", "H4", "H6", "H7", "H7"};
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
-		 assertEquals(0, point);
+		 assertEquals(-2, point);
 		 String name = calculator.getWinName();
 		 assertEquals("Input could not form a legal hand", name);
 		 //assertEquals(false, MJUtil.isThirteenOrphans(input));
@@ -496,7 +536,7 @@ public class CalculatorTest {
 		 String[] input = new String[]{"S1", "S9", "T1", "T9", "S1", "M9", "H1", "H2", "H3", "H5", "H4", "H6", "H7", "H7"};
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
-		 assertEquals(0, point);
+		 assertEquals(-2, point);
 		 String name = calculator.getWinName();
 		 assertEquals("Input could not form a legal hand", name);
 		 //assertEquals(false, MJUtil.isThirteenOrphans(input));
@@ -506,7 +546,7 @@ public class CalculatorTest {
 		 String[] input = new String[]{"M1", "S9", "T1", "T9", "M1", "S9", "H1", "H2", "H3", "H5", "H4", "H6", "H7", "H7"};
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
-		 assertEquals(0, point);
+		 assertEquals(-2, point);
 		 String name = calculator.getWinName();
 		 assertEquals("Input could not form a legal hand", name);
 		 //assertEquals(false, MJUtil.isThirteenOrphans(input));
@@ -516,7 +556,7 @@ public class CalculatorTest {
 		 String[] input = new String[]{"M1", "S9", "M1", "T9", "M1", "M9", "H1", "H2", "H3", "H5", "H4", "H6", "H7", "H7"};
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
-		 assertEquals(0, point);
+		 assertEquals(-2, point);
 		 String name = calculator.getWinName();
 		 assertEquals("Input could not form a legal hand", name);
 		 //assertEquals(false, MJUtil.isThirteenOrphans(input));
@@ -526,7 +566,7 @@ public class CalculatorTest {
 		 String[] input = new String[]{"M1", "S9", "T1", "M9", "M1", "M9", "H1", "H2", "H3", "H5", "H4", "H6", "H7", "H7"};
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
-		 assertEquals(0, point);
+		 assertEquals(-2, point);
 		 String name = calculator.getWinName();
 		 assertEquals("Input could not form a legal hand", name);
 		 //assertEquals(false, MJUtil.isThirteenOrphans(input));
@@ -536,11 +576,23 @@ public class CalculatorTest {
 		 String[] input = new String[]{"A1", "M9", "T1", "M9", "M1", "M9", "H1", "H2", "H3", "H5", "H4", "H6", "H7", "H7"};
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
-		 assertEquals(0, point);
+		 assertEquals(-1, point);
 		 String name = calculator.getWinName();
 		 assertEquals("InValid Input", name);
 		 //assertEquals(false, MJUtil.isThirteenOrphans(input));
 	 }
+	 
+	 @Test
+	 public void test_Mahjong_ThirteenOrphans12() { // No S
+		 String[] input = new String[]{"M1", "M9", "T1", "T9", "T1", "T9", "H1", "H2", "H3", "H5", "H4", "H6", "H7", "H7"};
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(-2, point);
+		 String name = calculator.getWinName();
+		 assertEquals("Input could not form a legal hand", name);
+		 //assertEquals(true, MJUtil.isThirteenOrphans(input));
+	 }
+	 
 	  @Test
 	 public void test_Mahjong_NineGateHand1() {  // No. of 1 = 4 : No. of 9 = 3
 		 String[] input = new String[]{"M1", "M1", "M1", "M1", "M2", "M3", "M4", "M5", "M6", "M7", "M8", "M9", "M9", "M9"};
@@ -569,4 +621,13 @@ public class CalculatorTest {
 		 assertEquals("Nine Gate Hand ", name);
 	 }
 	 
+	 @Test
+	 public void test_Mahjong_NotNineGateHand1() {  // No. of 1 = 4 : No. of 9 = 4
+		 String[] input = new String[]{"T1", "T1", "T1", "T1", "T2", "T3", "T7", "T8", "T9", "T7", "T8", "T9", "T9", "T9"};
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(7, point);
+		 String name = calculator.getWinName();
+		 assertEquals("All One Suit ", name);
+	 }
 }
