@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 public class CalculatorTest {
 	
 	@Test
-	 public void test_Mahjong_Invalid0() { // Invalid Input Test Case(mahJong.length != 14)
+	 public void test_Mahjong_Invalid0() { // Invalid Input Test Case(mahJong.length != 14 )
 		 String[] input = new String[] {"H5", "H5", "H5", "M1", "M2", "M3", "H6", "H6", "H6", "H7", "H7", "H7", "T1", "T1", "T1"}; 
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
