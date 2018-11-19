@@ -8,7 +8,7 @@ public class Triplet extends Meld{
 		// TODO Auto-generated constructor stub
 	}
 
-	public String toString() {
-		return "Triplet";
-	}
+//	public String toString() {
+//		return "Triplet";
+//	}
 }
