@@ -522,5 +522,14 @@ public class CalculatorTest {
 		 assertEquals("InValid Input", name);
 		 //assertEquals(false, MJUtil.isThirteenOrphans(input));
 	 }
+	 @Test
+	 public void test_Mahjong_NineGateHand1() {  
+		 String[] input = new String[]{"M1", "M1", "M1", "M1", "M2", "M3", "M4", "M5", "M6", "M7", "M8", "M9", "M9", "M9"};
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(13, point);
+		 String name = calculator.getWinName();
+		 assertEquals("Nine Gate Hand ", name);
+	 }
 	 
 }
