@@ -405,6 +405,16 @@ public class CalculatorTest {
 		 String name = calculator.getWinName();
 		 assertEquals("Small Winds", name);
      }
+	
+	 @Test
+	 public void test_Mahjong_SmallWind2() { //Contain Small Wind
+		 String[] input = new String[] {"H1", "H1", "H1", "H3", "H3", "H3", "H4", "H4", "H4", "T5", "T6", "T7", "H2", "H2"}; 
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(13, point);
+		 String name = calculator.getWinName();
+		 assertEquals("Small Winds", name);
+     }
 	 
 	 @Test
 	 public void test_Mahjong_ThirteenOrphans1() {  // suit same, rank different
