@@ -3,7 +3,8 @@ package mahJong;
 import java.util.ArrayList;
 
 public class MJUtil {
-	// 清一色, change name -> isAllOneSuit
+	
+	// 清一色
 	public static boolean isAllOneSuit(ArrayList<Combination> win) {
 		char suit = win.get(0).getSuit();
 		for (Combination c: win) {
@@ -13,6 +14,7 @@ public class MJUtil {
 		}
 		return true;
 	}
+	
 	//字一色
 	public static boolean isAllHonorSuit(ArrayList<Combination> win) {
 		for (Combination c: win) {
@@ -22,6 +24,7 @@ public class MJUtil {
 		}
 		return true;
 	}
+	
 	//十三么
 	public static boolean isThirteenOrphans(String[] input)
 	{
@@ -50,7 +53,8 @@ public class MJUtil {
 		if(!haveMan[0] || !haveMan[8] || !haveTung[0] || !haveTung[8] || !haveSort[0] || !haveSort[8])return false;
 		return true;
 	}
-	//九子連環, change name -> isNineGate
+	
+	//九子連環
 	public static boolean isNineGate(ArrayList<Combination> win)
 	{
 		int[] count = {0,0,0,0,0,0,0,0,0};
@@ -78,6 +82,7 @@ public class MJUtil {
 				return false;
 		return true;
 	}
+	
 	//大三元
 	public static boolean isBigDragon(ArrayList<Combination> win)
 	{
@@ -91,6 +96,7 @@ public class MJUtil {
 				return false;
 		return true;
 	}
+	
 	//小三元
 	public static boolean isSmallDragon(ArrayList<Combination> win)
 	{
@@ -102,15 +108,6 @@ public class MJUtil {
 		}
 		for(int i = 0;i < 3;i++)
 			if(!redGreenWhite[i])
-				return false;
-		return true;
-	}
-	//全么九 , change name -> isAllOrphans
-	public static boolean isAllOneOrNine(ArrayList<Combination> win)
-	{
-		for(Combination c:win)
-			if((c.getMeldType() != 2 && c.getMeldType() != 0) || c.getTile(0).getSuit() == 'H' ||
-			(c.getTile(0).getRank() != 1 && c.getTile(0).getRank() != 9))
 				return false;
 		return true;
 	}
@@ -126,6 +123,7 @@ public class MJUtil {
 		return false;
 	}
 	
+	//平糊
 	public static boolean isCommonHand(ArrayList<Combination> win) {
 		int count = 0;
 		for (Combination c: win) {
@@ -139,18 +137,20 @@ public class MJUtil {
 		}
 		return false;
 	}
-	public static int isAllTripletOrAllSequence (ArrayList<Combination> win) {
-		int count = 0;
-		for (Combination c: win) {
-			count+=c.getMeldType();
-		}
-		switch (count) {
-			case 4: return 1; 
-			case 8: return 3; 
-			default: return 0;
-		}
-	}
-	//大四喜 , change name -> isGreatWinds
+	
+//	public static int isAllTripletOrAllSequence (ArrayList<Combination> win) {
+//		int count = 0;
+//		for (Combination c: win) {
+//			count+=c.getMeldType();
+//		}
+//		switch (count) {
+//			case 4: return 1; 
+//			case 8: return 3; 
+//			default: return 0;
+//		}
+//	}
+	
+	//大四喜
 	public static boolean isGreatWinds(ArrayList<Combination> win)
 	{
 		int count = 0;
@@ -177,7 +177,8 @@ public class MJUtil {
 		}
 		return true;
 	}
-	//小四喜, change name -> isSmallWinds
+	
+	//小四喜
 	public static boolean isSmallWinds(ArrayList<Combination> win)
 	{
 		int count = 0;
@@ -221,6 +222,7 @@ public class MJUtil {
 		}
 	}
 	
+	//全么九
 	public static boolean isAllOrphans(ArrayList<Combination> win) { 
 		for (Combination c: win) {
 			if (c.getTile(0).getRank() != 1 && c.getTile(0).getRank() != 9)
@@ -229,6 +231,7 @@ public class MJUtil {
 		return true;
 	}
 	
+	//花么九
 	public static boolean isMixOrphans(ArrayList<Combination> win) {
 		for (Combination c: win) {
 			if (!(c.getSuit()+"").equals("H")) {
