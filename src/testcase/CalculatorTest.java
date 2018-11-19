@@ -522,9 +522,27 @@ public class CalculatorTest {
 		 assertEquals("InValid Input", name);
 		 //assertEquals(false, MJUtil.isThirteenOrphans(input));
 	 }
-	 @Test
-	 public void test_Mahjong_NineGateHand1() {  
+	  @Test
+	 public void test_Mahjong_NineGateHand1() {  // No. of 1 = 4 : No. of 9 = 3
 		 String[] input = new String[]{"M1", "M1", "M1", "M1", "M2", "M3", "M4", "M5", "M6", "M7", "M8", "M9", "M9", "M9"};
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(13, point);
+		 String name = calculator.getWinName();
+		 assertEquals("Nine Gate Hand ", name);
+	 }
+	 @Test
+	 public void test_Mahjong_NineGateHand2() {  // No. of 1 = 3 : No. of 9 = 3
+		 String[] input = new String[]{"S1", "S2", "S3", "S4", "S5", "S6", "S6", "S7", "S8", "S9", "S9", "S9", "S1", "S1"};
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(13, point);
+		 String name = calculator.getWinName();
+		 assertEquals("Nine Gate Hand ", name);
+	 }
+	 @Test
+	 public void test_Mahjong_NineGateHand3() {  // No. of 1 = 3 : No. of 9 = 4
+		 String[] input = new String[]{"T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8", "T9", "T9", "T9", "T9", "T1", "T1"};
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
 		 assertEquals(13, point);
