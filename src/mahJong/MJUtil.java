@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class MJUtil {
 	
-	// 清一色
+	
 	public static boolean isAllOneSuit(ArrayList<Combination> win) {
 		char suit = win.get(0).getSuit();
 		for (Combination c: win) {
@@ -15,7 +15,6 @@ public class MJUtil {
 		return true;
 	}
 	
-	//字一色
 	public static boolean isAllHonorSuit(ArrayList<Combination> win) {
 		for (Combination c: win) {
 			if (c.getSuit() != 'H') {
@@ -25,7 +24,6 @@ public class MJUtil {
 		return true;
 	}
 	
-	//十三么
 	public static boolean isThirteenOrphans(String[] input)
 	{
 		Combination win = new Combination();
@@ -46,7 +44,7 @@ public class MJUtil {
 			if(win.getTile(i).getSuit() == 'H')haveHonours[win.getTile(i).getRank()-1] = true;
 			else if(win.getTile(i).getSuit() == 'M')haveMan[win.getTile(i).getRank()-1] = true;
 			else if(win.getTile(i).getSuit() == 'T')haveTung[win.getTile(i).getRank()-1] = true;
-			else if(win.getTile(i).getSuit() == 'S')haveSort[win.getTile(i).getRank()-1] = true; 
+			else haveSort[win.getTile(i).getRank()-1] = true; 
 		}
 		for(boolean b:haveHonours)
 			if(!b)return false;
@@ -54,11 +52,11 @@ public class MJUtil {
 		return true;
 	}
 	
-	//九子連環
+	
 	public static boolean isNineGate(ArrayList<Combination> win)
 	{
 		int[] count = {0,0,0,0,0,0,0,0,0};
-		if(!isAllOneSuit(win))return false;
+//		if(!isAllOneSuit(win))return false;
 		for(int i = 0;i < win.size();i++)
 		{
 			if(i != win.size()-1)
@@ -77,13 +75,13 @@ public class MJUtil {
 		if((count[0] > 3 && count[8] > 3) || // the amount of 1 and 9 cannot be 4 at the same time
 				count[0] < 3 || count[8] < 3) // the amount of 1 and 9 cannot less than 3 at the same time
 			return false;
-		for(int i :count)
-			if(i == 0)
-				return false;
+//		for(int i :count)
+//			if(i == 0)
+//				return false;
 		return true;
 	}
 	
-	//大三元
+	
 	public static boolean isBigDragon(ArrayList<Combination> win)
 	{
 		boolean[] redGreenWhite = new boolean[3];
@@ -97,7 +95,6 @@ public class MJUtil {
 		return true;
 	}
 	
-	//小三元
 	public static boolean isSmallDragon(ArrayList<Combination> win)
 	{
 		boolean[] redGreenWhite = new boolean[3];
@@ -123,7 +120,6 @@ public class MJUtil {
 		return false;
 	}
 	
-	//平糊
 	public static boolean isCommonHand(ArrayList<Combination> win) {
 		int count = 0;
 		for (Combination c: win) {
@@ -150,7 +146,7 @@ public class MJUtil {
 //		}
 //	}
 	
-	//大四喜
+	//å¤§å››å–œ
 	public static boolean isGreatWinds(ArrayList<Combination> win)
 	{
 		int count = 0;
@@ -166,10 +162,7 @@ public class MJUtil {
 				else if (win.get(i).getTile(0).getRank() == 4)
 					count++;
 			}
-			else 
-			{
-				return false;
-			}
+
 		}
 		if (count != 4)
 		{
@@ -178,7 +171,6 @@ public class MJUtil {
 		return true;
 	}
 	
-	//小四喜
 	public static boolean isSmallWinds(ArrayList<Combination> win)
 	{
 		int count = 0;
@@ -211,18 +203,17 @@ public class MJUtil {
 			if (!suit.contains(c.getSuit()+""))
 			suit += c.getSuit();
 		}
-		if (suit.length() > 2) {
+		if (suit.length() != 2) {
 			return false;
 		}
-		else if (suit.length() == 2 && !suit.contains("H")) {
-			return false;
-		}
-		else {	// Assume all one suit is not possible in this method
+		else {
+			if (!suit.contains("H")) {
+				return false;
+			}
 			return true;
 		}
 	}
 	
-	//全么九
 	public static boolean isAllOrphans(ArrayList<Combination> win) { 
 		for (Combination c: win) {
 			if (c.getTile(0).getRank() != 1 && c.getTile(0).getRank() != 9)
@@ -231,7 +222,7 @@ public class MJUtil {
 		return true;
 	}
 	
-	//花么九
+	//èŠ±ä¹ˆä¹�
 	public static boolean isMixOrphans(ArrayList<Combination> win) {
 		for (Combination c: win) {
 			if (!(c.getSuit()+"").equals("H")) {
