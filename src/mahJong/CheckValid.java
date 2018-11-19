@@ -18,6 +18,9 @@ public class CheckValid {
 	}
 	
 	public static boolean isValidTile(String tile) {
+		if (tile.length() != 2) {
+			return false;
+		}
 		if(tile.charAt(0) == 'T' || tile.charAt(0) == 'S' || tile.charAt(0) == 'M') {
 			int rank = Character.getNumericValue(tile.charAt(1));
 			if(rank >= 1 && rank <= 9) {
