@@ -9,15 +9,17 @@ public class Calculator {
 	}
 
 	public int getWinPoint() {
+		if(!CheckValid.isValidInput(input)) {
+			return -1;
+		}
+		
 		if(MJUtil.isThirteenOrphans(input) ){
 			return 13;
-		}
-		if(!CheckValid.isValidInput(input)) {
-			return 0;
 		}
 		
 		boolean isWinHand = CheckValid.isWinHand(input);
 		if(!isWinHand) {
+			return -2;
 //			System.out.println("Input could not form a legal hand");
 		} else {
 			System.out.println("Is a legal Hand Type");
@@ -32,7 +34,7 @@ public class Calculator {
 			
 			return WinTracker.getPointsAccumulator().getPoint();
 		}
-		return 0;	
+//		return 0;	
 	}
 	
 	public String getWinName() {
@@ -60,7 +62,7 @@ public class Calculator {
 		}
 	}
 	//test
-	public static void main(String args[]) {
+//	public static void main(String args[]) {
 //		String[] input = new String[] {"O1","O2","O3","L1","L2","L3","M3","M3","M3","M1","M1","M1","M2","M2"};
 //		String[] input = new String[] {"H1","H2","H3","H1","H2","H3","H4","H4","H4","H5","H5","H5","H6","H6"};
 //		String[] input = new String[] {"H2","H2","H2","H1","H1","H1","H4","H4","H4","H5","H5","H5","H6","H6"};
@@ -76,37 +78,37 @@ public class Calculator {
 		
 //		String[] input = new String[] {"H5", "H5", "H5", "H6", "H6", "H6", "H7", "H7", "H7", "M4", "M4", "M4", "M5", "M5"}; // Valid 9chain case 5
 //		String[] input = new String[] {"T1", "T2", "T3", "T1", "T2", "T3", "T2", "T3", "T4", "T6", "T7", "T8", "T5", "T5"}; // Valid 9chain case 5
-//		String[] input = new String[] {"H5", "H5", "H5", "M6", "M6", "M6", "H7", "H7", "H7", "M4", "M4", "M4", "M5", "M5"}; // 瘛瑕�葉�
+//		String[] input = new String[] {"H5", "H5", "H5", "M6", "M6", "M6", "H7", "H7", "H7", "M4", "M4", "M4", "M5", "M5"}; // ç˜›ç‘•ï¿½ïš–è‘‰ï¿½î¨ª
 //		String[] input = new String[] {"H5", "H1", "H2", "H3", "H4", "M6", "H7", "H7", "H7", "M4", "M6", "M4", "M5", "M5"}; // 
-//		String[] input = new String[] {"H5", "H5", "H5", "H3", "H3", "H3", "T7", "T7", "T7", "M4", "M4", "M4", "M5", "M5"}; //  撠� 銝�
-//		String[] input = new String[] {"M1", "M2", "M3", "M4", "M5", "M6", "M2", "M3", "M4", "M7", "M8", "M9", "H5", "H5"}; // 瘛瑚��撟唾
+//		String[] input = new String[] {"H5", "H5", "H5", "H3", "H3", "H3", "T7", "T7", "T7", "M4", "M4", "M4", "M5", "M5"}; //  æ’ ïš—ï¿½ïššï€± éŠ�ï¿½
+//		String[] input = new String[] {"M1", "M2", "M3", "M4", "M5", "M6", "M2", "M3", "M4", "M7", "M8", "M9", "H5", "H5"}; // ç˜›ç‘šï¿½ï¿½ï�°æ’Ÿå”¾ï€±
 //		String[] input = new String[] {"H5", "H5", "H5", "M9", "M9", "M9", "H6", "H6", "H6", "H7", "H7", "H7", "M1", "M1"}; //
-		String[] input = new String[] {"H5", "H5", "H5", "M9", "M9", "M9", "H6", "H6", "H6", "H7", "H7", "H7", "M5", "M5"}; //
+//		String[] input = new String[] {"H5", "H5", "H5", "M9", "M9", "M9", "H6", "H6", "H6", "H7", "H7", "H7", "M5", "M5"}; //
 //		String[] input = new String[] {"H5", "H5", "H5", "M1", "M2", "M3", "H6", "H6", "H6", "H7", "H7", "H7", "T1", "T1"}; //
 		
 		
 		
 //		new CheckValid();
-		if(!CheckValid.isValidInput(input)) {
-			System.exit(1);
-		}
-		if(MJUtil.isThirteenOrphans(input) ){
-			System.out.print(13);
-			System.exit(0);
-		}
-		boolean isWinHand = CheckValid.isWinHand(input);
-		if(!isWinHand) {
-			System.out.println("Input could not form a legal hand");
-		} else {
-			System.out.println("Is a legal Hand Type");
-			Win win = new MakeWin(input).getWin();
-			
-			WinTracker wintracker = WinTracker.getInstance();
-			wintracker.createPointsAccumulator();
-			wintracker.setWin(win.getWin());
-			wintracker.startTracking();
+//		if(!CheckValid.isValidInput(input)) {
+//			System.exit(1);
+//		}
+//		if(MJUtil.isThirteenOrphans(input) ){
+//			System.out.print(13);
+//			System.exit(0);
+//		}
+//		boolean isWinHand = CheckValid.isWinHand(input);
+//		if(!isWinHand) {
+//			System.out.println("Input could not form a legal hand");
+//		} else {
+//			System.out.println("Is a legal Hand Type");
+//			Win win = new MakeWin(input).getWin();
+//			
+//			WinTracker wintracker = WinTracker.getInstance();
+//			wintracker.createPointsAccumulator();
+//			wintracker.setWin(win.getWin());
+//			wintracker.startTracking();
 //			WinTracker.getPointsAccumulator().printString();
-		}
-	}
-	
+//		}
+//	}
+//	
 }
