@@ -205,6 +205,15 @@ public class CalculatorTest {
 		 String name = calculator.getWinName();
 		 assertEquals("All One Suit Common Hand ", name);
      }
+	 @Test
+	 public void test_Mahjong_AllOneSuit3() { //AllOneSuit+AllinTriplets(Integration Testing)
+		 String[] input = new String[] {"S1", "S1", "S1", "S2", "S2", "S2", "S3", "S3", "S3", "S4", "S4", "S4", "S5", "S5"}; 
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(10, point);
+		 String name = calculator.getWinName();
+		 assertEquals("All One Suit All in Triplet ", name);
+     }
 	 
 	 @Test
 	 public void test_Mahjong_AllOrphans1() { //AllOrphans(Unit Testing)
