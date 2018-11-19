@@ -47,7 +47,7 @@ public class Combination {
 	}
 	public Tile getTile(int i)
 	{
-		if(tiles.size() == i)return null; // Array out of bound
+//		if(tiles.size() == i)return null; // Array out of bound
 		return tiles.get(i);
 	}
 }
