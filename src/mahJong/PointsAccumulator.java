@@ -54,13 +54,13 @@ public class PointsAccumulator {
 		return false;
 	}
 	
- 	public void printString() {
- 		System.out.println("Points: " + point);
- 		if(isChickenHand()) {
- 			System.out.println("Name: " + "Chicken Hand");
- 		}
- 		System.out.println("Name: " + name);
- 	}
+// 	public void printString() {
+// 		System.out.println("Points: " + point);
+// 		if(isChickenHand()) {
+// 			System.out.println("Name: " + "Chicken Hand");
+// 		}
+// 		System.out.println("Name: " + name);
+// 	}
 
 	
 }
