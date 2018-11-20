@@ -649,6 +649,6 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(13, point);
 		 String name = calculator.getWinName();
-		 assertEquals("Small Winds", name);
+		 assertEquals("All Honor Tiles Small Winds", name);
      }
 }
