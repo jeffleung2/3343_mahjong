@@ -173,7 +173,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(0, point);
 		 String name = calculator.getWinName();
-		 assertEquals("Chicken Hand ", name);
+		 assertEquals("Chicken Hand", name);
      }
 	 
 	 @Test
@@ -183,7 +183,8 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(13, point);
 		 String name = calculator.getWinName();
-		 assertEquals("All Honor Tiles ", name);
+		 System.out.println("XXXX:"+name);
+		 assertEquals("All Honor Tiles", name);
      }
 	 
 	 @Test
@@ -193,7 +194,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(7, point);
 		 String name = calculator.getWinName();
-		 assertEquals("All One Suit ", name);
+		 assertEquals("All One Suit", name);
      }
 	 
 	 @Test
@@ -203,7 +204,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(8, point);
 		 String name = calculator.getWinName();
-		 assertEquals("All One Suit Common Hand ", name);
+		 assertEquals("All One Suit Common Hand", name);
      }
 	 @Test
 	 public void test_Mahjong_AllOneSuit3() { //AllOneSuit+AllinTriplets(Integration Testing)
@@ -212,7 +213,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(10, point);
 		 String name = calculator.getWinName();
-		 assertEquals("All One Suit All in Triplet ", name);
+		 assertEquals("All One Suit All in Triplet", name);
      }
 	 
 	 @Test
@@ -222,7 +223,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(13, point);
 		 String name = calculator.getWinName();
-		 assertEquals("All Orphans ", name);
+		 assertEquals("All Orphans", name);
      }
 	 
 	 @Test
@@ -232,7 +233,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(3, point);
 		 String name = calculator.getWinName();
-		 assertEquals("All in Triplet ", name);
+		 assertEquals("All in Triplet", name);
      }
 	 
 	 @Test
@@ -242,7 +243,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(4, point);
 		 String name = calculator.getWinName();
-		 assertEquals("Contain One Dragon All in Triplet ", name);
+		 assertEquals("Contain One Dragon All in Triplet", name);
      }
 	 
 	 @Test
@@ -252,7 +253,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(5, point);
 		 String name = calculator.getWinName();
-		 assertEquals("Contain Two Dragon All in Triplet ", name);
+		 assertEquals("Contain Two Dragon All in Triplet", name);
      }
 	 
 	 @Test
@@ -262,7 +263,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(4, point);
 		 String name = calculator.getWinName();
-		 assertEquals("All in Triplet Mix Orphans ", name);
+		 assertEquals("All in Triplet Mix Orphans", name);
      }
 	 
 	 @Test
@@ -272,7 +273,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(5, point);
 		 String name = calculator.getWinName();
-		 assertEquals("Contain One Dragon All in Triplet Mix Orphans ", name);
+		 assertEquals("Contain One Dragon All in Triplet Mix Orphans", name);
      }
 	 
 	 @Test
@@ -282,7 +283,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(6, point);
 		 String name = calculator.getWinName();
-		 assertEquals("Contain Two Dragon All in Triplet Mix Orphans ", name);
+		 assertEquals("Contain Two Dragon All in Triplet Mix Orphans", name);
      }
 	 
 	 @Test
@@ -292,7 +293,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(8, point);
 		 String name = calculator.getWinName();
-		 assertEquals("Big Dragon ", name);
+		 assertEquals("Big Dragon", name);
      }
 	 
 	 @Test
@@ -302,7 +303,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(11, point);
 		 String name = calculator.getWinName();
-		 assertEquals("Big Dragon Mix One Suit ", name);
+		 assertEquals("Big Dragon Mix One Suit", name);
      }
 	 
 	 @Test
@@ -312,7 +313,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(13, point);
 		 String name = calculator.getWinName();
-		 assertEquals("Big Dragon Mix One Suit All in Triplet ", name);
+		 assertEquals("Big Dragon Mix One Suit All in Triplet", name);
      }
 	 
 	 @Test
@@ -322,7 +323,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(1, point);
 		 String name = calculator.getWinName();
-		 assertEquals("Common Hand ", name);
+		 assertEquals("Common Hand", name);
      }
 	 
 	 @Test
@@ -332,7 +333,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(1, point);
 		 String name = calculator.getWinName();
-		 assertEquals("Contain One Dragon ", name);
+		 assertEquals("Contain One Dragon", name);
      }
 	 
 	 @Test
@@ -342,7 +343,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(2, point);
 		 String name = calculator.getWinName();
-		 assertEquals("Contain Two Dragon ", name);
+		 assertEquals("Contain Two Dragon", name);
      }
 	 
 	 @Test
@@ -362,7 +363,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(7, point);
 		 String name = calculator.getWinName();
-		 assertEquals("Contain One Dragon Mix One Suit All in Triplet ", name);
+		 assertEquals("Contain One Dragon Mix One Suit All in Triplet", name);
      }
 	 
 	 @Test
@@ -372,7 +373,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(3, point);
 		 String name = calculator.getWinName();
-		 assertEquals("Mix One Suit ", name);
+		 assertEquals("Mix One Suit", name);
      }
 	 
 	 @Test
@@ -382,7 +383,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(4, point);
 		 String name = calculator.getWinName();
-		 assertEquals("Contain One Dragon Mix One Suit ", name);
+		 assertEquals("Contain One Dragon Mix One Suit", name);
      }
 	 
 	 @Test
@@ -392,7 +393,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(5, point);
 		 String name = calculator.getWinName();
-		 assertEquals("Contain Two Dragon Mix One Suit ", name);
+		 assertEquals("Contain Two Dragon Mix One Suit", name);
      }
 	 
 	 @Test
@@ -402,7 +403,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(4, point);
 		 String name = calculator.getWinName();
-		 assertEquals("Mix One Suit Common Hand ", name);
+		 assertEquals("Mix One Suit Common Hand", name);
      }
 	 
 	 @Test
@@ -412,7 +413,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(0, point);
 		 String name = calculator.getWinName();
-		 assertEquals("Chicken Hand ", name);
+		 assertEquals("Chicken Hand", name);
      }
 	 
 	 @Test
@@ -452,7 +453,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(3, point);
 		 String name = calculator.getWinName();
-		 assertEquals("Mix One Suit ", name);
+		 assertEquals("Mix One Suit", name);
      }
 	 
 	 @Test
@@ -462,7 +463,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(3, point);
 		 String name = calculator.getWinName();
-		 assertEquals("Mix One Suit ", name);
+		 assertEquals("Mix One Suit", name);
      }
 	 
 	 @Test
@@ -600,7 +601,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(13, point);
 		 String name = calculator.getWinName();
-		 assertEquals("Nine Gate Hand ", name);
+		 assertEquals("Nine Gate Hand", name);
 	 }
 	 @Test
 	 public void test_Mahjong_NineGateHand2() {  // No. of 1 = 3 : No. of 9 = 3
@@ -609,7 +610,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(13, point);
 		 String name = calculator.getWinName();
-		 assertEquals("Nine Gate Hand ", name);
+		 assertEquals("Nine Gate Hand", name);
 	 }
 	 @Test
 	 public void test_Mahjong_NineGateHand3() {  // No. of 1 = 3 : No. of 9 = 4
@@ -618,7 +619,7 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(13, point);
 		 String name = calculator.getWinName();
-		 assertEquals("Nine Gate Hand ", name);
+		 assertEquals("Nine Gate Hand", name);
 	 }
 	 
 	 @Test
@@ -628,6 +629,16 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(7, point);
 		 String name = calculator.getWinName();
-		 assertEquals("All One Suit ", name);
+		 assertEquals("All One Suit", name);
 	 }
+	 
+	 @Test
+	 public void test_Mahjong_ContainGreatWinds0() { //Contain Great Winds(Unit Testing)
+		 String[] input = new String[] {"H1", "H1", "H1", "H2", "H2", "H2", "H4", "H4", "H4", "H3", "H3", "H3", "H5", "H5"}; 
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(13, point);
+		 String name = calculator.getWinName();
+		 assertEquals("All Honor Tiles Great Winds", name);
+     }
 }

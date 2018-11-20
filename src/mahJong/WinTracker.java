@@ -38,6 +38,8 @@ public class WinTracker {
 	private void checkAllHonorTiles() {
 		if(MJUtil.isAllHonorSuit(win)) {
 			new CountAllHonorTiles().count();
+			if(MJUtil.isGreatWinds(win))new CountGreatWinds().count();
+			else if(MJUtil.isSmallWinds(win))new CountSmallWinds().count();
 		} else {
 			checkNineGate();
 		}

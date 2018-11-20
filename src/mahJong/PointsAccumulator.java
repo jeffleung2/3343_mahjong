@@ -6,6 +6,7 @@ public class PointsAccumulator {
 	
 	private int point;
 	private String name = "";
+	private ArrayList<String> names = new ArrayList<>();
 //	private static PointsAccumulator instance = new PointsAccumulator();
 	
 	public PointsAccumulator() {
@@ -18,18 +19,20 @@ public class PointsAccumulator {
 //	}
 	
 	public void setName(String name) {
-		this.name = name;
+		names.clear();
+		names.add(name);
 	}
 	
 	public void addName (String name) {
-		this.name += name;
+		names.add(name);
 	}
 	
 	public String getName () {
 		if(isChickenHand()) {
-			return "Chicken Hand ";
+			return "Chicken Hand";
 		}
-		return this.name;
+//		return this.name;
+		return String.join(" ", names);
 	}
 
 	public void setPoint(int point) {

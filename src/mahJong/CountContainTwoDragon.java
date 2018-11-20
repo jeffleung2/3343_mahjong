@@ -6,7 +6,7 @@ public class CountContainTwoDragon implements Counter {
 	public void count() {
 		PointsAccumulator pointsAccumulator = WinTracker.getPointsAccumulator();
 		pointsAccumulator.addPoint(2);
-		pointsAccumulator.addName("Contain Two Dragon ");
+		pointsAccumulator.addName("Contain Two Dragon");
 	}
 
 }
