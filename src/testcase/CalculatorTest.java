@@ -651,4 +651,14 @@ public class CalculatorTest {
 		 String name = calculator.getWinName();
 		 assertEquals("All Honor Tiles Small Winds", name);
      }
+	 
+	 @Test
+	 public void test_Mahjong_AllOneSuit() { //Contain Small Winds(Unit Testing)
+		 String[] input = new String[] {"MA", "M2", "M3", "M3", "M3", "M3", "M4", "M4", "M4", "M6", "M6", "M6", "M1", "M1"}; 
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(-1, point);
+		 String name = calculator.getWinName();
+		 assertEquals("InValid Input", name);
+     }
 }

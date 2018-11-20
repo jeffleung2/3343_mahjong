@@ -32,10 +32,15 @@ public class MakeWin {
 //	}
 	
 	public boolean isTriplet(String[] tile) {
-		if(tile[0].charAt(1) == tile[1].charAt(1) && tile[0].charAt(1) == tile[2].charAt(1)) {
-			return true;
+		boolean isTriplet = true;
+		if(tile[0].charAt(1) != tile[2].charAt(1)) {
+			isTriplet = false;
 		}
-		return false;
+		if(tile[0].charAt(1) != tile[1].charAt(1)) {
+			isTriplet = false;
+		}
+		
+		return isTriplet;
 	}
 	
 // 	public Tile makeTile(String tile) {

@@ -22,12 +22,14 @@ public class CheckValid {
 			return false;
 		}
 		if(tile.charAt(0) == 'T' || tile.charAt(0) == 'S' || tile.charAt(0) == 'M') {
-			int rank = Character.getNumericValue(tile.charAt(1));
+//			int rank = Character.getNumericValue(tile.charAt(1));
+			int rank = (int)tile.charAt(1) - 48;
 			if(rank >= 1 && rank <= 9) {
 				return true;
 			}
 		} else if ( tile.charAt(0) == 'H' ) {
-			int rank = Character.getNumericValue(tile.charAt(1));
+//			int rank = Character.getNumericValue(tile.charAt(1));
+			int rank = (int)tile.charAt(1) - 48;
 			if(rank >= 1 && rank <= 7) {
 				return true;
 			}
@@ -41,6 +43,7 @@ public class CheckValid {
 	
 	public static boolean isValidMeld(String tile[]) {
 		int count = 0;
+		boolean isValid = true;
 		for(int i = 0; i < 2; i++) {
 			if(tile[0].charAt(0) == tile[i + 1].charAt(0)) {
 				count++;
@@ -53,7 +56,9 @@ public class CheckValid {
 				int firstCard = Character.getNumericValue(tile[0].charAt(1));
 				int secondCard = Character.getNumericValue(tile[1].charAt(1));
 				int thirdCard = Character.getNumericValue(tile[2].charAt(1));
-				return secondCard == firstCard + 1 && thirdCard == firstCard + 2; 
+				if(secondCard != firstCard + 1)isValid = false;
+				if(thirdCard != firstCard + 2)isValid = false;
+				return isValid; 
 			}else {
 				return false;
 			}
