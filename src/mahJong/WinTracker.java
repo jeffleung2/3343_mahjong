@@ -135,7 +135,8 @@ public class WinTracker {
 	private void checkSmallDragon() {
 		if(MJUtil.isSmallDragon(win)) {
 			new CountSmallDragon().count();
-			checkAllTriplet(false);
+//			checkAllTriplet(false);
+			checkMixOneSuit();
 		} else {
 			checkContainDragon();
 		}
