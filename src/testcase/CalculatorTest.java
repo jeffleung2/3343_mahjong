@@ -407,7 +407,7 @@ public class CalculatorTest {
      }
 	 
 	 @Test
-	 public void test_Mahjong_NotMixOneSuit1() { 
+	 public void test_Mahjong_ChickenHand() { // ( isMixOneSuit -> if((!suit.contains("H")))
 		 String[] input = new String[] {"T1", "T1", "T1", "T4", "T5", "T6", "T5", "T6", "T7", "T2", "T3", "T4", "M1", "M1"}; 
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
@@ -436,38 +436,38 @@ public class CalculatorTest {
 		 assertEquals("Small Winds", name);
      }
 	
-	 @Test
-	 public void test_Mahjong_SmallWind2() { //Contain Small Wind
-		 String[] input = new String[] {"H1", "H1", "H1", "H3", "H3", "H3", "H4", "H4", "H4", "T5", "T6", "T7", "H2", "H2"}; 
-		 Calculator calculator = new Calculator(input);
-		 int point = calculator.getWinPoint();
-		 assertEquals(13, point);
-		 String name = calculator.getWinName();
-		 assertEquals("Small Winds", name);
-     }
+//	 @Test
+//	 public void test_Mahjong_SmallWind2() { //Contain Small Wind
+//		 String[] input = new String[] {"H1", "H1", "H1", "H3", "H3", "H3", "H4", "H4", "H4", "T5", "T6", "T7", "H2", "H2"}; 
+//		 Calculator calculator = new Calculator(input);
+//		 int point = calculator.getWinPoint();
+//		 assertEquals(13, point);
+//		 String name = calculator.getWinName();
+//		 assertEquals("Small Winds", name);
+//     }
+	 
+//	 @Test
+//	 public void test_Mahjong_NotSmallWind1() { //Contain Small Wind
+//		 String[] input = new String[] {"H1", "H1", "H1", "H3", "H3", "H3", "H4", "H4", "H4", "T5", "T6", "T7", "T2", "T2"}; 
+//		 Calculator calculator = new Calculator(input);
+//		 int point = calculator.getWinPoint();
+//		 assertEquals(3, point);
+//		 String name = calculator.getWinName();
+//		 assertEquals("Mix One Suit", name);
+//     }
+//	 
+//	 @Test
+//	 public void test_Mahjong_NotSmallWind2() { //Contain Small Wind
+//		 String[] input = new String[] {"H1", "H1", "H1", "H3", "H3", "H3", "H4", "H4", "H4", "T5", "T6", "T7", "H6", "H6"}; 
+//		 Calculator calculator = new Calculator(input);
+//		 int point = calculator.getWinPoint();
+//		 assertEquals(3, point);
+//		 String name = calculator.getWinName();
+//		 assertEquals("Mix One Suit", name);
+//     }
 	 
 	 @Test
-	 public void test_Mahjong_NotSmallWind1() { //Contain Small Wind
-		 String[] input = new String[] {"H1", "H1", "H1", "H3", "H3", "H3", "H4", "H4", "H4", "T5", "T6", "T7", "T2", "T2"}; 
-		 Calculator calculator = new Calculator(input);
-		 int point = calculator.getWinPoint();
-		 assertEquals(3, point);
-		 String name = calculator.getWinName();
-		 assertEquals("Mix One Suit", name);
-     }
-	 
-	 @Test
-	 public void test_Mahjong_NotSmallWind2() { //Contain Small Wind
-		 String[] input = new String[] {"H1", "H1", "H1", "H3", "H3", "H3", "H4", "H4", "H4", "T5", "T6", "T7", "H6", "H6"}; 
-		 Calculator calculator = new Calculator(input);
-		 int point = calculator.getWinPoint();
-		 assertEquals(3, point);
-		 String name = calculator.getWinName();
-		 assertEquals("Mix One Suit", name);
-     }
-	 
-	 @Test
-	 public void test_Mahjong_ThirteenOrphans() {  // suit same, rank different
+	 public void test_Mahjong_ThirteenOrphans() {  // Thirteen Orphans
 		 String[] input = new String[]{"M1", "M9", "T1", "T9", "S1", "S9", "H1", "H2", "H3", "H4", "H5", "H6", "H7", "H7"};
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
@@ -511,17 +511,6 @@ public class CalculatorTest {
 	 }
 	 
 	 @Test
-	 public void test_Mahjong_ThirteenOrphans4() { // suit same, rank same
-		 String[] input = new String[]{"M1", "M9", "T1", "T9", "S1", "S9", "H1", "H2", "H3", "H5", "H4", "H6", "H7", "H7"};
-		 Calculator calculator = new Calculator(input);
-		 int point = calculator.getWinPoint();
-		 assertEquals(13, point);
-		 String name = calculator.getWinName();
-		 assertEquals("Thirteen Orphans", name);
-		 //assertEquals(true, MJUtil.isThirteenOrphans(input));
-	 }
-	 
-	 @Test
 	 public void test_Mahjong_ThirteenOrphans5() { // no S1
 		 String[] input = new String[]{"M1", "S9", "T1", "T9", "M1", "M9", "H1", "H2", "H3", "H5", "H4", "H6", "H7", "H7"};
 		 Calculator calculator = new Calculator(input);
@@ -529,7 +518,6 @@ public class CalculatorTest {
 		 assertEquals(-2, point);
 		 String name = calculator.getWinName();
 		 assertEquals("Input could not form a legal hand", name);
-		 //assertEquals(false, MJUtil.isThirteenOrphans(input));
 	 }
 	 
 	 @Test
@@ -591,7 +579,6 @@ public class CalculatorTest {
 		 assertEquals(-1, point);
 		 String name = calculator.getWinName();
 		 assertEquals("InValid Input", name);
-		 //assertEquals(false, MJUtil.isThirteenOrphans(input));
 	 }
 	 
 	 @Test
@@ -602,7 +589,6 @@ public class CalculatorTest {
 		 assertEquals(-2, point);
 		 String name = calculator.getWinName();
 		 assertEquals("Input could not form a legal hand", name);
-		 //assertEquals(true, MJUtil.isThirteenOrphans(input));
 	 }
 	 
 	  @Test
@@ -664,7 +650,7 @@ public class CalculatorTest {
      }
 	 
 	 @Test
-	 public void test_Mahjong_AllOneSuit() { 
+	 public void test_Mahjong_InvalidInput() { 
 		 String[] input = new String[] {"MA", "M2", "M3", "M3", "M3", "M3", "M4", "M4", "M4", "M6", "M6", "M6", "M1", "M1"}; 
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
@@ -674,7 +660,7 @@ public class CalculatorTest {
      }
 	 
 	 @Test
-	 public void test_Mahjong_TripletBigDragon() { // Big Dragon Mixed One Suit Triplet
+	 public void test_Mahjong_TripletBigDragon() { // Big Dragon Mixed One Suit Triplet (Coverage)
 		 String[] input = new String[] {"M1", "M1", "M1", "H5", "H5", "H5", "H6", "H6", "H6", "H7", "H7", "H7", "M2", "M2"}; 
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
@@ -703,15 +689,15 @@ public class CalculatorTest {
 		 assertEquals("Contain Two Dragon Mix One Suit All in Triplet Mix Orphans", name);
      }
 	 
-	 @Test
-	 public void test_Mahjong_TripletTwoDragon() {  //AllTriplets+ContainTwoDragon
-		 String[] input = new String[]{"S1", "S1", "S1", "H6", "H6", "H6", "M3", "M3", "M3", "H5", "H5", "H5", "T4", "T4"}; //AllTriplets+ContainTwoDragon
-		 Calculator calculator = new Calculator(input);
-		 int point = calculator.getWinPoint();
-		 assertEquals(5, point);
-		 String name = calculator.getWinName();
-		 assertEquals("Contain Two Dragon All in Triplet", name);
-     }
+//	 @Test
+//	 public void test_Mahjong_TripletTwoDragon() {  //AllTriplets+ContainTwoDragon
+//		 String[] input = new String[]{"S1", "S1", "S1", "H6", "H6", "H6", "M3", "M3", "M3", "H5", "H5", "H5", "T4", "T4"}; //AllTriplets+ContainTwoDragon
+//		 Calculator calculator = new Calculator(input);
+//		 int point = calculator.getWinPoint();
+//		 assertEquals(5, point);
+//		 String name = calculator.getWinName();
+//		 assertEquals("Contain Two Dragon All in Triplet", name);
+//     }
 	 
 	 @Test
 	 public void test_Mahjong_TripletSmallDragon() {  //AllTriplets+SmallDragon
@@ -733,32 +719,84 @@ public class CalculatorTest {
 		 assertEquals("Big Dragon All in Triplet", name);
      }
 	 
-//   
-
+	 @Test
+	 public void test_Mahjong_BigDragonMixOneSuitAllinTripletMixOrphans() {  //Big Dragon Mix One Suit All in Triplet  Mix Orphans
+	   String[] input = new String[]{"S1", "S1", "S1", "H6", "H6", "H6", "H7", "H7", "H7", "H5", "H5", "H5", "S9", "S9"}; //AllTriplets+BigDragon
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(13, point);
+		 String name = calculator.getWinName();
+		 assertEquals("Big Dragon Mix One Suit All in Triplet Mix Orphans", name);
+     }
 	 
-//     String[] input = new String[]{"T1", "T2", "T3", "T3", "T4", "T5", "T7", "T8", "T9", "T6", "T7", "T8", "T9", "T9"}; //AllOneSuit+CommonHand
-//     String[] input = new String[]{"T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8", "T9", "T9", "T9", "T9", "T1", "T1"}; //AllOneSuit+NineGateHand
-//    
-//      String[] input = new String[]{"T1", "T1", "T1", "H1", "H1", "H1", "T7", "T7", "T7", "H6", "H6", "H6", "T9", "T9"}; //MixOneSuit+AllTriplets
-//     String[] input = new String[]{"T1", "T1", "T1", "H5", "H5", "H5", "T7", "T8", "T9", "H6", "H6", "H6", "H7", "H7"}; //MixOneSuit+SmallDragon+ContainTwoDragon
-//     String[] input = new String[]{"T1", "T2", "T3", "H5", "H5", "H5", "H7", "H7", "H7", "H6", "H6", "H6", "T9", "T9"}; //MixOneSuit+BigDragon
-//     String[] input = new String[]{"T1", "T2", "T3", "H5", "H5", "H5", "T7", "T8", "T9", "H1", "H1", "H1", "T9", "T9"}; //MixOneSuit+ContainOneDragon
-//     String[] input = new String[]{"T1", "T2", "T3", "H5", "H5", "H5", "T7", "T8", "T9", "H7", "H7", "H7", "T9", "T9"}; //MixOneSuit+ContainTwoDragon
-//     String[] input = new String[]{"H1", "H1", "H1", "H2", "H2", "H2", "H4", "H4", "H4", "S2", "S3", "S4", "H3", "H3"}; //MixOneSuit+SmallWinds
-//     String[] input = new String[]{"H1", "H1", "H1", "H2", "H2", "H2", "H4", "H4", "H4", "H3", "H3", "H3", "T9", "T9"}; //MixOneSuit+AllTriplets+ContainGreatWinds
-//     String[] input = new String[]{"H1", "H1", "H1", "H2", "H2", "H2", "H4", "H4", "H4", "S2", "S2", "S2", "H3", "H3"}; //MixOneSuit+AllTriplets+SmallWinds
-//     String[] input = new String[]{"T1", "T1", "T1", "H1", "H1", "H1", "T7", "T7", "T7", "H6", "H6", "H6", "T9", "T9"}; //MixOneSuit+AllTriplets+SmallDragon+ContainTwoDragon
-//     String[] input = new String[]{"T1", "T1", "T1", "H5", "H5", "H5", "H7", "H7", "H7", "H6", "H6", "H6", "T9", "T9"}; //MixOneSuit+AllTriplets+BigDragon
-//     String[] input = new String[]{"T1", "T1", "T1", "H5", "H5", "H5", "H2", "H2", "H2", "H1", "H1", "H1", "T9", "T9"}; //MixOneSuit+AllTriplets+ContainOneDragon
-//     
-//    
-//      String[] input = new String[]{"H1", "H1", "H1", "H2", "H2", "H2", "H4", "H4", "H4", "H5", "H5", "H5", "H6", "H6"}; //AllHonourSuit+AllTriplets+ContainOneDragon
-//     String[] input = new String[]{"H1", "H1", "H1", "H2", "H2", "H2", "H6", "H6", "H6", "H5", "H5", "H5", "H3", "H3"}; //AllHonourSuit+AllTriplets+ContainTwoDragon
-//     String[] input = new String[]{"H5", "H5", "H5", "H2", "H2", "H2", "H6", "H6", "H6", "H1", "H1", "H1", "H7", "H7"}; //AllHonourSuit+AllTriplets+SmallDragon+ContainTwoDragon
-//     String[] input = new String[]{"H5", "H5", "H5", "H7", "H7", "H7", "H6", "H6", "H6", "H1", "H1", "H1", "H2", "H2"}; //AllHonourSuit+AllTriplets+BigDragon
-//     String[] input = new String[]{"H1", "H1", "H1", "H2", "H2", "H2", "H3", "H3", "H3", "H4", "H4", "H4", "H5", "H5"}; //AllHonourSuit+AllTriplets+ContainGreatWinds
-//     String[] input = new String[]{"H1", "H1", "H1", "H2", "H2", "H2", "H3", "H3", "H3", "H5", "H5", "H5", "H4", "H4"}; //AllHonourSuit+AllTriplets+SmallWinds+ContainOneDragon
-//    
-//      String[] input = new String[]{"S1", "S1", "S1", "H2", "H2", "H2", "M3", "M3", "M3", "H5", "H5", "H5", "T4", "T4"}; //AllTriplets+ContainOneDragon
-
+	 @Test
+	 public void test_Mahjong_BigDragonAllinTripletMixOrphans() {  //Big Dragon All in Triplet Mix Orphans
+	   String[] input = new String[]{"S1", "S1", "S1", "H6", "H6", "H6", "H7", "H7", "H7", "H5", "H5", "H5", "M9", "M9"}; //AllTriplets+BigDragon
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(12, point);
+		 String name = calculator.getWinName();
+		 assertEquals("Big Dragon All in Triplet Mix Orphans", name);
+     }
+	 
+	 @Test
+	 public void test_Mahjong_SmallDragonMixOneSuitAllinTriplet() {  //Small Dragon Mix One Suit All in Triplets
+	   String[] input = new String[]{"S1", "S1", "S1", "H6", "H6", "H6", "H7", "H7", "H7", "S8", "S8", "S8", "H5", "H5"}; //AllTriplets+BigDragon
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(11, point);
+		 String name = calculator.getWinName();
+		 assertEquals("Small Dragon Mix One Suit All in Triplet", name);
+     }
+	 
+	 @Test
+	 public void test_Mahjong_SmallDragonAllinTripletMixOrphans() {  //Small Dragon All in Triplet Mix Orphans
+	   String[] input = new String[]{"S1", "S1", "S1", "H6", "H6", "H6", "H7", "H7", "H7", "M9", "M9", "M9", "H5", "H5"}; //AllTriplets+BigDragon
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(9, point);
+		 String name = calculator.getWinName();
+		 assertEquals("Small Dragon All in Triplet Mix Orphans", name);
+     }
+	 
+	 @Test
+	 public void test_Mahjong_SmallDragonMixOneSuit() {  //Small Dragon Mix One Suit
+	   String[] input = new String[]{"S1", "S1", "S1", "H6", "H6", "H6", "H7", "H7", "H7", "S7", "S8", "S9", "H5", "H5"}; //AllTriplets+BigDragon
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(8, point);
+		 String name = calculator.getWinName();
+		 assertEquals("Small Dragon Mix One Suit", name);
+     }
+	 
+	 @Test
+	 public void test_Mahjong_ContainTwoDragonMixOneSuitAllinTriplet() {  //Contain Two Dragon Mix One Suit All in Triplet
+	   String[] input = new String[]{"S1", "S1", "S1", "H6", "H6", "H6", "H7", "H7", "H7", "S8", "S8", "S8", "S5", "S5"}; //AllTriplets+BigDragon
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(8, point);
+		 String name = calculator.getWinName();
+		 assertEquals("Contain Two Dragon Mix One Suit All in Triplet", name);
+     }
+	 
+	 @Test
+	 public void test_Mahjong_ContainOneDragonMixOneSuitAllinTripletMixOrphans() {  //Contain One Dragon Mix One Suit All in Triplet  Mix Orphans
+	   String[] input = new String[]{"S1", "S1", "S1", "H6", "H6", "H6", "H4", "H4", "H4", "H3", "H3", "H3", "S9", "S9"}; //AllTriplets+BigDragon
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(8, point);
+		 String name = calculator.getWinName();
+		 assertEquals("Contain One Dragon Mix One Suit All in Triplet Mix Orphans", name);
+     }
+	 
+	 @Test
+	 public void test_Mahjong_MixOneSuitAllinTriplet () {  //Mix One Suit All in Triplet 
+	   String[] input = new String[]{"S1", "S1", "S1", "H2", "H2", "H2", "H4", "H4", "H4", "H3", "H3", "H3", "S8", "S8"}; //AllTriplets+BigDragon
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(6, point);
+		 String name = calculator.getWinName();
+		 assertEquals("Mix One Suit All in Triplet", name);
+     }
+	 
 }
