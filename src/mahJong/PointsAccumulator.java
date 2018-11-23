@@ -4,19 +4,9 @@ import java.util.ArrayList;
 
 public class PointsAccumulator {
 	
-	private int point;
-	private String name = "";
+	private int point = 0;
 	private ArrayList<String> names = new ArrayList<>();
-//	private static PointsAccumulator instance = new PointsAccumulator();
-	
-	public PointsAccumulator() {
-		point = 0;
-		name = "";
-	}
-	
-//	public static PointsAccumulator getInstance() {
-//		return instance;
-//	}
+
 	
 	public void setName(String name) {
 		names.clear();

@@ -2,7 +2,7 @@ package mahJong;
 
 public class Calculator {
 	
-	String[] input;
+	private String[] input;
 	
 	public Calculator(String[] input) {
 		this.input = input;

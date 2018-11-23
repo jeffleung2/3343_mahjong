@@ -692,4 +692,73 @@ public class CalculatorTest {
 		 String name = calculator.getWinName();
 		 assertEquals("Small Dragon Mix One Suit All in Triplet Mix Orphans", name);
      }
+	 
+	 @Test
+	 public void test_Mahjong_MixOneTripletTwoDragon() {  //MixOneSuit+AllTriplets+ContainTwoDragon
+		 String[] input = new String[]{"T1", "T1", "T1", "H5", "H5", "H5", "H7", "H7", "H7", "H1", "H1", "H1", "T9", "T9"}; //MixOneSuit+AllTriplets+ContainTwoDragon
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(9, point);
+		 String name = calculator.getWinName();
+		 assertEquals("Contain Two Dragon Mix One Suit All in Triplet Mix Orphans", name);
+     }
+	 
+	 @Test
+	 public void test_Mahjong_TripletTwoDragon() {  //AllTriplets+ContainTwoDragon
+		 String[] input = new String[]{"S1", "S1", "S1", "H6", "H6", "H6", "M3", "M3", "M3", "H5", "H5", "H5", "T4", "T4"}; //AllTriplets+ContainTwoDragon
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(5, point);
+		 String name = calculator.getWinName();
+		 assertEquals("Contain Two Dragon All in Triplet", name);
+     }
+	 
+	 @Test
+	 public void test_Mahjong_TripletSmallDragon() {  //AllTriplets+SmallDragon
+		 String[] input = new String[]{"S1", "S1", "S1", "H6", "H6", "H6", "M3", "M3", "M3", "H5", "H5", "H5", "H7", "H7"}; //AllTriplets+SmallDragon+ContainTwoDragon
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(8, point);
+		 String name = calculator.getWinName();
+		 assertEquals("Small Dragon All in Triplet", name);
+     }
+	 
+	 @Test
+	 public void test_Mahjong_TripletBigDragon1() {  //AllTriplets+BigDragon
+	   String[] input = new String[]{"S1", "S1", "S1", "H6", "H6", "H6", "H7", "H7", "H7", "H5", "H5", "H5", "M7", "M7"}; //AllTriplets+BigDragon
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(11, point);
+		 String name = calculator.getWinName();
+		 assertEquals("Big Dragon All in Triplet", name);
+     }
+	 
+//   
+
+	 
+//     String[] input = new String[]{"T1", "T2", "T3", "T3", "T4", "T5", "T7", "T8", "T9", "T6", "T7", "T8", "T9", "T9"}; //AllOneSuit+CommonHand
+//     String[] input = new String[]{"T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8", "T9", "T9", "T9", "T9", "T1", "T1"}; //AllOneSuit+NineGateHand
+//    
+//      String[] input = new String[]{"T1", "T1", "T1", "H1", "H1", "H1", "T7", "T7", "T7", "H6", "H6", "H6", "T9", "T9"}; //MixOneSuit+AllTriplets
+//     String[] input = new String[]{"T1", "T1", "T1", "H5", "H5", "H5", "T7", "T8", "T9", "H6", "H6", "H6", "H7", "H7"}; //MixOneSuit+SmallDragon+ContainTwoDragon
+//     String[] input = new String[]{"T1", "T2", "T3", "H5", "H5", "H5", "H7", "H7", "H7", "H6", "H6", "H6", "T9", "T9"}; //MixOneSuit+BigDragon
+//     String[] input = new String[]{"T1", "T2", "T3", "H5", "H5", "H5", "T7", "T8", "T9", "H1", "H1", "H1", "T9", "T9"}; //MixOneSuit+ContainOneDragon
+//     String[] input = new String[]{"T1", "T2", "T3", "H5", "H5", "H5", "T7", "T8", "T9", "H7", "H7", "H7", "T9", "T9"}; //MixOneSuit+ContainTwoDragon
+//     String[] input = new String[]{"H1", "H1", "H1", "H2", "H2", "H2", "H4", "H4", "H4", "S2", "S3", "S4", "H3", "H3"}; //MixOneSuit+SmallWinds
+//     String[] input = new String[]{"H1", "H1", "H1", "H2", "H2", "H2", "H4", "H4", "H4", "H3", "H3", "H3", "T9", "T9"}; //MixOneSuit+AllTriplets+ContainGreatWinds
+//     String[] input = new String[]{"H1", "H1", "H1", "H2", "H2", "H2", "H4", "H4", "H4", "S2", "S2", "S2", "H3", "H3"}; //MixOneSuit+AllTriplets+SmallWinds
+//     String[] input = new String[]{"T1", "T1", "T1", "H1", "H1", "H1", "T7", "T7", "T7", "H6", "H6", "H6", "T9", "T9"}; //MixOneSuit+AllTriplets+SmallDragon+ContainTwoDragon
+//     String[] input = new String[]{"T1", "T1", "T1", "H5", "H5", "H5", "H7", "H7", "H7", "H6", "H6", "H6", "T9", "T9"}; //MixOneSuit+AllTriplets+BigDragon
+//     String[] input = new String[]{"T1", "T1", "T1", "H5", "H5", "H5", "H2", "H2", "H2", "H1", "H1", "H1", "T9", "T9"}; //MixOneSuit+AllTriplets+ContainOneDragon
+//     
+//    
+//      String[] input = new String[]{"H1", "H1", "H1", "H2", "H2", "H2", "H4", "H4", "H4", "H5", "H5", "H5", "H6", "H6"}; //AllHonourSuit+AllTriplets+ContainOneDragon
+//     String[] input = new String[]{"H1", "H1", "H1", "H2", "H2", "H2", "H6", "H6", "H6", "H5", "H5", "H5", "H3", "H3"}; //AllHonourSuit+AllTriplets+ContainTwoDragon
+//     String[] input = new String[]{"H5", "H5", "H5", "H2", "H2", "H2", "H6", "H6", "H6", "H1", "H1", "H1", "H7", "H7"}; //AllHonourSuit+AllTriplets+SmallDragon+ContainTwoDragon
+//     String[] input = new String[]{"H5", "H5", "H5", "H7", "H7", "H7", "H6", "H6", "H6", "H1", "H1", "H1", "H2", "H2"}; //AllHonourSuit+AllTriplets+BigDragon
+//     String[] input = new String[]{"H1", "H1", "H1", "H2", "H2", "H2", "H3", "H3", "H3", "H4", "H4", "H4", "H5", "H5"}; //AllHonourSuit+AllTriplets+ContainGreatWinds
+//     String[] input = new String[]{"H1", "H1", "H1", "H2", "H2", "H2", "H3", "H3", "H3", "H5", "H5", "H5", "H4", "H4"}; //AllHonourSuit+AllTriplets+SmallWinds+ContainOneDragon
+//    
+//      String[] input = new String[]{"S1", "S1", "S1", "H2", "H2", "H2", "M3", "M3", "M3", "H5", "H5", "H5", "T4", "T4"}; //AllTriplets+ContainOneDragon
+
 }
