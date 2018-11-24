@@ -9,7 +9,8 @@ public class Calculator {
 	}
 
 	public int getWinPoint() {
-		if(!CheckValid.isValidInput(input)) {
+		CheckValid checkValid = new CheckValid();
+		if(!checkValid.isValidInput(input)) {
 			return -1;
 		}
 		
@@ -17,7 +18,7 @@ public class Calculator {
 			return 13;
 		}
 		
-		boolean isWinHand = CheckValid.isWinHand(input);
+		boolean isWinHand = checkValid.isWinHand(input);
 		if(!isWinHand) {
 			return -2;
 //			System.out.println("Input could not form a legal hand");
@@ -38,13 +39,14 @@ public class Calculator {
 	}
 	
 	public String getWinName() {
-		if(!CheckValid.isValidInput(input)) {
+		CheckValid checkValid = new CheckValid();
+		if(!checkValid.isValidInput(input)) {
 			return "InValid Input";
 		}
 		if(MJUtil.isThirteenOrphans(input) ){
 			return "Thirteen Orphans";
 		}
-		boolean isWinHand = CheckValid.isWinHand(input);
+		boolean isWinHand = checkValid.isWinHand(input);
 		if(!isWinHand) {
 //			System.out.println("Input could not form a legal hand");
 			return "Input could not form a legal hand";
