@@ -87,7 +87,7 @@ public class MJUtil {
 		boolean[] redGreenWhite = new boolean[3];
 		for(int i = 0, l = win.size()-1;i < l;i++)
 		{
-			if(win.get(i).getTile(0).getSuit() == 'H' && win.get(i).getTile(0).getRank() >= 5)redGreenWhite[win.get(i).getTile(0).getRank()-5] = true;
+			if(isDragonTiles(win.get(i)))redGreenWhite[win.get(i).getTile(0).getRank()-5] = true;
 		}
 		for(int i = 0;i < 3;i++)
 			if(!redGreenWhite[i])
@@ -100,7 +100,7 @@ public class MJUtil {
 		boolean[] redGreenWhite = new boolean[3];
 		for(int i = 0, l = win.size();i < l;i++)
 		{
-			if(win.get(i).getTile(0).getSuit() == 'H' && win.get(i).getTile(0).getRank() >= 5)
+			if(isDragonTiles(win.get(i)))
 				redGreenWhite[win.get(i).getTile(0).getRank()-5] = true;
 		}
 		for(int i = 0;i < 3;i++)
@@ -146,17 +146,13 @@ public class MJUtil {
 //		}
 //	}
 	
-	//å¤§å››å–œ
+
 	public boolean isGreatWinds(ArrayList<Combination> win)
 	{
 		int count = 0;
 		for (int i = 0; i < 4; i++) {
-			if (win.get(i).getSuit() == 'H')
-			{
-				if (win.get(i).getTile(0).getRank() < 5)
-					count++;
-			}
-
+			if (isWindTiles(win.get(i)))
+				count++;
 		}
 		if (count != 4)
 		{
@@ -169,17 +165,14 @@ public class MJUtil {
 	{
 		int count = 0;
 		for (int i = 0; i < 4; i++) {
-			if (win.get(i).getSuit() == 'H')
-			{
-				if (win.get(i).getTile(0).getRank() < 5)
-					count++;
-			}
+			if (isWindTiles(win.get(i)))
+				count++;
 		}
 		if (count != 3)
 		{
 			return false;
 		}
-		else if (win.get(4).getTile(0).getSuit() == 'H' && win.get(4).getTile(0).getRank() < 5)
+		else if (isWindTiles(win.get(4)))
 			return true;
 		else 
 			return false;
@@ -194,7 +187,7 @@ public class MJUtil {
 		if (suit.length() != 2) {
 			return false;
 		}
-		else {
+		else { 
 			if (!suit.contains("H")) {
 				return false;
 			}
@@ -210,7 +203,7 @@ public class MJUtil {
 		return true;
 	}
 	
-	//èŠ±ä¹ˆä¹�
+	//Ã¨Å Â±Ã¤Â¹Ë†Ã¤Â¹ï¿½
 	public boolean isMixOrphans(ArrayList<Combination> win) {
 		for (Combination c: win) {
 			if (!(c.getSuit()+"").equals("H")) {
@@ -224,11 +217,9 @@ public class MJUtil {
 	public int countDragons (ArrayList<Combination> win) {
 		int count = 0;
 		for (int i = 0; i < 4; i++) {
-			if (win.get(i).getSuit() == 'H')
-			{
-				if (win.get(i).getTile(0).getRank() > 4)
-					count++;
-			}
+			if (isDragonTiles(win.get(i)))
+			count++;
+			
 		}
 //		if (count == 3)
 //		{
@@ -255,4 +246,13 @@ public class MJUtil {
 //			count+=c.getMeldType();
 //		}
 //	}
+	
+	public boolean isWindTiles(Combination comb) {
+		return comb.getSuit() == 'H' && comb.getTile(0).getRank() < 5 ;
+	}
+	
+	public boolean isDragonTiles(Combination comb) {
+		return comb.getSuit() == 'H' && comb.getTile(0).getRank() > 4;
+	}
+	
 }
