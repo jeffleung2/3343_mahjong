@@ -6,9 +6,12 @@ public class WinTracker {
 	
 	private static ArrayList<Combination> win;
 	private static PointsAccumulator pointsAccumulator;
-	private static WinTracker instance = new WinTracker();
+	private static WinTracker instance = new WinTracker();;
+	private static MJUtil mjUtil;
 	
-	private WinTracker(){};
+	private WinTracker(){
+		mjUtil = new MJUtil();
+	};
 	
 	public static WinTracker getInstance() {
 		return instance;
@@ -27,7 +30,7 @@ public class WinTracker {
 	}
 	
 	public void startTracking() {
-		if(MJUtil.isAllOneSuit(win)) {
+		if(mjUtil.isAllOneSuit(win)) {
 			new CountAllOneSuit().count();
 			checkAllHonorTiles();
 		} else {
@@ -36,20 +39,24 @@ public class WinTracker {
 	}
 
 	private void checkAllHonorTiles() {
-		if(MJUtil.isAllHonorSuit(win)) {
+		if(mjUtil.isAllHonorSuit(win)) {
 			new CountAllHonorTiles().count();
-			if(MJUtil.isGreatWinds(win))new CountGreatWinds().count();
-			else if(MJUtil.isSmallWinds(win))
+			if(mjUtil.isGreatWinds(win))new CountGreatWinds().count();
+			else if(mjUtil.isSmallWinds(win))
 			{
 				new CountSmallWinds().count();
 			}
 		} else {
+<<<<<<< HEAD
+=======
+//			System.out.println("n");
+>>>>>>> 4413c0f8fe1b3003c3515fa6df68a49d54288ec5
 			checkNineGate();
 		}
 	}
 	
 	private void checkNineGate() {
-		if(MJUtil.isNineGate(win)) {
+		if(mjUtil.isNineGate(win)) {
 			new CountNineGate().count();
 		} else {
 			checkAllTriplet(true);
@@ -58,13 +65,13 @@ public class WinTracker {
 
 	private void checkAllTriplet(boolean isAllOneSuit) {
 		if(isAllOneSuit) {
-			if(MJUtil.isAllTriplet(win)) {
+			if(mjUtil.isAllTriplet(win)) {
 				new CountAllTriplet().count();
 			} else {
 				checkCommonHand();
 			}
 		} else {
-			if(MJUtil.isAllTriplet(win)) {
+			if(mjUtil.isAllTriplet(win)) {
 				new CountAllTriplet().count();
 				checkAllOrphans();
 			} else {
@@ -74,7 +81,7 @@ public class WinTracker {
 	}
 
 	private void checkAllOrphans() {
-		if(MJUtil.isAllOrphans(win)) {
+		if(mjUtil.isAllOrphans(win)) {
 			new CountAllOrphans().count();
 		} else {
 			checkisMixOrphans();
@@ -83,19 +90,19 @@ public class WinTracker {
 	}
 
 	private void checkisMixOrphans() {
-		if(MJUtil.isMixOrphans(win)) {
+		if(mjUtil.isMixOrphans(win)) {
 			new CountMixOrphans().count();
 		}
 	}
 
 	private void checkCommonHand() {
-		if(MJUtil.isCommonHand(win)) {
+		if(mjUtil.isCommonHand(win)) {
 			new CountCommonHand().count();
 		}
 	}
 	
 	private void checkGreatWinds() {
-		if(MJUtil.isGreatWinds(win)) {
+		if(mjUtil.isGreatWinds(win)) {
 			new CountGreatWinds().count();
 		} else {
 			checkSmallWinds();
@@ -103,7 +110,7 @@ public class WinTracker {
 	}
 
 	private void checkSmallWinds() {
-		if(MJUtil.isSmallWinds(win)) {
+		if(mjUtil.isSmallWinds(win)) {
 			new CountSmallWinds().count();
 		} else {
 			checkBigDragon();
@@ -111,7 +118,7 @@ public class WinTracker {
 	}
 
 	private void checkBigDragon() {
-		if(MJUtil.isBigDragon(win)) {
+		if(mjUtil.isBigDragon(win)) {
 			new CountBigDragon().count();
 			checkMixOneSuit();
 		} else {
@@ -121,7 +128,7 @@ public class WinTracker {
 	}
 
 	private void checkMixOneSuit() {
-		if(MJUtil.isMixOneSuit(win)) {
+		if(mjUtil.isMixOneSuit(win)) {
 			new CountMixOneSuit().count();
 			checkAllTriplet(false);
 		} else {
@@ -131,7 +138,7 @@ public class WinTracker {
 	}
 	
 	private void checkSmallDragon() {
-		if(MJUtil.isSmallDragon(win)) {
+		if(mjUtil.isSmallDragon(win)) {
 			new CountSmallDragon().count();
 //			checkAllTriplet(false);
 			checkMixOneSuit();
@@ -141,10 +148,10 @@ public class WinTracker {
 	}
 
 	private void checkContainDragon() {
-		if(MJUtil.countDragons(win) == 2) {
+		if(mjUtil.countDragons(win) == 2) {
 			new CountContainTwoDragon().count();
 			checkMixOneSuit();
-		} else if (MJUtil.countDragons(win) == 1) {
+		} else if (mjUtil.countDragons(win) == 1) {
 			new CountContainOneDragon().count();
 			checkMixOneSuit();
 		} else {

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class MJUtil {
 	
 	
-	public static boolean isAllOneSuit(ArrayList<Combination> win) {
+	public boolean isAllOneSuit(ArrayList<Combination> win) {
 		char suit = win.get(0).getSuit();
 		for (Combination c: win) {
 			if (c.getSuit() != suit) {
@@ -15,7 +15,7 @@ public class MJUtil {
 		return true;
 	}
 	
-	public static boolean isAllHonorSuit(ArrayList<Combination> win) {
+	public boolean isAllHonorSuit(ArrayList<Combination> win) {
 		for (Combination c: win) {
 			if (c.getSuit() != 'H') {
 				return false;
@@ -53,7 +53,7 @@ public class MJUtil {
 	}
 	
 	
-	public static boolean isNineGate(ArrayList<Combination> win)
+	public boolean isNineGate(ArrayList<Combination> win)
 	{
 		int[] count = {0,0,0,0,0,0,0,0,0};
 //		if(!isAllOneSuit(win))return false;
@@ -82,12 +82,12 @@ public class MJUtil {
 	}
 	
 	
-	public static boolean isBigDragon(ArrayList<Combination> win)
+	public boolean isBigDragon(ArrayList<Combination> win)
 	{
 		boolean[] redGreenWhite = new boolean[3];
 		for(int i = 0, l = win.size()-1;i < l;i++)
 		{
-			if(win.get(i).getTile(0).getSuit() == 'H' && win.get(i).getTile(0).getRank() >= 5)redGreenWhite[win.get(i).getTile(0).getRank()-5] = true;
+			if(isDragonTiles(win.get(i)))redGreenWhite[win.get(i).getTile(0).getRank()-5] = true;
 		}
 		for(int i = 0;i < 3;i++)
 			if(!redGreenWhite[i])
@@ -95,12 +95,12 @@ public class MJUtil {
 		return true;
 	}
 	
-	public static boolean isSmallDragon(ArrayList<Combination> win)
+	public boolean isSmallDragon(ArrayList<Combination> win)
 	{
 		boolean[] redGreenWhite = new boolean[3];
 		for(int i = 0, l = win.size();i < l;i++)
 		{
-			if(win.get(i).getTile(0).getSuit() == 'H' && win.get(i).getTile(0).getRank() >= 5)
+			if(isDragonTiles(win.get(i)))
 				redGreenWhite[win.get(i).getTile(0).getRank()-5] = true;
 		}
 		for(int i = 0;i < 3;i++)
@@ -109,7 +109,7 @@ public class MJUtil {
 		return true;
 	}
 	
-	public static boolean isAllTriplet(ArrayList<Combination> win) {
+	public boolean isAllTriplet(ArrayList<Combination> win) {
 		int count = 0;
 		for (Combination c: win) {
 			count+=c.getMeldType();
@@ -120,7 +120,7 @@ public class MJUtil {
 		return false;
 	}
 	
-	public static boolean isCommonHand(ArrayList<Combination> win) {
+	public boolean isCommonHand(ArrayList<Combination> win) {
 		int count = 0;
 		for (Combination c: win) {
 			count+=c.getMeldType();
@@ -146,23 +146,13 @@ public class MJUtil {
 //		}
 //	}
 	
-	//å¤§å››å–œ
-	public static boolean isGreatWinds(ArrayList<Combination> win)
+
+	public boolean isGreatWinds(ArrayList<Combination> win)
 	{
 		int count = 0;
 		for (int i = 0; i < 4; i++) {
-			if (win.get(i).getSuit() == 'H')
-			{
-				if (win.get(i).getTile(0).getRank() == 1)
-					count++;
-				else if (win.get(i).getTile(0).getRank() == 2)
-					count++;
-				else if (win.get(i).getTile(0).getRank() == 3)
-					count++;
-				else if (win.get(i).getTile(0).getRank() == 4)
-					count++;
-			}
-
+			if (isWindTiles(win.get(i)))
+				count++;
 		}
 		if (count != 4)
 		{
@@ -171,33 +161,24 @@ public class MJUtil {
 		return true;
 	}
 	
-	public static boolean isSmallWinds(ArrayList<Combination> win)
+	public boolean isSmallWinds(ArrayList<Combination> win)
 	{
 		int count = 0;
 		for (int i = 0; i < 4; i++) {
-			if (win.get(i).getSuit() == 'H')
-			{
-				if (win.get(i).getTile(0).getRank() == 1)
-					count++;
-				else if (win.get(i).getTile(0).getRank() == 2)
-					count++;
-				else if (win.get(i).getTile(0).getRank() == 3)
-					count++;
-				else if (win.get(i).getTile(0).getRank() == 4)
-					count++;
-			}
+			if (isWindTiles(win.get(i)))
+				count++;
 		}
 		if (count != 3)
 		{
 			return false;
 		}
-		else if (win.get(4).getTile(0).getSuit() == 'H' && win.get(4).getTile(0).getRank() < 5)
+		else if (isWindTiles(win.get(4)))
 			return true;
 		else 
 			return false;
 	}
 	
-	public static boolean isMixOneSuit(ArrayList<Combination> win) {
+	public boolean isMixOneSuit(ArrayList<Combination> win) {
 		String suit="";
 		for (Combination c: win) {
 			if (!suit.contains(c.getSuit()+""))
@@ -206,7 +187,7 @@ public class MJUtil {
 		if (suit.length() != 2) {
 			return false;
 		}
-		else {
+		else { 
 			if (!suit.contains("H")) {
 				return false;
 			}
@@ -214,7 +195,7 @@ public class MJUtil {
 		}
 	}
 	
-	public static boolean isAllOrphans(ArrayList<Combination> win) { 
+	public boolean isAllOrphans(ArrayList<Combination> win) { 
 		for (Combination c: win) {
 			if (c.getTile(0).getRank() != 1 && c.getTile(0).getRank() != 9)
 			return false;
@@ -222,8 +203,8 @@ public class MJUtil {
 		return true;
 	}
 	
-	//èŠ±ä¹ˆä¹�
-	public static boolean isMixOrphans(ArrayList<Combination> win) {
+	//Ã¨Å Â±Ã¤Â¹Ë†Ã¤Â¹ï¿½
+	public boolean isMixOrphans(ArrayList<Combination> win) {
 		for (Combination c: win) {
 			if (!(c.getSuit()+"").equals("H")) {
 				if (c.getTile(0).getRank() != 1 && c.getTile(0).getRank() != 9)
@@ -233,18 +214,12 @@ public class MJUtil {
 		return true;
 	}
 	
-	public static int countDragons (ArrayList<Combination> win) {
+	public int countDragons (ArrayList<Combination> win) {
 		int count = 0;
 		for (int i = 0; i < 4; i++) {
-			if (win.get(i).getSuit() == 'H')
-			{
-				if (win.get(i).getTile(0).getRank() == 5)
-					count++;
-				else if (win.get(i).getTile(0).getRank() == 6)
-					count++;
-				else if (win.get(i).getTile(0).getRank() == 7)
-					count++;
-			}
+			if (isDragonTiles(win.get(i)))
+			count++;
+			
 		}
 //		if (count == 3)
 //		{
@@ -271,4 +246,13 @@ public class MJUtil {
 //			count+=c.getMeldType();
 //		}
 //	}
+	
+	public boolean isWindTiles(Combination comb) {
+		return comb.getSuit() == 'H' && comb.getTile(0).getRank() < 5 ;
+	}
+	
+	public boolean isDragonTiles(Combination comb) {
+		return comb.getSuit() == 'H' && comb.getTile(0).getRank() > 4;
+	}
+	
 }

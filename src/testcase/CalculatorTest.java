@@ -689,15 +689,15 @@ public class CalculatorTest {
 		 assertEquals("Contain Two Dragon Mix One Suit All in Triplet Mix Orphans", name);
      }
 	 
-//	 @Test
-//	 public void test_Mahjong_TripletTwoDragon() {  //AllTriplets+ContainTwoDragon
-//		 String[] input = new String[]{"S1", "S1", "S1", "H6", "H6", "H6", "M3", "M3", "M3", "H5", "H5", "H5", "T4", "T4"}; //AllTriplets+ContainTwoDragon
-//		 Calculator calculator = new Calculator(input);
-//		 int point = calculator.getWinPoint();
-//		 assertEquals(5, point);
-//		 String name = calculator.getWinName();
-//		 assertEquals("Contain Two Dragon All in Triplet", name);
-//     }
+	 @Test
+	 public void test_Mahjong_TripletTwoDragon() {  //AllTriplets+ContainTwoDragon
+		 String[] input = new String[]{"S1", "S1", "S1", "H6", "H6", "H6", "M3", "M3", "M3", "H5", "H5", "H5", "T4", "T4"}; //AllTriplets+ContainTwoDragon
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(5, point);
+		 String name = calculator.getWinName();
+		 assertEquals("Contain Two Dragon All in Triplet", name);
+     }
 	 
 	 @Test
 	 public void test_Mahjong_TripletSmallDragon() {  //AllTriplets+SmallDragon

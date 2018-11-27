@@ -9,7 +9,8 @@ public class Calculator {
 	}
 
 	public int getWinPoint() {
-		if(!CheckValid.isValidInput(input)) {
+		CheckValid checkValid = new CheckValid();
+		if(!checkValid.isValidInput(input)) {
 			return -1;
 		}
 		
@@ -17,7 +18,7 @@ public class Calculator {
 			return 13;
 		}
 		
-		boolean isWinHand = CheckValid.isWinHand(input);
+		boolean isWinHand = checkValid.isWinHand(input);
 		if(!isWinHand) {
 			return -2;
 //			System.out.println("Input could not form a legal hand");
@@ -38,13 +39,14 @@ public class Calculator {
 	}
 	
 	public String getWinName() {
-		if(!CheckValid.isValidInput(input)) {
+		CheckValid checkValid = new CheckValid();
+		if(!checkValid.isValidInput(input)) {
 			return "InValid Input";
 		}
 		if(MJUtil.isThirteenOrphans(input) ){
 			return "Thirteen Orphans";
 		}
-		boolean isWinHand = CheckValid.isWinHand(input);
+		boolean isWinHand = checkValid.isWinHand(input);
 		if(!isWinHand) {
 //			System.out.println("Input could not form a legal hand");
 			return "Input could not form a legal hand";
@@ -75,7 +77,6 @@ public class Calculator {
 //		String[] input = new String[] {"M1", "M9", "T1", "T9", "S1", "S9", "H1", "H2", "H3", "H4", "H5", "H6", "H7", "H7"}; // Valid 9chain case 5
 //		String[] input = new String[] {"M1", "M9", "T1", "T9", "S1", "S9", "H1", "H2", "H3", "H5", "H4", "H6", "H7", "H7"}; // Valid 9chain case 5
 //		String[] input = new String[] {"M1", "M1", "M1", "M2", "M3", "M4", "M3", "M3", "M3", "M4", "M4", "M4", "M5", "M5"}; // Valid 9chain case 5
-		
 //		String[] input = new String[] {"H5", "H5", "H5", "H6", "H6", "H6", "H7", "H7", "H7", "M4", "M4", "M4", "M5", "M5"}; // Valid 9chain case 5
 //		String[] input = new String[] {"T1", "T2", "T3", "T1", "T2", "T3", "T2", "T3", "T4", "T6", "T7", "T8", "T5", "T5"}; // Valid 9chain case 5
 //		String[] input = new String[] {"H5", "H5", "H5", "M6", "M6", "M6", "H7", "H7", "H7", "M4", "M4", "M4", "M5", "M5"}; // ç˜›ç‘•ï¿½ïš–è‘‰ï¿½î¨ª
@@ -85,9 +86,12 @@ public class Calculator {
 //		String[] input = new String[] {"H5", "H5", "H5", "M9", "M9", "M9", "H6", "H6", "H6", "H7", "H7", "H7", "M1", "M1"}; //
 //		String[] input = new String[] {"H5", "H5", "H5", "M9", "M9", "M9", "H6", "H6", "H6", "H7", "H7", "H7", "M5", "M5"}; //
 //		String[] input = new String[] {"H5", "H5", "H5", "M1", "M2", "M3", "H6", "H6", "H6", "H7", "H7", "H7", "T1", "T1"}; //
-		
-		
-		
+//		
+//		
+//		String[] input = new String[] {"M1", "M1", "M1", "M1", "M2", "M3", "M4", "M5", "M6", "M7", "M8", "M9", "M9", "M9"}; // Valid 9chain case 1
+//		Calculator calculator = new Calculator(input);
+//		int point = calculator.getWinPoint();
+//		String name = calculator.getWinName();
 //		new CheckValid();
 //		if(!CheckValid.isValidInput(input)) {
 //			System.exit(1);
