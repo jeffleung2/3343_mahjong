@@ -47,10 +47,6 @@ public class WinTracker {
 				new CountSmallWinds().count();
 			}
 		} else {
-<<<<<<< HEAD
-=======
-//			System.out.println("n");
->>>>>>> 4413c0f8fe1b3003c3515fa6df68a49d54288ec5
 			checkNineGate();
 		}
 	}

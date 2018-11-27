@@ -23,7 +23,7 @@ public class Calculator {
 			return -2;
 //			System.out.println("Input could not form a legal hand");
 		} else {
-			System.out.println("Is a legal Hand Type");
+//			System.out.println("Is a legal Hand Type");
 			Win win = new MakeWin(input).getWin();
 			
 			WinTracker wintracker = WinTracker.getInstance();
@@ -31,7 +31,7 @@ public class Calculator {
 			wintracker.setWin(win.getWin());
 			wintracker.startTracking();
 			
-			System.out.println(WinTracker.getPointsAccumulator().getPoint());
+//			System.out.println(WinTracker.getPointsAccumulator().getPoint());
 			
 			return WinTracker.getPointsAccumulator().getPoint();
 		}
@@ -51,7 +51,7 @@ public class Calculator {
 //			System.out.println("Input could not form a legal hand");
 			return "Input could not form a legal hand";
 		} else {
-			System.out.println("Is a legal Hand Type");
+//			System.out.println("Is a legal Hand Type");
 			Win win = new MakeWin(input).getWin();
 			
 			WinTracker wintracker = WinTracker.getInstance();
@@ -59,7 +59,7 @@ public class Calculator {
 			wintracker.setWin(win.getWin());
 			wintracker.startTracking();
 			
-			System.out.println(WinTracker.getPointsAccumulator().getName());
+//			System.out.println(WinTracker.getPointsAccumulator().getName());
 			return WinTracker.getPointsAccumulator().getName();
 		}
 	}

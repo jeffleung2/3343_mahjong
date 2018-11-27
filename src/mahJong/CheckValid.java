@@ -38,7 +38,7 @@ public class CheckValid {
 	}
 	
 	public static boolean isValidEyes(String eyes[]) {
-		return eyes[0] == eyes[1];
+		return eyes[0].equals(eyes[1]);
 	}
 	
 	public static boolean isValidMeld(String tile[]) {
