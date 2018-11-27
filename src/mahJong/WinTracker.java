@@ -41,11 +41,9 @@ public class WinTracker {
 			if(MJUtil.isGreatWinds(win))new CountGreatWinds().count();
 			else if(MJUtil.isSmallWinds(win))
 			{
-				System.out.println("y");
 				new CountSmallWinds().count();
 			}
 		} else {
-			System.out.println("n");
 			checkNineGate();
 		}
 	}
