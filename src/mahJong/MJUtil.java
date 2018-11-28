@@ -67,7 +67,7 @@ public class MJUtil {
 			}
 			else
 			{
-				Eyes e = (Eyes)win.get(i);
+				Meld e = (Meld)win.get(i);
 				for(int j = 0;j < 2;j++)
 					count[e.getTile(j).getRank()-1] ++;
 			}
@@ -112,7 +112,7 @@ public class MJUtil {
 	public boolean isAllTriplet(ArrayList<Combination> win) {
 		int count = 0;
 		for (Combination c: win) {
-			count+=c.getMeldType();
+			count+=c.getMeldState().getState();
 		}
 		if(count == 8) {
 			return true;
@@ -123,7 +123,7 @@ public class MJUtil {
 	public boolean isCommonHand(ArrayList<Combination> win) {
 		int count = 0;
 		for (Combination c: win) {
-			count+=c.getMeldType();
+			count+=c.getMeldState().getState();
 //			System.out.println(c.getMeldType());
 //			System.out.println(count);
 		}
@@ -203,7 +203,7 @@ public class MJUtil {
 		return true;
 	}
 	
-	//Ã¨Å Â±Ã¤Â¹Ë†Ã¤Â¹ï¿½
+	//�並掙勻嘔�勻嘔純螞�
 	public boolean isMixOrphans(ArrayList<Combination> win) {
 		for (Combination c: win) {
 			if (!(c.getSuit()+"").equals("H")) {

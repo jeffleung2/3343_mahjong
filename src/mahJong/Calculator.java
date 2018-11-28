@@ -4,6 +4,8 @@ public class Calculator {
 	
 	private String[] input;
 	
+	private Counter winHand;
+	
 	public Calculator(String[] input) {
 		this.input = input;
 	}
@@ -79,10 +81,10 @@ public class Calculator {
 //		String[] input = new String[] {"M1", "M1", "M1", "M2", "M3", "M4", "M3", "M3", "M3", "M4", "M4", "M4", "M5", "M5"}; // Valid 9chain case 5
 //		String[] input = new String[] {"H5", "H5", "H5", "H6", "H6", "H6", "H7", "H7", "H7", "M4", "M4", "M4", "M5", "M5"}; // Valid 9chain case 5
 //		String[] input = new String[] {"T1", "T2", "T3", "T1", "T2", "T3", "T2", "T3", "T4", "T6", "T7", "T8", "T5", "T5"}; // Valid 9chain case 5
-//		String[] input = new String[] {"H5", "H5", "H5", "M6", "M6", "M6", "H7", "H7", "H7", "M4", "M4", "M4", "M5", "M5"}; // ç˜›ç‘•ï¿½ïš–è‘‰ï¿½î¨ª
+//		String[] input = new String[] {"H5", "H5", "H5", "M6", "M6", "M6", "H7", "H7", "H7", "M4", "M4", "M4", "M5", "M5"}; // 癟��疑把��〡純螞衛級﹦�兩��冕純螞衛捍阬�
 //		String[] input = new String[] {"H5", "H1", "H2", "H3", "H4", "M6", "H7", "H7", "H7", "M4", "M6", "M4", "M5", "M5"}; // 
-//		String[] input = new String[] {"H5", "H5", "H5", "H3", "H3", "H3", "T7", "T7", "T7", "M4", "M4", "M4", "M5", "M5"}; //  æ’ ïš—ï¿½ïššï€± éŠ�ï¿½
-//		String[] input = new String[] {"M1", "M2", "M3", "M4", "M5", "M6", "M2", "M3", "M4", "M7", "M8", "M9", "H5", "H5"}; // ç˜›ç‘šï¿½ï¿½ï�°æ’Ÿå”¾ï€±
+//		String[] input = new String[] {"H5", "H5", "H5", "H3", "H3", "H3", "T7", "T7", "T7", "M4", "M4", "M4", "M5", "M5"}; //  疆�級﹦�純螞衛級ˍ￣胼簣 矇�蕭簿聶翻
+//		String[] input = new String[] {"M1", "M2", "M3", "M4", "M5", "M6", "M2", "M3", "M4", "M7", "M8", "M9", "H5", "H5"}; // 癟��疑把�￣純螞衛純螞衛荔蕭簞疆�蜆乒�壅胼簣
 //		String[] input = new String[] {"H5", "H5", "H5", "M9", "M9", "M9", "H6", "H6", "H6", "H7", "H7", "H7", "M1", "M1"}; //
 //		String[] input = new String[] {"H5", "H5", "H5", "M9", "M9", "M9", "H6", "H6", "H6", "H7", "H7", "H7", "M5", "M5"}; //
 //		String[] input = new String[] {"H5", "H5", "H5", "M1", "M2", "M3", "H6", "H6", "H6", "H7", "H7", "H7", "T1", "T1"}; //
