@@ -14,7 +14,7 @@ public class MakeWin {
 		secondMeld = makeMeld(new String[]{input[3], input[4], input[5]});
 		thirdMeld = makeMeld(new String[]{input[6], input[7], input[8]});
 		fouthMeld = makeMeld(new String[]{input[9], input[10], input[11]});
-		eyes = makeEyes(new String[]{input[12], input[13]});
+		eyes = makeMeld(new String[]{input[12], input[13]});
 		win = new Win(firstMeld, secondMeld, thirdMeld, fouthMeld, eyes);
 	}
 	
@@ -50,17 +50,11 @@ public class MakeWin {
 	public Meld makeMeld(String[] tile) {
 		Tile firstTile = new Tile(tile[0]);
 		Tile secondTile = new Tile(tile[1]);
+		if(tile.length == 2)return new Meld(firstTile, secondTile, new Eyes());
 		Tile thirdTile = new Tile(tile[2]);
 		if(isTriplet(tile)) {
-			return new Triplet(firstTile, secondTile, thirdTile);
+			return new Meld(firstTile, secondTile, thirdTile, new Triplet());
 		}
-		return new Sequence(firstTile, secondTile, thirdTile);
+		return new Meld(firstTile, secondTile, thirdTile, new Sequence());
 	}
-	
-	public Eyes makeEyes(String[] tile) {
-		Tile firstTile = new Tile(tile[0]);
-		Tile secondTile = new Tile(tile[1]);
-		return new Eyes(firstTile, secondTile);
-	}
-	
 }

@@ -7,13 +7,14 @@ public class Combination {
 	private String state;
 	private char suit;
 	private int meldType;
+	private MeldState meldState;
 	// 2 : triplet
 	// 1 : sequence
 	public Combination()
 	{
 		tiles = new ArrayList<>();
 	}
-	public Combination(Tile firstTile, Tile secondTile, String state, int meldType) {
+	public Combination(Tile firstTile, Tile secondTile, String state) {
 		tiles = new ArrayList<>();
 		tiles.add(firstTile);
 		tiles.add(secondTile);
@@ -29,15 +30,18 @@ public class Combination {
 	{
 		return tiles.size();
 	}
-// 	public String getState() {
-// 		return this.state;
-// 	}
 	
 	public char getSuit() {
 		return suit;
 	}
 	
 
+	public MeldState getMeldState() {
+		return meldState;
+	}
+	public void setMeldState(MeldState meldState) {
+		this.meldState = meldState;
+	}
 	public int getMeldType() {
 		return meldType;
 	}
