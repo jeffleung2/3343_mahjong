@@ -25,7 +25,6 @@ import javax.swing.JTextField;
 public class Main {
 
 	private JFrame frame;
-	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
@@ -39,6 +38,7 @@ public class Main {
 	private JTextField textField_11;
 	private JTextField textField_12;
 	private JTextField textField_13;
+	private JTextField textField_14;
 	
 	/**
 	 * Launch the application.
@@ -83,73 +83,108 @@ public class Main {
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
 		
-		JLabel lblImg_1 = new JLabel();
-		lblImg_1.setBounds(19, 291, 64, 64);
-		panel_1.add(lblImg_1);
-		lblImg_1.setIcon(img);
-		
-		JLabel lblImg_3 = new JLabel();
-		lblImg_3.setBounds(765, 291, 64, 64);
-		panel_1.add(lblImg_3);
-		lblImg_3.setIcon(img);
-		
 		JLabel lblMahjongFunFun = new JLabel("Mahjong Fun Fun Fun");
 		lblMahjongFunFun.setBounds(348, 5, 281, 44);
 		panel_1.add(lblMahjongFunFun);
 		lblMahjongFunFun.setFont(new Font ("", Font.BOLD, 20));
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(153, 391, 86, 20);
+		textField_1.setBounds(19, 391, 86, 20);
 		panel_1.add(textField_1);
-		textField_1.setText("M2");
+		textField_1.setText("M1");
 		textField_1.setColumns(10);
 		fields.add(textField_1);
 		
 		textField_2 = new JTextField();
-		textField_2.setBounds(269, 391, 86, 20);
+		textField_2.setBounds(153, 391, 86, 20);
 		panel_1.add(textField_2);
-		textField_2.setText("M3");
+		textField_2.setText("M2");
 		textField_2.setColumns(10);
 		fields.add(textField_2);
 		
 		textField_3 = new JTextField();
-		textField_3.setBounds(633, 391, 86, 20);
+		textField_3.setBounds(269, 391, 86, 20);
 		panel_1.add(textField_3);
-		textField_3.setText("M4");
+		textField_3.setText("M3");
 		textField_3.setColumns(10);
 		fields.add(textField_3);
 		
-		JLabel lblImg_8 = new JLabel();
-		lblImg_8.setBounds(269, 444, 79, 84);
-		panel_1.add(lblImg_8);
-		lblImg_8.setIcon(img);
-		
 		textField_4 = new JTextField();
-		textField_4.setBounds(765, 391, 86, 20);
+		textField_4.setBounds(633, 391, 86, 20);
 		panel_1.add(textField_4);
-		textField_4.setText("M5");
+		textField_4.setText("M4");
 		textField_4.setColumns(10);
 		fields.add(textField_4);
 		
-		JLabel lblMeld_3 = new JLabel("Meld 4");
-		lblMeld_3.setBounds(765, 422, 46, 14);
-		panel_1.add(lblMeld_3);
-		
 		textField_5 = new JTextField();
-		textField_5.setBounds(879, 391, 86, 20);
+		textField_5.setBounds(765, 391, 86, 20);
 		panel_1.add(textField_5);
-		textField_5.setText("M6");
+		textField_5.setText("M5");
 		textField_5.setColumns(10);
 		fields.add(textField_5);
 		
-		JLabel lblImg_13 = new JLabel();
-		lblImg_13.setBounds(633, 271, 86, 95);
-		panel_1.add(lblImg_13);
-		lblImg_13.setIcon(img);
+		textField_6 = new JTextField();
+		textField_6.setBounds(879, 391, 86, 20);
+		panel_1.add(textField_6);
+		textField_6.setText("M6");
+		textField_6.setColumns(10);
+		fields.add(textField_6);
 		
-		JLabel lblMeld_2 = new JLabel("Meld 2");
-		lblMeld_2.setBounds(783, 260, 46, 14);
-		panel_1.add(lblMeld_2);
+		textField_7 = new JTextField();
+		textField_7.setBounds(19, 539, 86, 20);
+		panel_1.add(textField_7);
+		textField_7.setText("M7");
+		textField_7.setColumns(10);
+		fields.add(textField_7);
+		
+		textField_8 = new JTextField();
+		textField_8.setBounds(153, 539, 86, 20);
+		panel_1.add(textField_8);
+		textField_8.setText("M8");
+		textField_8.setColumns(10);
+		fields.add(textField_8);
+		
+		textField_9 = new JTextField();
+		textField_9.setBounds(269, 539, 86, 20);
+		panel_1.add(textField_9);
+		textField_9.setText("M9");
+		textField_9.setColumns(10);
+		fields.add(textField_9);
+		
+		textField_10 = new JTextField();
+		textField_10.setBounds(633, 539, 86, 20);
+		panel_1.add(textField_10);
+		textField_10.setText("H7");
+		textField_10.setColumns(10);
+		fields.add(textField_10);
+		
+		textField_11 = new JTextField();
+		textField_11.setBounds(765, 539, 86, 20);
+		panel_1.add(textField_11);
+		textField_11.setText("H7");
+		textField_11.setColumns(10);
+		fields.add(textField_11);
+		
+		textField_12 = new JTextField();
+		textField_12.setBounds(879, 539, 86, 20);
+		panel_1.add(textField_12);
+		textField_12.setText("H7");
+		textField_12.setColumns(10);
+		fields.add(textField_12);
+		
+		textField_13 = new JTextField();
+		textField_13.setBounds(459, 678, 86, 20);
+		panel_1.add(textField_13);
+		textField_13.setText("H6");
+		textField_13.setColumns(10);
+		fields.add(textField_13);
+		
+		textField_14 = new JTextField();
+		textField_14.setBounds(606, 678, 86, 20);
+		panel_1.add(textField_14);
+		textField_14.setText("H6");
+		textField_14.setColumns(10);
+		fields.add(textField_14);
 		
 		JLabel lblNewLabel_1 = new JLabel("New label");
 		lblNewLabel_1.setBounds(766, 45, 345, 165);
@@ -164,25 +199,25 @@ public class Main {
 		lblRules.setBounds(783, 24, 46, 14);
 		panel_1.add(lblRules);
 		
-		JLabel lblMeld = new JLabel("Meld 3");
-		lblMeld.setBounds(153, 433, 46, 14);
-		panel_1.add(lblMeld);
-		
-		textField = new JTextField();
-		textField.setBounds(19, 391, 86, 20);
-		panel_1.add(textField);
-		textField.setText("M1");
-		textField.setColumns(10);
-		fields.add(textField);
-		
-		JLabel lblImg = new JLabel();
-		lblImg.setBounds(270, 271, 70, 84);
-		panel_1.add(lblImg);
-		lblImg.setIcon(img);
-		
 		JLabel lblMeld_1 = new JLabel("Meld 1");
 		lblMeld_1.setBounds(153, 247, 46, 14);
 		panel_1.add(lblMeld_1);
+		
+		JLabel lblMeld_2 = new JLabel("Meld 2");
+		lblMeld_2.setBounds(783, 260, 46, 14);
+		panel_1.add(lblMeld_2);
+		
+		JLabel lblMeld3 = new JLabel("Meld 3");
+		lblMeld3.setBounds(153, 433, 46, 14);
+		panel_1.add(lblMeld3);
+		
+		JLabel lblMeld_4 = new JLabel("Meld 4");
+		lblMeld_4.setBounds(765, 422, 46, 14);
+		panel_1.add(lblMeld_4);
+		
+		JLabel lblNewLabel = new JLabel("Eye");
+		lblNewLabel.setBounds(550, 577, 79, 14);
+		panel_1.add(lblNewLabel);
 		
 		JLabel lblInstructions = new JLabel("Instructions");
 		lblInstructions.setBounds(26, 83, 79, 14);
@@ -196,85 +231,6 @@ public class Main {
 		txtrYouAre.setBounds(101, 78, 352, 146);
 		panel_1.add(txtrYouAre);
 		
-		JLabel lblImg_7 = new JLabel();
-		lblImg_7.setBounds(26, 444, 79, 84);
-		panel_1.add(lblImg_7);
-		lblImg_7.setIcon(img);
-		
-		textField_8 = new JTextField();
-		textField_8.setBounds(269, 539, 86, 20);
-		panel_1.add(textField_8);
-		textField_8.setText("M9");
-		textField_8.setColumns(10);
-		fields.add(textField_8);
-		
-		JLabel lblImg_6 = new JLabel();
-		lblImg_6.setBounds(153, 271, 86, 95);
-		panel_1.add(lblImg_6);
-		lblImg_6.setIcon(img);
-		
-		textField_7 = new JTextField();
-		textField_7.setBounds(153, 539, 86, 20);
-		panel_1.add(textField_7);
-		textField_7.setText("M8");
-		textField_7.setColumns(10);
-		fields.add(textField_7);
-		
-		textField_6 = new JTextField();
-		textField_6.setBounds(19, 539, 86, 20);
-		panel_1.add(textField_6);
-		textField_6.setText("M7");
-		textField_6.setColumns(10);
-		fields.add(textField_6);
-		
-		JLabel lblImg_5 = new JLabel();
-		lblImg_5.setBounds(449, 592, 86, 95);
-		panel_1.add(lblImg_5);
-		lblImg_5.setIcon(img);
-		
-		JLabel lblImg_9 = new JLabel();
-		lblImg_9.setBounds(608, 592, 70, 84);
-		panel_1.add(lblImg_9);
-		lblImg_9.setIcon(img);
-		
-		JLabel lblNewLabel = new JLabel("Eye");
-		lblNewLabel.setBounds(550, 577, 79, 14);
-		panel_1.add(lblNewLabel);
-		
-		JLabel lblImg_4 = new JLabel();
-		lblImg_4.setBounds(640, 433, 79, 95);
-		panel_1.add(lblImg_4);
-		lblImg_4.setIcon(img);
-		
-		JLabel lblImg_10 = new JLabel();
-		lblImg_10.setBounds(765, 433, 86, 95);
-		panel_1.add(lblImg_10);
-		lblImg_10.setIcon(img);
-		
-		textField_9 = new JTextField();
-		textField_9.setBounds(633, 539, 86, 20);
-		panel_1.add(textField_9);
-		textField_9.setText("H7");
-		textField_9.setColumns(10);
-		fields.add(textField_9);
-		
-		JLabel lblImg_11 = new JLabel();
-		lblImg_11.setBounds(879, 433, 86, 95);
-		panel_1.add(lblImg_11);
-		lblImg_11.setIcon(img);
-		
-		JLabel lblImg_12 = new JLabel();
-		lblImg_12.setBounds(879, 271, 86, 95);
-		panel_1.add(lblImg_12);
-		lblImg_12.setIcon(img);
-		
-		textField_11 = new JTextField();
-		textField_11.setBounds(879, 539, 86, 20);
-		panel_1.add(textField_11);
-		textField_11.setText("H7");
-		textField_11.setColumns(10);
-		fields.add(textField_11);
-		
 		JButton btnCheck = new JButton("Check");
 		btnCheck.setBounds(740, 697, 89, 23);
 		panel_1.add(btnCheck);
@@ -283,19 +239,6 @@ public class Main {
 		btnClear.setBounds(864, 697, 89, 23);
 		panel_1.add(btnClear);
 		
-		textField_13 = new JTextField();
-		textField_13.setBounds(606, 678, 86, 20);
-		panel_1.add(textField_13);
-		textField_13.setText("H6");
-		textField_13.setColumns(10);
-		fields.add(textField_13);
-		
-		textField_12 = new JTextField();
-		textField_12.setBounds(459, 678, 86, 20);
-		panel_1.add(textField_12);
-		textField_12.setText("H6");
-		textField_12.setColumns(10);
-		fields.add(textField_12);
 		
 		JLabel lblHandName = new JLabel("Hand Type:");
 		lblHandName.setFont(new Font ("", Font.BOLD, 14));
@@ -320,21 +263,79 @@ public class Main {
 		lblResult.setBounds(19, 656, 121, 14);
 		panel_1.add(lblResult);
 		
-		textField_10 = new JTextField();
-		textField_10.setBounds(765, 539, 86, 20);
-		panel_1.add(textField_10);
-		textField_10.setText("H7");
-		textField_10.setColumns(10);
-		fields.add(textField_10);
-		
 		JLabel label = new JLabel();
 		label.setBounds(231, 409, 79, 84);
 		panel_1.add(label);
 		
-		JLabel lblNewLabel_2 = new JLabel();
-		lblNewLabel_2.setBounds(163, 450, 70, 78);
-		lblNewLabel_2.setIcon(img);
-		panel_1.add(lblNewLabel_2);
+		JLabel lblImg_1 = new JLabel();
+		lblImg_1.setBounds(19, 291, 64, 64);
+		panel_1.add(lblImg_1);
+		lblImg_1.setIcon(img);
+		
+		JLabel lblImg_2 = new JLabel();
+		lblImg_2.setBounds(153, 271, 86, 95);
+		panel_1.add(lblImg_2);
+		lblImg_2.setIcon(img);
+		
+		JLabel lblImg_3 = new JLabel();
+		lblImg_3.setBounds(270, 271, 70, 84);
+		panel_1.add(lblImg_3);
+		lblImg_3.setIcon(img);
+		
+		JLabel lblImg_4 = new JLabel();
+		lblImg_4.setBounds(633, 271, 86, 95);
+		panel_1.add(lblImg_4);
+		lblImg_4.setIcon(img);
+		
+		JLabel lblImg_5 = new JLabel();
+		lblImg_5.setBounds(765, 291, 64, 64);
+		panel_1.add(lblImg_5);
+		lblImg_5.setIcon(img);
+		
+		JLabel lblImg_6 = new JLabel();
+		lblImg_6.setBounds(879, 271, 86, 95);
+		panel_1.add(lblImg_6);
+		lblImg_6.setIcon(img);
+		
+		JLabel lblImg_7 = new JLabel();
+		lblImg_7.setBounds(26, 444, 79, 84);
+		panel_1.add(lblImg_7);
+		lblImg_7.setIcon(img);
+		
+		JLabel lblImg_8 = new JLabel();
+		lblImg_8.setBounds(163, 450, 70, 78);
+		lblImg_8.setIcon(img);
+		panel_1.add(lblImg_8);
+		
+		JLabel lblImg_9 = new JLabel();
+		lblImg_9.setBounds(269, 444, 79, 84);
+		panel_1.add(lblImg_9);
+		lblImg_9.setIcon(img);
+		
+		JLabel lblImg_10 = new JLabel();
+		lblImg_10.setBounds(640, 433, 79, 95);
+		panel_1.add(lblImg_10);
+		lblImg_10.setIcon(img);
+		
+		JLabel lblImg_11 = new JLabel();
+		lblImg_11.setBounds(765, 433, 86, 95);
+		panel_1.add(lblImg_11);
+		lblImg_11.setIcon(img);
+		
+		JLabel lblImg_12 = new JLabel();
+		lblImg_12.setBounds(879, 433, 86, 95);
+		panel_1.add(lblImg_12);
+		lblImg_12.setIcon(img);
+	
+		JLabel lblImg_13 = new JLabel();
+		lblImg_13.setBounds(449, 592, 86, 95);
+		panel_1.add(lblImg_13);
+		lblImg_13.setIcon(img);
+		
+		JLabel lblImg_14 = new JLabel();
+		lblImg_14.setBounds(608, 592, 70, 84);
+		panel_1.add(lblImg_14);
+		lblImg_14.setIcon(img);
 		
 		btnClear.addActionListener(new ActionListener() {
 			@Override
