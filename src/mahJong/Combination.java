@@ -39,13 +39,6 @@ public class Combination {
 	public void setMeldState(MeldState meldState) {
 		this.meldState = meldState;
 	}
-	public int getMeldType() {
-		return meldType;
-	}
-	public void setMeldType(int meldType)
-	{
-		this.meldType = meldType;
-	}
 	public Tile getTile(int i)
 	{
 //		if(tiles.size() == i)return null; // Array out of bound
