@@ -71,12 +71,12 @@ public class Main {
 	private void initialize() {
 		frame = new JFrame();
 		ArrayList<JTextField> fields = new ArrayList<JTextField>();
-		ImageIcon img = new ImageIcon("src/img/tt.png");
+		ImageIcon img = new ImageIcon("./resources/tt.png");
 		
 		frame.setBounds(40, 100, 1200, 1200);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		ImageIcon img_I = new ImageIcon("src/img/final_i.jpg");
+		ImageIcon img_I = new ImageIcon("./resources/final_i.jpg");
 		
 		
 		JPanel panel_1 = new JPanel();
@@ -349,7 +349,6 @@ public class Main {
 			}
 		});
 		btnCheck.addActionListener(new ActionListener() {
-			String input = "";
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				String[] temp = new String[14];
@@ -359,10 +358,6 @@ public class Main {
 					temp[i] = fields.get(i).getText();
 //					input += fields.get(i).getText();
 				}
-				if(false)System.out.println("Error: Insufficient Tiles");
-//				if(input.length() < 28)System.out.println("Error: Insufficient Tiles");
-				else
-				{
 //					String[] temp = new String[14];
 //					for(int i = 0;i < 28;i+=2)temp[i/2] = input.substring(i, i+2);
 					Calculator calculator = new Calculator(temp);
@@ -370,7 +365,6 @@ public class Main {
 					lblPoint.setText(Integer.toString(calculator.getWinPoint()));
 					//System.out.println("Scoring Hands: "+calculator.getWinName());
 					lblType.setText(calculator.getWinName());
-				}
 			}
 		});	
 	}

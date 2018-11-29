@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Combination {
 	private ArrayList<Tile> tiles;
-	private String state;
 	private char suit;
 	private int meldType;
 	private MeldState meldState;
@@ -19,8 +18,6 @@ public class Combination {
 		tiles.add(firstTile);
 		tiles.add(secondTile);
 		this.suit = firstTile.getSuit();
-		this.state = state;
-		this.meldType = meldType;
 	}
 	public void addTiles(Tile tile)
 	{

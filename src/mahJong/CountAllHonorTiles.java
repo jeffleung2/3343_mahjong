@@ -1,7 +1,5 @@
 package mahJong;
 
-import java.util.ArrayList;
-
 public class CountAllHonorTiles implements Counter {
 
 	@Override

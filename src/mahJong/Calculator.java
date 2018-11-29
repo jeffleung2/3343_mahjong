@@ -4,8 +4,6 @@ public class Calculator {
 	
 	private String[] input;
 	
-	private Counter winHand;
-	
 	public Calculator(String[] input) {
 		this.input = input;
 	}

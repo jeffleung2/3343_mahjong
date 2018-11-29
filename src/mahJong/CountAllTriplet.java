@@ -1,7 +1,5 @@
 package mahJong;
 
-import java.util.ArrayList;
-
 public class CountAllTriplet implements Counter {
 
 	@Override
