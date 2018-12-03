@@ -244,7 +244,7 @@ public class Main {
 		
 		JLabel lblHandName = new JLabel("Hand Type:");
 		lblHandName.setFont(new Font ("", Font.BOLD, 14));
-		lblHandName.setBounds(19, 750, 86, 14);
+		lblHandName.setBounds(19, 750, 300, 14);
 		panel_1.add(lblHandName);
 		
 		JLabel lblType = new JLabel();
