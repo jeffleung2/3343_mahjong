@@ -19,23 +19,20 @@ public class Calculator {
 		}
 		
 		boolean isWinHand = checkValid.isWinHand(input);
-		if(!isWinHand) {
-			return -2;
-//			System.out.println("Input could not form a legal hand");
-		} else {
-//			System.out.println("Is a legal Hand Type");
-			Win win = new MakeWin(input).getWin();
-			
-			WinTracker wintracker = WinTracker.getInstance();
-			wintracker.createPointsAccumulator();
-			wintracker.setWin(win.getWin());
-			wintracker.startTracking();
-			
-//			System.out.println(WinTracker.getPointsAccumulator().getPoint());
-			
-			return WinTracker.getPointsAccumulator().getPoint();
-		}
-//		return 0;	
+		if(!isWinHand) return -2;
+		return getPoint();
+	}
+	
+	public int getPoint()
+	{
+		Win win = new MakeWin(input).getWin();
+		
+		WinTracker wintracker = WinTracker.getInstance();
+		wintracker.createPointsAccumulator();
+		wintracker.setWin(win.getWin());
+		wintracker.startTracking();
+		
+		return WinTracker.getPointsAccumulator().getPoint();
 	}
 	
 	public String getWinName() {

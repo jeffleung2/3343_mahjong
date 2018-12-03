@@ -75,9 +75,9 @@ public class MJUtil {
 		if((count[0] > 3 && count[8] > 3) || // the amount of 1 and 9 cannot be 4 at the same time
 				count[0] < 3 || count[8] < 3) // the amount of 1 and 9 cannot less than 3 at the same time
 			return false;
-//		for(int i :count)
-//			if(i == 0)
-//				return false;
+		for(int i :count)
+			if(i == 0)
+				return false;
 		return true;
 	}
 	
@@ -203,7 +203,6 @@ public class MJUtil {
 		return true;
 	}
 	
-	//�並掙勻嘔�勻嘔純螞�
 	public boolean isMixOrphans(ArrayList<Combination> win) {
 		for (Combination c: win) {
 			if (!(c.getSuit()+"").equals("H")) {
