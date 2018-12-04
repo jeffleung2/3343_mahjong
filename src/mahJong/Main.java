@@ -248,7 +248,7 @@ public class Main {
 		panel_1.add(lblHandName);
 		
 		JLabel lblType = new JLabel();
-		lblType.setBounds(122, 750, 269, 14);
+		lblType.setBounds(122, 750, 400, 14);
 		panel_1.add(lblType);
 		
 		JLabel lblResult_1 = new JLabel("Fan Point:");

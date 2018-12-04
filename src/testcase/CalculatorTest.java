@@ -591,7 +591,7 @@ public class CalculatorTest {
 		 assertEquals("Input could not form a legal hand", name);
 	 }
 	 
-	  @Test
+	 @Test
 	 public void test_Mahjong_NineGateHand1() {  // No. of 1 = 4 : No. of 9 = 3
 		 String[] input = new String[]{"M1", "M1", "M1", "M1", "M2", "M3", "M4", "M5", "M6", "M7", "M8", "M9", "M9", "M9"};
 		 Calculator calculator = new Calculator(input);
@@ -620,8 +620,88 @@ public class CalculatorTest {
 	 }
 	 
 	 @Test
-	 public void test_Mahjong_NotNineGateHand1() {  // No. of 1 = 4 : No. of 9 = 4
+	 public void test_Mahjong_NotNineGateHand1() {  // No. of 1 = 4 : No. of 9 = 4 No 4
 		 String[] input = new String[]{"T1", "T1", "T1", "T1", "T2", "T3", "T7", "T8", "T9", "T7", "T8", "T9", "T9", "T9"};
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(7, point);
+		 String name = calculator.getWinName();
+		 assertEquals("All One Suit", name);
+	 }
+	 
+	 @Test
+	 public void test_Mahjong_NotNineGateHand2() {  // No 1
+		 String[] input = new String[]{"T2", "T2", "T2", "T2", "T3", "T4", "T7", "T8", "T9", "T7", "T8", "T9", "T9", "T9"};
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(7, point);
+		 String name = calculator.getWinName();
+		 assertEquals("All One Suit", name);
+	 }
+	 
+	 @Test
+	 public void test_Mahjong_NotNineGateHand3() {  // No 2
+		 String[] input = new String[]{"T2", "T2", "T2", "T2", "T3", "T4", "T7", "T8", "T9", "T7", "T8", "T9", "T9", "T9"};
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(7, point);
+		 String name = calculator.getWinName();
+		 assertEquals("All One Suit", name);
+	 }
+	 
+	 @Test
+	 public void test_Mahjong_NotNineGateHand4() {  // No 3
+		 String[] input = new String[]{"T4", "T5", "T6", "T4", "T5", "T6", "T7", "T8", "T9", "T7", "T8", "T9", "T9", "T9"};
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(8, point);
+		 String name = calculator.getWinName();
+		 assertEquals("All One Suit Common Hand", name);
+	 }
+	 
+	 @Test
+	 public void test_Mahjong_NotNineGateHand5() {  // No 5
+		 String[] input = new String[]{"T1", "T2", "T3", "T2", "T3", "T4", "T7", "T8", "T9", "T7", "T8", "T9", "T9", "T9"};
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(8, point);
+		 String name = calculator.getWinName();
+		 assertEquals("All One Suit Common Hand", name);
+	 }
+	 
+	 @Test
+	 public void test_Mahjong_NotNineGateHand6() {  // No 6
+		 String[] input = new String[]{"T1", "T2", "T3", "T3", "T4", "T5", "T7", "T8", "T9", "T7", "T8", "T9", "T9", "T9"};
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(8, point);
+		 String name = calculator.getWinName();
+		 assertEquals("All One Suit Common Hand", name);
+	 }
+	 
+	 @Test
+	 public void test_Mahjong_NotNineGateHand7() {  // No 7
+		 String[] input = new String[]{"T1", "T2", "T3", "T4", "T5", "T6", "T8", "T8", "T8", "T9", "T9", "T9", "T1", "T1"};
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(7, point);
+		 String name = calculator.getWinName();
+		 assertEquals("All One Suit", name);
+	 }
+	 
+	 @Test
+	 public void test_Mahjong_NotNineGateHand8() {  // No 8
+		 String[] input = new String[]{"T1", "T2", "T3", "T4", "T5", "T6", "T7", "T7", "T7", "T9", "T9", "T9", "T1", "T1"};
+		 Calculator calculator = new Calculator(input);
+		 int point = calculator.getWinPoint();
+		 assertEquals(7, point);
+		 String name = calculator.getWinName();
+		 assertEquals("All One Suit", name);
+	 }
+	 
+	 @Test
+	 public void test_Mahjong_NotNineGateHand9() {  // No 9
+		 String[] input = new String[]{"T1", "T2", "T3", "T4", "T5", "T6", "T7", "T7", "T7", "T8", "T8", "T8", "T1", "T1"};
 		 Calculator calculator = new Calculator(input);
 		 int point = calculator.getWinPoint();
 		 assertEquals(7, point);
