@@ -45,8 +45,8 @@ For Mac OSX, open terminal and execute "sh run.sh"
 =========================================================================
 << User Guideline >>
 =========================================================================
-1.User enter 14 valid tiles.
-2.System output corresponding Fan points.
+1.User enters 14 valid tiles.
+2.System outputs the name of hand and corresponding Fan points.
 
 
 -----------------------------------------------------------------------
