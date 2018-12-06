@@ -85,119 +85,119 @@ public class Main {
 		panel_1.setLayout(null);
 		
 		JLabel lblMahjongFunFun = new JLabel("Mahjong Fun Fun Fun (Mahjong Calculation System)");
-		lblMahjongFunFun.setBounds(100, 5, 1000, 44);
+		lblMahjongFunFun.setBounds(10, 5, 1000, 44);
 		panel_1.add(lblMahjongFunFun);
 		lblMahjongFunFun.setFont(new Font ("", Font.BOLD, 20));
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(10, 365, 86, 20);
+		textField_1.setBounds(10, 351, 86, 20);
 		panel_1.add(textField_1);
 		textField_1.setText("M1");
 		textField_1.setColumns(10);
 		fields.add(textField_1);
 		
 		textField_2 = new JTextField();
-		textField_2.setBounds(150, 365, 86, 20);
+		textField_2.setBounds(150, 351, 86, 20);
 		panel_1.add(textField_2);
 		textField_2.setText("M2");
 		textField_2.setColumns(10);
 		fields.add(textField_2);
 		
 		textField_3 = new JTextField();
-		textField_3.setBounds(290, 365, 86, 20);
+		textField_3.setBounds(290, 351, 86, 20);
 		panel_1.add(textField_3);
 		textField_3.setText("M3");
 		textField_3.setColumns(10);
 		fields.add(textField_3);
 		
 		textField_4 = new JTextField();
-		textField_4.setBounds(630, 365, 86, 20);
+		textField_4.setBounds(630, 351, 86, 20);
 		panel_1.add(textField_4);
 		textField_4.setText("M4");
 		textField_4.setColumns(10);
 		fields.add(textField_4);
 		
 		textField_5 = new JTextField();
-		textField_5.setBounds(770, 365, 86, 20);
+		textField_5.setBounds(770, 351, 86, 20);
 		panel_1.add(textField_5);
 		textField_5.setText("M5");
 		textField_5.setColumns(10);
 		fields.add(textField_5);
 		
 		textField_6 = new JTextField();
-		textField_6.setBounds(910, 365, 86, 20);
+		textField_6.setBounds(910, 351, 86, 20);
 		panel_1.add(textField_6);
 		textField_6.setText("M6");
 		textField_6.setColumns(10);
 		fields.add(textField_6);
 		
 		textField_7 = new JTextField();
-		textField_7.setBounds(10, 551, 86, 20);
+		textField_7.setBounds(10, 509, 86, 20);
 		panel_1.add(textField_7);
 		textField_7.setText("M7");
 		textField_7.setColumns(10);
 		fields.add(textField_7);
 		
 		textField_8 = new JTextField();
-		textField_8.setBounds(150, 551, 86, 20);
+		textField_8.setBounds(150, 509, 86, 20);
 		panel_1.add(textField_8);
 		textField_8.setText("M8");
 		textField_8.setColumns(10);
 		fields.add(textField_8);
 		
 		textField_9 = new JTextField();
-		textField_9.setBounds(290, 551, 86, 20);
+		textField_9.setBounds(290, 509, 86, 20);
 		panel_1.add(textField_9);
 		textField_9.setText("M9");
 		textField_9.setColumns(10);
 		fields.add(textField_9);
 		
 		textField_10 = new JTextField();
-		textField_10.setBounds(630, 551, 86, 20);
+		textField_10.setBounds(630, 509, 86, 20);
 		panel_1.add(textField_10);
 		textField_10.setText("H7");
 		textField_10.setColumns(10);
 		fields.add(textField_10);
 		
 		textField_11 = new JTextField();
-		textField_11.setBounds(770, 551, 86, 20);
+		textField_11.setBounds(770, 509, 86, 20);
 		panel_1.add(textField_11);
 		textField_11.setText("H7");
 		textField_11.setColumns(10);
 		fields.add(textField_11);
 		
 		textField_12 = new JTextField();
-		textField_12.setBounds(910, 551, 86, 20);
+		textField_12.setBounds(910, 509, 86, 20);
 		panel_1.add(textField_12);
 		textField_12.setText("H7");
 		textField_12.setColumns(10);
 		fields.add(textField_12);
 		
 		textField_13 = new JTextField();
-		textField_13.setBounds(395, 697, 86, 20);
+		textField_13.setBounds(395, 655, 86, 20);
 		panel_1.add(textField_13);
 		textField_13.setText("H6");
 		textField_13.setColumns(10);
 		fields.add(textField_13);
 		
 		textField_14 = new JTextField();
-		textField_14.setBounds(535, 697, 86, 20);
+		textField_14.setBounds(535, 655, 86, 20);
 		panel_1.add(textField_14);
 		textField_14.setText("H6");
 		textField_14.setColumns(10);
 		fields.add(textField_14);
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setBounds(766, 45, 345, 165);
+		JLabel lblNewLabel_1 = new JLabel();
+		lblNewLabel_1.setBounds(650, 45, 500, 200);
 		panel_1.add(lblNewLabel_1);
 		lblNewLabel_1.setIcon(img_I);
 		
 		JLabel lblM = new JLabel("T: Dot S: Bamboo M: Character H: Honor");
-		lblM.setBounds(839, 21, 299, 20);
+		lblM.setBounds(700, 35, 299, 20);
 		panel_1.add(lblM);
 		
 		JLabel lblRules = new JLabel("Rules:");
-		lblRules.setBounds(783, 24, 46, 14);
+		lblRules.setBounds(650, 35, 46, 20);
 		panel_1.add(lblRules);
 		
 		JLabel lblMeld_1 = new JLabel("Meld 1");
@@ -209,60 +209,60 @@ public class Main {
 		panel_1.add(lblMeld_2);
 		
 		JLabel lblMeld3 = new JLabel("Meld 3");
-		lblMeld3.setBounds(153, 433, 46, 14);
+		lblMeld3.setBounds(153, 405, 46, 14);
 		panel_1.add(lblMeld3);
 		
 		JLabel lblMeld_4 = new JLabel("Meld 4");
-		lblMeld_4.setBounds(783, 433, 46, 14);
+		lblMeld_4.setBounds(783, 405, 46, 14);
 		panel_1.add(lblMeld_4);
 		
 		JLabel lblNewLabel = new JLabel("Eye");
-		lblNewLabel.setBounds(495, 590, 79, 14);
+		lblNewLabel.setBounds(495, 548, 79, 14);
 		panel_1.add(lblNewLabel);
 		
-		JLabel lblInstructions = new JLabel("Instructions");
-		lblInstructions.setBounds(26, 83, 79, 14);
+		JLabel lblInstructions = new JLabel("Instructions: ");
+		lblInstructions.setBounds(10, 83, 100, 14);
 		panel_1.add(lblInstructions);
 		
 		JTextArea txtrYouAre = new JTextArea();
 		txtrYouAre.setText("1.You are required to enter the 14 tiles in the below 14 boxes." + '\n' + "The first 12 tiles are used to form the four melds and the last 2 tiles" + '\n' +"are used for the eyes." + '\n' + 
-				"2.Please input the tiles in a correct sequence! That means each" + '\n' +"3 tiles to form a valid meld must be kept in a sequence, like"+ '\n'+ 
-				"they are placed in box 1,2 and 3. For the eyes, they must be" + '\n' + 
-				"placed at last. Otherwise, our system MAY NOT detect it as a" + '\n' + "legal hand.");
+				"2.Please input the tiles in a correct sequence! That means" + '\n' +"each 3 tiles to form a valid meld must be kept in a sequence, "+ '\n'+ 
+				"like they are placed in box 1,2 and 3. " + '\n' + 
+				"For the eyes, they must be placed at last. "+'\n'+"Otherwise, our system MAY NOT detect it as a legal hand.");
 		JScrollPane sp = new JScrollPane(txtrYouAre);
 		sp.setBounds(101, 78, 440, 146);
 		panel_1.add(sp);
 		
 		JButton btnCheck = new JButton("Check");
-		btnCheck.setBounds(740, 697, 89, 23);
+		btnCheck.setBounds(740, 655, 89, 23);
 		panel_1.add(btnCheck);
 		
 		JButton btnClear = new JButton("Clear");
-		btnClear.setBounds(864, 697, 89, 23);
+		btnClear.setBounds(864, 655, 89, 23);
 		panel_1.add(btnClear);
 		
 		
 		JLabel lblHandName = new JLabel("Hand Type:");
 		lblHandName.setFont(new Font ("", Font.BOLD, 14));
-		lblHandName.setBounds(19, 750, 300, 14);
+		lblHandName.setBounds(19, 698, 400, 30);
 		panel_1.add(lblHandName);
 		
 		JLabel lblType = new JLabel();
-		lblType.setBounds(122, 750, 400, 14);
+		lblType.setBounds(122, 700, 400, 30);
 		panel_1.add(lblType);
 		
 		JLabel lblResult_1 = new JLabel("Fan Point:");
 		lblResult_1.setFont(new Font ("", Font.BOLD, 14));
-		lblResult_1.setBounds(19, 720, 106, 14);
+		lblResult_1.setBounds(19, 678, 106, 14);
 		panel_1.add(lblResult_1);
 		
 		JLabel lblPoint = new JLabel();
-		lblPoint.setBounds(122, 720, 46, 14);
+		lblPoint.setBounds(122, 680, 46, 14);
 		panel_1.add(lblPoint);
 		
-		JLabel lblResult = new JLabel("Result");
+		JLabel lblResult = new JLabel("Result:");
 		lblResult.setFont(new Font ("", Font.BOLD, 18));
-		lblResult.setBounds(19, 690, 121, 14);
+		lblResult.setBounds(19, 648, 121, 14);
 		panel_1.add(lblResult);
 		
 		JLabel label = new JLabel();
@@ -270,72 +270,72 @@ public class Main {
 		panel_1.add(label);
 		
 		JLabel lblImg_1 = new JLabel();
-		lblImg_1.setBounds(20, 291, 80, 64);
+		lblImg_1.setBounds(20, 277, 80, 64);
 		panel_1.add(lblImg_1);
 		lblImg_1.setIcon(img);
 		
 		JLabel lblImg_2 = new JLabel();
-		lblImg_2.setBounds(160, 291, 80, 64);
+		lblImg_2.setBounds(160, 277, 80, 64);
 		panel_1.add(lblImg_2);
 		lblImg_2.setIcon(img);
 		
 		JLabel lblImg_3 = new JLabel();
-		lblImg_3.setBounds(300, 291, 80, 64);
+		lblImg_3.setBounds(300, 277, 80, 64);
 		panel_1.add(lblImg_3);
 		lblImg_3.setIcon(img);
 		
 		JLabel lblImg_4 = new JLabel();
-		lblImg_4.setBounds(630, 291, 80, 64);
+		lblImg_4.setBounds(630, 277, 80, 64);
 		panel_1.add(lblImg_4);
 		lblImg_4.setIcon(img);
 		
 		JLabel lblImg_5 = new JLabel();
-		lblImg_5.setBounds(770, 291, 80, 64);
+		lblImg_5.setBounds(770, 277, 80, 64);
 		panel_1.add(lblImg_5);
 		lblImg_5.setIcon(img);
 		
 		JLabel lblImg_6 = new JLabel();
-		lblImg_6.setBounds(910, 291, 80, 64);
+		lblImg_6.setBounds(910, 277, 80, 64);
 		panel_1.add(lblImg_6);
 		lblImg_6.setIcon(img);
 		
 		JLabel lblImg_7 = new JLabel();
-		lblImg_7.setBounds(20, 477, 80, 64);
+		lblImg_7.setBounds(20, 435, 80, 64);
 		panel_1.add(lblImg_7);
 		lblImg_7.setIcon(img);
 		
 		JLabel lblImg_8 = new JLabel();
-		lblImg_8.setBounds(160, 477, 80, 64);
+		lblImg_8.setBounds(160, 435, 80, 64);
 		lblImg_8.setIcon(img);
 		panel_1.add(lblImg_8);
 		
 		JLabel lblImg_9 = new JLabel();
-		lblImg_9.setBounds(300, 477, 80, 64);
+		lblImg_9.setBounds(300, 435, 80, 64);
 		panel_1.add(lblImg_9);
 		lblImg_9.setIcon(img);
 		
 		JLabel lblImg_10 = new JLabel();
-		lblImg_10.setBounds(630, 477, 80, 64);
+		lblImg_10.setBounds(630, 435, 80, 64);
 		panel_1.add(lblImg_10);
 		lblImg_10.setIcon(img);
 		
 		JLabel lblImg_11 = new JLabel();
-		lblImg_11.setBounds(770, 477, 80, 64);
+		lblImg_11.setBounds(770, 435, 80, 64);
 		panel_1.add(lblImg_11);
 		lblImg_11.setIcon(img);
 		
 		JLabel lblImg_12 = new JLabel();
-		lblImg_12.setBounds(910, 477, 80, 64);
+		lblImg_12.setBounds(910, 435, 80, 64);
 		panel_1.add(lblImg_12);
 		lblImg_12.setIcon(img);
 	
 		JLabel lblImg_13 = new JLabel();
-		lblImg_13.setBounds(400, 610, 80, 64);
+		lblImg_13.setBounds(400, 573, 80, 64);
 		panel_1.add(lblImg_13);
 		lblImg_13.setIcon(img);
 		
 		JLabel lblImg_14 = new JLabel();
-		lblImg_14.setBounds(540, 605, 80, 84);
+		lblImg_14.setBounds(540, 568, 80, 84);
 		panel_1.add(lblImg_14);
 		lblImg_14.setIcon(img);
 		
