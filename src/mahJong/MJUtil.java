@@ -72,8 +72,8 @@ public class MJUtil {
 					count[e.getTile(j).getRank()-1] ++;
 			}
 		}
-		if((count[0] > 3 && count[8] > 3) || // the amount of 1 and 9 cannot be 4 at the same time
-				count[0] < 3 || count[8] < 3) // the amount of 1 and 9 cannot less than 3 at the same time
+		if(count[8] < 3 || (count[0] > 3 && count[8] > 3) || // the amount of 1 and 9 cannot be 4 at the same time
+				count[0] < 3) // the amount of 1 and 9 cannot less than 3 at the same time
 			return false;
 		for(int i :count)
 			if(i == 0)
@@ -84,15 +84,16 @@ public class MJUtil {
 	
 	public boolean isBigDragon(ArrayList<Combination> win)
 	{
-		boolean[] redGreenWhite = new boolean[3];
-		for(int i = 0, l = win.size()-1;i < l;i++)
-		{
-			if(isDragonTiles(win.get(i)))redGreenWhite[win.get(i).getTile(0).getRank()-5] = true;
-		}
-		for(int i = 0;i < 3;i++)
-			if(!redGreenWhite[i])
-				return false;
-		return true;
+//		boolean[] redGreenWhite = new boolean[3];
+//		for(int i = 0, l = win.size()-1;i < l;i++)
+//		{
+//			if(isDragonTiles(win.get(i)))redGreenWhite[win.get(i).getTile(0).getRank()-5] = true;
+//		}
+//		for(int i = 0;i < 3;i++)
+//			if(!redGreenWhite[i])
+//				return false;
+		if(countDragons(win) == 3)return true;
+		return false;
 	}
 	
 	public boolean isSmallDragon(ArrayList<Combination> win)

@@ -44,21 +44,21 @@ public class Calculator {
 			return "Thirteen Orphans";
 		}
 		boolean isWinHand = checkValid.isWinHand(input);
-		if(!isWinHand) {
-//			System.out.println("Input could not form a legal hand");
-			return "Input could not form a legal hand";
-		} else {
-//			System.out.println("Is a legal Hand Type");
-			Win win = new MakeWin(input).getWin();
-			
-			WinTracker wintracker = WinTracker.getInstance();
-			wintracker.createPointsAccumulator();
-			wintracker.setWin(win.getWin());
-			wintracker.startTracking();
-			
-//			System.out.println(WinTracker.getPointsAccumulator().getName());
-			return WinTracker.getPointsAccumulator().getName();
-		}
+		if(!isWinHand)return "Input could not form a legal hand";
+		else return getName();
+	}
+	
+	public String getName()
+	{
+		Win win = new MakeWin(input).getWin();
+		
+		WinTracker wintracker = WinTracker.getInstance();
+		wintracker.createPointsAccumulator();
+		wintracker.setWin(win.getWin());
+		wintracker.startTracking();
+		
+//		System.out.println(WinTracker.getPointsAccumulator().getName());
+		return WinTracker.getPointsAccumulator().getName();
 	}
 	//test
 //	public static void main(String args[]) {
