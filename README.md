@@ -39,7 +39,7 @@ https://en.wikipedia.org/wiki/Hong_Kong_Mahjong_scoring_rules#Criteria
 http://www.oracle.com/technetwork/java/javase/downloads/index.html
 2. Execute the "run.bat" (if you are using window) inside the build folder
 For Mac OSX, open terminal and execute "sh run.sh"
-3. The program is now running in command line mode
+3. The program is now running in GUI.
 4. To run the program, you can simply open .jar file
 
 =========================================================================
