@@ -1,4 +1,4 @@
-﻿CS3343 Mahjong Calculation System (Group 23)
+CS3343 Mahjong Calculation System (Group 23)
 
 
 =========================================================
@@ -46,8 +46,18 @@ ________________
 
 A detailed version is as follow:
 
+（Chinese Version)
 
-  
+Rank\Suit	T	S	M	H
+1		一筒	一索	一萬	東
+2		二萬	二索	二萬	南
+3		三萬	三索	三萬	西
+4		四萬	四索	四萬	北
+5		五萬	五索	五萬	紅中
+6		六萬	六索	六萬	發財
+7		七萬	七索	七萬	白板
+8		八萬	八索	八萬	/
+9  		九萬	九索	九萬	/
 
 
 
@@ -65,14 +75,15 @@ https://en.wikipedia.org/wiki/Hong_Kong_Mahjong_scoring_rules#Criteria
 << Installation >>
 ========================================================================
 
+Windows User
+1. Execute the "mahjong.bat" inside the build folder
+2. The program is now running in command line.
+3. If you wish to run the program in GUI, you can simply open mahjong.jar file
 
-1. In Windows environment, install Java SE/Java SE Development Kit (JDK)
-http://www.oracle.com/technetwork/java/javase/downloads/index.html
-2. Execute the "mahjong.bat" (if you are using window) inside the build folder
-For Mac OSX, open terminal and execute "sh mahjong.sh"
-3. The program is now running in command line.
-4. If you wish to run the program in GUI, you can simply open mahjong.jar file
-
+Mac User
+1. Open terminal and execute "sh mahjong.sh"
+2. The program is now running in command line.
+3. If you wish to run the program in GUI, you can simply open mahjong.jar file
 
 
 
@@ -81,7 +92,7 @@ For Mac OSX, open terminal and execute "sh mahjong.sh"
 ========================================================================
 
 
-1.User enters 14 valid tiles in the 14 input boxs of the GUI.
+1.User enters 14 valid tiles in the 14 input boxes of the GUI.
 2.System outputs the name of hand and the corresponding Fan points.
 
 
@@ -90,30 +101,14 @@ For Mac OSX, open terminal and execute "sh mahjong.sh"
 ========================================================================
 
 
-Name
-	SID
-	Role
-	NGAI Ho Chun Jonathan 
-	54806258
-	Project Manager
-	Wong Chun Yan
-	54820308
-	Assistant Project Manager
-	Leung Chi Hin
-	54820161
-	System Engineer
-	Wong Jyu Fung
-	54817967
-	System Engineer
-	Wong Him Yau
-	54792679
-	System Designer
-	Ho Kin Lok
-	54812947
-	Testing Engineer
-	Lam Chun Kit
-	54812413
-	Testing Engineer
+Name			 SID	      	      Role
+NGAI Ho Chun Jonathan  54806258		Project Manager
+Wong Chun Yan	       54820308		Assistant Project Manager
+Leung Chi Hin	       54820161		System Engineer
+Wong Jyu Fung	       54817967		System Engineer
+Wong Him Yau	       54792679		System Designer
+Ho Kin Lok	       54812947		Testing Engineer
+Lam Chun Kit	       54812413		Testing Engineer
 	
 
 -----------------------------------------------------------------------
