@@ -37,10 +37,10 @@ https://en.wikipedia.org/wiki/Hong_Kong_Mahjong_scoring_rules#Criteria
 
 1. In Windows environment, install Java SE/Java SE Development Kit (JDK)
 http://www.oracle.com/technetwork/java/javase/downloads/index.html
-2. Execute the "run.bat" (if you are using window) inside the build folder
-For Mac OSX, open terminal and execute "sh run.sh"
-3. The program is now running in GUI.
-4. To run the program, you can simply open .jar file
+2. Execute the "mahjong.bat" (if you are using window) inside the build folder
+For Mac OSX, open terminal and execute "sh mahjong.sh"
+3. The program is now running in command line.
+4. If you wish to run the program in GUI, you can simply open mahjong.jar file
 
 =========================================================================
 << User Guideline >>
