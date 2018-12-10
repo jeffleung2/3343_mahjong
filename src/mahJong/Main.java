@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 //import java.io.InputStream;
 import java.util.ArrayList;
 //import java.util.Scanner;
+import java.util.Scanner;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -44,18 +45,56 @@ public class Main {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Main window = new Main();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
+	public static void main(String[] args)
+	{
+		boolean isGUI = true;
+		if(isGUI)
+		{
+			EventQueue.invokeLater(new Runnable() {
+				public void run() {
+					try {
+						Main window = new Main();
+						window.frame.setVisible(true);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			});
+		}
+		else
+		{
+			System.out.println("Description: H - Honour Tile, S - Bamboo Tile, T - Dots Tile, M - Characters Tile");
+			System.out.println("Winds Tile Description: H1 - East Wind, H2 - South Wind, H3 - West Wind, H4 - North Wind");
+			System.out.println("Dragons Tile Description: H5 - Red, H6 - Green, H7 - White");
+			System.out.println("Simples Tile Description: T1 - 1Dot, S3 - 3 Bamboos, M6 - 6 Characters");
+			System.out.println("Input Example: M1 M2 M3 M4 M5 M6 M7 M8 M9 H7 H7 H7 H6 H6");
+			//M1 M2 M3 M4 M5 M6 M7 M8 M9 H7 H7 H7 H6 H6
+			System.out.println("Tips: A Pair of eyes should be placed at the last.");
+			System.out.println("Tips: The input should be in increasing order like H1H2H3 but not H3H2H1");
+			System.out.println("Tips: type exit to leave the program");
+			System.out.print("Please input your tiles (14 Tiles):");
+			Scanner in = new Scanner(System.in);
+			String[] temp = new String[14];
+			int count = 0;
+			while(in.hasNext())
+			{
+				String tiles = in.next();
+				if(tiles.equals("exit"))
+				{
+					in.close();
+					break;
+				}
+				temp[count++] = tiles;
+				if(count == 14)
+				{
+					Calculator calculator = new Calculator(temp);
+					System.out.println("Points: "+calculator.getWinPoint());
+					System.out.println("Scoring Hands: "+calculator.getWinName());
+					System.out.print("Please input your tiles (14 Tiles):");
+					count = 0;
 				}
 			}
-		});
-	
+		}
 	}
 
 	/**
@@ -368,35 +407,4 @@ public class Main {
 			}
 		});	
 	}
-
-//	public static void main(String args[])
-//	{
-//		
-//		System.out.println("Description: H - Honour Tile, S - Bamboo Tile, T - Dots Tile, M - Characters Tile");
-//		System.out.println("Winds Tile Description: H1 - East Wind, H2 - South Wind, H3 - West Wind, H4 - North Wind");
-//		System.out.println("Dragons Tile Description: H5 - Red, H6 - Green, H7 - White");
-//		System.out.println("Simples Tile Description: T1 - 1Dot, S3 - 3 Bamboos, M6 - 6 Characters");
-//		System.out.println("Input Example: M1M2M3M4M5M6M7M8M9H7H7H7H6H6");
-//		//M1 M2 M3 M4 M5 M6 M7 M8 M9 H7 H7 H7 H6 H6
-//		System.out.println("Tips: A Pair of eyes should be placed at the last.");
-//		System.out.println("Tips: The input should be in increasing order like H1H2H3 but not H3H2H1");
-//		System.out.print("Please input your tiles (14 Tiles):");
-//		Scanner in = new Scanner(System.in);
-//		String[] temp = new String[14];
-//		int count = 0;
-//		while(count < 14)
-//		{
-//			String tiles = in.next();
-//			temp[count++] = tiles;
-//		}
-//		if(count < 14)System.out.println("Error: Insufficient Tiles");
-//		else
-//		{
-////			for(int i = 0;i < 28;i+=2)temp[i/2] = tiles.substring(i, i+2);
-//			Calculator calculator = new Calculator(temp);
-//			System.out.println("Points: "+calculator.getWinPoint());
-//			System.out.println("Scoring Hands: "+calculator.getWinName());
-//			in.close();
-//		}
-//	}
 }
