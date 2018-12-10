@@ -1,1 +1,1 @@
-java -jar mahjong.jar
+java -jar mahjong-command-line.jar
