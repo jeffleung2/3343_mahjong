@@ -94,6 +94,7 @@ Mac User
 
 1.User enters 14 valid tiles no matter in which operating system.
 2.System outputs the name of hand and the corresponding Fan points.
+3.If you wish to terminate the program, type "exit".
 
 For example,
 14 valid tiles: M1M2M3 M4M5M6 M7M8M9 H7H7H7 H6H6
