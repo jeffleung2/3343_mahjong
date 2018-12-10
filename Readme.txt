@@ -78,12 +78,12 @@ https://en.wikipedia.org/wiki/Hong_Kong_Mahjong_scoring_rules#Criteria
 Windows User
 1. Execute the "mahjong.bat" inside the build folder
 2. The program is now running in command line.
-3. If you wish to run the program in GUI, you can simply open mahjong.jar file
+3. If you wish to run the program in GUI, you can simply open "mahjong.jar" file
 
 Mac User
 1. Open terminal and execute "sh mahjong.sh"
 2. The program is now running in command line.
-3. If you wish to run the program in GUI, you can simply open mahjong.jar file
+3. If you wish to run the program in GUI, you can simply open "mahjong.jar" file
 
 
 
@@ -92,16 +92,20 @@ Mac User
 ========================================================================
 
 
-1.User enters 14 valid tiles in the 14 input boxes of the GUI.
+1.User enters 14 valid tiles no matter in which operating system.
 2.System outputs the name of hand and the corresponding Fan points.
 
+For example,
+14 valid tiles: M1M2M3 M4M5M6 M7M8M9 H7H7H7 H6H6
+=> System outputs: Fan Point:	4
+		   Hand Type:	Contain One Dragon Mix One Suit
 
 ========================================================================
 << Team member of the system >>
 ========================================================================
 
 
-Name			 SID	      	      Role
+     Name		 SID	      	    Role
 NGAI Ho Chun Jonathan  54806258		Project Manager
 Wong Chun Yan	       54820308		Assistant Project Manager
 Leung Chi Hin	       54820161		System Engineer
