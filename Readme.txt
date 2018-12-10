@@ -76,14 +76,18 @@ https://en.wikipedia.org/wiki/Hong_Kong_Mahjong_scoring_rules#Criteria
 ========================================================================
 
 Windows User
-1. Execute the "mahjong.bat" inside the build folder
-2. The program is now running in command line.
-3. If you wish to run the program in GUI, you can simply open "mahjong.jar" file
+1. Extract the "mahjong.zip".
+2. Please ensure the "resources" folder is in the same path.
+3. Execute the mahjong.bat.
+4. The program is now running in command line.
+5. If you wish to run the program in GUI, you can simply open "mahjong.jar" file
 
 Mac User
-1. Open terminal and execute "sh mahjong.sh"
-2. The program is now running in command line.
-3. If you wish to run the program in GUI, you can simply open "mahjong.jar" file
+1. Extract the "mahjong.zip".
+2. Please ensure the "resources" folder is in the same path.
+3. Open terminal and execute "sh mahjong.sh"
+4. The program is now running in command line.
+5. If you wish to run the program in GUI, you can simply open "mahjong.jar" file
 
 
 
