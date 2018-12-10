@@ -183,7 +183,6 @@ public class CalculatorTest {
 		 int point = calculator.getWinPoint();
 		 assertEquals(13, point);
 		 String name = calculator.getWinName();
-		 System.out.println("XXXX:"+name);
 		 assertEquals("All Honor Tiles", name);
      }
 	 
